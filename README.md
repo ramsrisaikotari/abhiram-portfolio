@@ -2,24 +2,58 @@
 
 An original, responsive DevOps and Site Reliability Engineering portfolio built with React, TypeScript, Vite, and plain CSS. No backend, database, or external font dependency is needed.
 
-## Local development
+## Development and deployment
 
 Requires Node.js 22.12+ (or 20.19+) and npm.
+
+Local development:
 
 ```sh
 npm install
 npm run dev
 ```
 
-Open the localhost URL printed by Vite. To check the finished production output:
+Production build:
 
 ```sh
-npm run lint
 npm run build
-npm run preview
 ```
 
-`npm run build` type-checks the project and generates a self-contained static `dist/` directory. Upload the contents of that directory, rather than the directory itself, to your hosting bucket.
+Manual Firebase Hosting deployment:
+
+```sh
+firebase deploy --only hosting
+```
+
+`npm run build` type-checks the project and generates the static `dist/` directory configured in `firebase.json`. A push to `main` triggers `.github/workflows/firebase-deploy.yml`, which installs the locked dependencies, builds the site, and deploys it to Firebase Hosting. The workflow can also be started manually from the GitHub Actions page.
+
+GitHub Actions authenticates to Google Cloud with short-lived credentials issued through GitHub OIDC and Google Cloud Workload Identity Federation. No service-account key or long-lived Firebase token is stored in GitHub.
+
+## Required GCP / GitHub configuration
+
+Create these resources manually in the `abhiram-portfolio` Google Cloud project:
+
+1. A dedicated deployment service account used only by this workflow.
+2. A Workload Identity Pool.
+3. An OIDC Workload Identity Provider in that pool with issuer `https://token.actions.githubusercontent.com`.
+4. Provider attribute mappings for at least `google.subject=assertion.sub` and `attribute.repository_id=assertion.repository_id`. Map `attribute.ref=assertion.ref` if the branch is included in the IAM principal or provider condition.
+5. A provider attribute condition restricted to this repository and branch. Prefer the immutable numeric GitHub repository ID: `assertion.repository_id == '<GITHUB_REPOSITORY_ID>' && assertion.ref == 'refs/heads/main'`. Obtain the ID with `gh api repos/ramsrisaikotari/abhiram-portfolio --jq .id`; do not substitute an unrelated repository ID. This prevents tokens from arbitrary repositories or branches from entering the pool.
+6. On the deployment service account, grant `roles/iam.workloadIdentityUser` to the principal set for that repository ID in the pool: `principalSet://iam.googleapis.com/projects/<GCP_PROJECT_NUMBER>/locations/global/workloadIdentityPools/<POOL_ID>/attribute.repository_id/<GITHUB_REPOSITORY_ID>`.
+7. On the `abhiram-portfolio` project, grant the deployment service account:
+   - `roles/firebasehosting.admin` to create Hosting versions, upload files, and release the version to the live site.
+   - `roles/serviceusage.apiKeysViewer` because the Firebase CLI requires API Keys Viewer in addition to a Firebase product role.
+
+Do not grant Owner or Editor. This Hosting-only workflow does not need Cloud Functions, Cloud Run, Artifact Registry, storage administration, `roles/iam.serviceAccountUser`, or `roles/iam.serviceAccountTokenCreator`. If the deployment later includes another Firebase product, review and add only that product's required role.
+
+In the GitHub repository, open **Settings → Secrets and variables → Actions → Variables** and create:
+
+| Variable | Value |
+| --- | --- |
+| `GCP_PROJECT_ID` | `abhiram-portfolio` |
+| `GCP_WORKLOAD_IDENTITY_PROVIDER` | Full provider resource name: `projects/<GCP_PROJECT_NUMBER>/locations/global/workloadIdentityPools/<POOL_ID>/providers/<PROVIDER_ID>` |
+| `GCP_SERVICE_ACCOUNT` | Full email address of the dedicated deployment service account |
+
+These identifiers are configuration values, so the workflow reads them from GitHub repository variables. No GitHub secret is required. Ensure the IAM Service Account Credentials API and Security Token Service API are enabled for Workload Identity Federation, then allow several minutes for new federation and IAM settings to propagate before the first run.
 
 ## Architecture
 
@@ -44,17 +78,3 @@ The fixed navbar uses native anchor links and marks the visible section. The mob
 5. Add your real domain to `og:url` and a canonical link in `index.html`. No placeholder domain is emitted in metadata. A social preview image can be added later with an absolute `og:image` URL.
 
 Test every contact link before publishing.
-
-## Future AWS deployment architecture
-
-```text
-GitHub → GitHub Actions → private S3 bucket
-                                ↑
-Visitor → Route 53 → CloudFront (ACM HTTPS certificate)
-```
-
-Use GitHub Actions to run `npm ci`, `npm run lint`, and `npm run build`, then sync `dist/` to S3. Authenticate to AWS through GitHub OIDC and a restricted IAM role rather than committing access keys. Deployment resources and a workflow are deliberately not provisioned by this project.
-
-Configure CloudFront with an S3 REST origin and Origin Access Control; keep the bucket private and block public access. Set `index.html` as the default root object. This is a single page with hash navigation, so it does not require server-side routing or an SPA error rewrite. Request the CloudFront ACM certificate in `us-east-1`, validate it through DNS, and configure Route 53 alias records for the distribution and your custom domain.
-
-Cache hashed files under `/assets/` for a long duration with `immutable`; use short caching or revalidation for `index.html`. Upload hashed assets before HTML, and invalidate `/` and `/index.html` after deployment. Avoid deleting old hashed assets immediately if visitors may still have an older HTML document cached. Serve HTTPS and apply appropriate security response headers through CloudFront.

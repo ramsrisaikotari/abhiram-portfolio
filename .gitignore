@@ -1,9 +1,11 @@
 node_modules/
 dist/
+.firebase/
 *.tsbuildinfo
 .env
 .env.*
 !.env.example
+gha-creds-*.json
 .DS_Store
 *.log
 .vscode/
