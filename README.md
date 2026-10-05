@@ -75,6 +75,6 @@ The fixed navbar uses native anchor links and marks the visible section. The mob
 2. Replace `public/resume.pdf` whenever the résumé changes; the configured `/resume.pdf` URL can stay the same.
 3. Add optional `github` fields to projects only for publicly shareable repositories.
 4. Add verified employment dates to the optional `period` field in `src/data/experience.ts` if desired.
-5. Add your real domain to `og:url` and a canonical link in `index.html`. No placeholder domain is emitted in metadata. A social preview image can be added later with an absolute `og:image` URL.
+5. The canonical production URL is `https://abhiramkotari.com/`. Update `index.html`, `public/robots.txt`, and `public/sitemap.xml` together if the domain changes. A social preview image can be added later with an absolute `og:image` URL.
 
 Test every contact link before publishing.
