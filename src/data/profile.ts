@@ -1,14 +1,14 @@
 export const profile = {
   name: "Abhi Ram Kotari",
   description:
-    "AWS-focused DevOps and Site Reliability Engineer with experience supporting 150+ APIs and microservices across multi-account, multi-region environments. I work across CI/CD, cloud infrastructure, observability, incident response, automation, and production reliability, with a growing focus on AI/MLOps.",
+    "I’m a DevOps and Site Reliability Engineer working mainly with AWS. My day-to-day work includes deployments, cloud infrastructure, monitoring, automation, and troubleshooting production issues across applications, networking, and platform services. I’m also building my skills in AI and MLOps.",
   email: "mailto:ramsrisaikotari@gmail.com",
   github: "https://github.com/ramsrisaikotari",
   linkedin: "https://www.linkedin.com/in/abhi-ram-kotari-bb4bb9323/",
   resume: "/resume.pdf",
   about: [
-    "I work at the intersection of cloud infrastructure and production reliability. My focus is on making deployments repeatable, systems observable, and troubleshooting practical.",
-    "My experience spans CI/CD, AWS infrastructure, containerized services, monitoring, incident response and automation. I enjoy understanding how application, infrastructure, networking and observability layers connect, and I am increasingly applying that foundation toward AI and MLOps.",
+    "Most of my work is around keeping cloud applications reliable and making day-to-day operations easier to manage. That includes improving deployment pipelines, monitoring systems, automating repetitive checks, and troubleshooting problems when something goes wrong.",
+    "I like understanding the full path of an issue rather than looking at only one layer. A problem might start in an application, but the cause could be a container, database connection, network route, load balancer, or deployment change. That kind of troubleshooting is one of the parts of SRE work I enjoy most.",
   ],
   technologies: [
     "AWS",

@@ -28,8 +28,8 @@ export default function Projects() {
       <section id="projects" className="section" aria-label="Featured projects">
         <SectionHeading number="03">Featured Projects</SectionHeading>
         <p className="section-intro">
-          Personal and academic work spanning delivery platforms, applied AI and
-          data systems.
+          A few projects that show how I approach building, automating, and
+          solving technical problems.
         </p>
         <div className="projects-grid">
           {projects
@@ -46,9 +46,12 @@ export default function Projects() {
       >
         <SectionHeading number="04">Engineering Case Studies</SectionHeading>
         <p className="section-intro">
-          Selected examples of infrastructure, reliability and automation work
-          from enterprise environments. Details are intentionally generalized to
-          avoid exposing proprietary systems.
+          Examples of the cloud, monitoring, deployment, and production support
+          work I’ve handled in enterprise environments.
+        </p>
+        <p className="confidential-note">
+          Professional work is summarized at a high level to avoid exposing
+          internal systems or proprietary details.
         </p>
         <div className="projects-grid case-grid">
           {projects
@@ -76,8 +79,8 @@ export default function Projects() {
       <section id="archive" className="section" aria-label="Project archive">
         <SectionHeading number="05">Project Archive</SectionHeading>
         <p className="section-intro">
-          Earlier work and focused experiments. Choose a category to explore all
-          related personal and academic projects.
+          More projects from my coursework and earlier hands-on work in software
+          engineering, data, and machine learning.
         </p>
         <div
           className="project-filters"

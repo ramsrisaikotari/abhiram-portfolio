@@ -50,19 +50,19 @@ export default function ProjectCard({
           <div className="detail-content">
             {project.confidential && (
               <p className="confidential-note">
-                Professional case study — proprietary implementation details
-                omitted.
+                This is a high-level summary of professional work. Internal
+                implementation details are intentionally left out.
               </p>
             )}
             <h4>Overview</h4>
             <p>{project.summary}</p>
-            <h4>Problem / Goal</h4>
+            <h4>Goal</h4>
             <p>{project.detail.goal}</p>
             <h4>Architecture</h4>
             {project.architecture.map((flow) => (
               <ArchitectureFlow key={flow.label} flow={flow} />
             ))}
-            <h4>Engineering Highlights</h4>
+            <h4>What I Worked On</h4>
             <ul className="project-highlights">
               {project.highlights.map((h) => (
                 <li key={h}>{h}</li>
@@ -74,13 +74,9 @@ export default function ProjectCard({
                 <li key={t}>{t}</li>
               ))}
             </ul>
-            <h4>
-              {project.confidential
-                ? "Engineering Focus"
-                : "My Role / Project Type"}
-            </h4>
+            <h4>{project.confidential ? "Engineering Focus" : "My Focus"}</h4>
             <p>{project.detail.focus}</p>
-            <h4>Outcome / What I Learned</h4>
+            <h4>Outcome</h4>
             <p>{project.detail.outcome}</p>
           </div>
         </details>

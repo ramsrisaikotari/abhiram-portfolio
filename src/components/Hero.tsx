@@ -18,8 +18,8 @@ export default function Hero() {
           Abhi Ram Kotari<span className="accent">.</span>
         </h1>
         <p className="hero-statement">
-          Building reliable cloud platforms, automated delivery pipelines, and
-          observable distributed systems.
+          I build and support cloud systems, automate deployments, and improve
+          how production applications are monitored and operated.
         </p>
         <p className="hero-description">{profile.description}</p>
         <div className="hero-actions">
@@ -80,12 +80,14 @@ export default function Hero() {
             </span>
           </div>
         </div>
-        <p className="diagram-caption">Build. Deploy. Observe. Improve.</p>
+        <p className="diagram-caption">
+          From deployment to production monitoring.
+        </p>
       </div>
       <div className="hero-bottom">
         <span>DEVOPS & SITE RELIABILITY ENGINEERING</span>
         <a href="#about">
-          Explore the portfolio <span aria-hidden="true">↓</span>
+          See my work <span aria-hidden="true">↓</span>
         </a>
       </div>
     </section>

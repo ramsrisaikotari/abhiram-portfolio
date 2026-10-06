@@ -3,7 +3,7 @@ import SectionHeading from "./SectionHeading";
 export default function About() {
   return (
     <section id="about" className="section reveal" aria-label="About me">
-      <SectionHeading number="01">Engineering Approach</SectionHeading>
+      <SectionHeading number="01">About Me</SectionHeading>
       <div className="about-layout">
         <div className="about-copy">
           {profile.about.map((p) => (
@@ -11,13 +11,13 @@ export default function About() {
           ))}
         </div>
         <aside className="approach-aside">
-          <span className="eyebrow">A connected view of systems</span>
+          <span className="eyebrow">How I work</span>
           <p>
-            Repeatable delivery.
+            Automate repeated work.
             <br />
-            Useful observability.
+            Monitor what matters.
             <br />
-            Practical troubleshooting.
+            Troubleshoot across the stack.
           </p>
         </aside>
       </div>

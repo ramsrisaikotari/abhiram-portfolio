@@ -8,16 +8,15 @@ export default function Contact() {
       aria-labelledby="contact-title"
     >
       <p className="contact-kicker">
-        <span>07.</span> What's Next?
+        <span>07.</span> Contact
       </p>
       <h2 id="contact-title">
-        Get In Touch<span className="accent">.</span>
+        Let’s Connect<span className="accent">.</span>
       </h2>
       <p>
-        I'm open to opportunities in{" "}
-        {profile.opportunities.slice(0, -1).join(", ")}, and{" "}
-        {profile.opportunities.at(-1)}. If you're building reliable systems and
-        looking for someone to help, I'd love to connect.
+        I’m currently interested in DevOps, SRE, cloud, platform engineering,
+        and MLOps opportunities. If you'd like to talk about a role, one of the
+        projects here, or engineering in general, feel free to reach out.
       </p>
       <div className="contact-links">
         <a className="button button-solid" href={profile.email}>

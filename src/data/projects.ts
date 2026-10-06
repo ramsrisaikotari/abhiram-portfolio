@@ -32,7 +32,7 @@ export const projects: Project[] = [
     category: "AI / Generative AI",
     featured: true,
     summary:
-      "Built an LLM-powered job application assistant that generates personalized application content from a resume summary, target role, job description, preferred tone, language and selected model.",
+      "A FastAPI application that takes a résumé summary and job description and uses an LLM to generate tailored application content. I added options for role, tone, language, and model selection.",
     technologies: [
       "Python",
       "FastAPI",
@@ -43,9 +43,9 @@ export const projects: Project[] = [
       "Render",
     ],
     highlights: [
-      "Designed a REST API with structured candidate and job inputs.",
-      "Validated requests with Pydantic API contracts.",
-      "Supported configurable model, language and tone selection.",
+      "Built a FastAPI endpoint around structured résumé and job inputs.",
+      "Used Pydantic to validate requests before sending them to the model.",
+      "Added options for model, tone, and language so the output can be adjusted for different applications.",
     ],
     architecture: [
       {
@@ -61,11 +61,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Generate role-specific application content through a structured API.",
+      goal: "Create a simple API that turns résumé and job information into tailored application content.",
       focus:
-        "Personal project \u00b7 API design, validation and LLM integration.",
+        "I focused on API design, request validation, prompt construction, and the LLM integration.",
       outcome:
-        "A working API implementation connecting validated inputs to an external language model.",
+        "The project gave me a practical way to connect a typed API to an external LLM and control how requests are handled.",
     },
     filters: ["AI & ML"],
     github: "https://github.com/ramsrisaikotari/llm-job-agent",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     category: "DevOps / Platform Engineering",
     featured: true,
     summary:
-      "Designed and deployed a production portfolio platform with protected GitHub workflows, automated CI/CD, pull-request previews, keyless cloud authentication, custom DNS, HTTPS and availability monitoring.",
+      "This website is also one of my DevOps projects. Changes go through pull requests, CI checks, Firebase preview environments, and an automated production deployment using GitHub Actions and keyless GCP authentication.",
     technologies: [
       "React",
       "TypeScript",
@@ -88,9 +88,9 @@ export const projects: Project[] = [
       "Cloud Monitoring",
     ],
     highlights: [
-      "Implemented pull-request validation and Firebase preview environments.",
-      "Used OIDC and Workload Identity Federation instead of long-lived cloud keys.",
-      "Automated production delivery with custom DNS, HTTPS and uptime monitoring.",
+      "Set up pull-request checks and Firebase preview environments so changes can be reviewed before production.",
+      "Used GitHub OIDC and GCP Workload Identity Federation instead of storing a long-lived service-account key.",
+      "Automated the production deployment after merges to main and added uptime monitoring for the live site.",
     ],
     architecture: [
       {
@@ -112,11 +112,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Make changes reviewable before production and authenticate delivery with short-lived credentials.",
+      goal: "Build a portfolio that uses a real review, deployment, and monitoring workflow instead of manually publishing changes.",
       focus:
-        "Personal project \u00b7 frontend, CI/CD and cloud delivery architecture.",
+        "I built the site and the CI/CD path around it, including previews, cloud authentication, hosting, DNS, and monitoring.",
       outcome:
-        "A production portfolio with a repeatable preview and release workflow.",
+        "The site now has a repeatable path from feature branch to preview to production without storing long-lived deployment credentials.",
     },
     filters: ["Cloud & DevOps"],
     github: "https://github.com/ramsrisaikotari/abhiram-portfolio",
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     category: "Machine Learning / Security",
     featured: true,
     summary:
-      "Developed a machine-learning-based phishing URL detection system using URL and domain characteristics, model experimentation and application/API integration.",
+      "An academic machine-learning project that explores phishing detection using URL and domain features. I worked with several ML and deep-learning approaches and connected the prediction flow to an application layer.",
     technologies: [
       "Python",
       "Random Forest",
@@ -141,9 +141,9 @@ export const projects: Project[] = [
       "AWS",
     ],
     highlights: [
-      "Evaluated classical machine-learning and deep-learning approaches.",
-      "Performed URL/domain feature engineering and model evaluation.",
-      "Integrated prediction functionality with an application/API layer.",
+      "Prepared URL and domain features for model training and comparison.",
+      "Compared classical ML and deep-learning approaches including Random Forest, SVM, CNN, and LSTM.",
+      "Connected the model output to an application/API flow for testing predictions.",
     ],
     architecture: [
       {
@@ -160,11 +160,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Explore how URL and domain features can identify potentially malicious websites.",
+      goal: "Explore whether URL and domain features can help distinguish phishing sites from legitimate ones.",
       focus:
-        "Academic project \u00b7 feature engineering, model evaluation and integration.",
+        "I worked on feature preparation, model comparison, evaluation, and connecting predictions to the application flow.",
       outcome:
-        "Compared model approaches for phishing detection; no unverified accuracy claims are published.",
+        "The project helped me understand the trade-offs between different model types and how model predictions can be exposed through an application.",
     },
     filters: ["AI & ML"],
   },
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     category: "Data Engineering / Machine Learning",
     featured: true,
     summary:
-      "Built a data-processing and analytics platform for ingesting, transforming, visualizing and forecasting COVID-19 trends with automated pipelines and time-series analysis.",
+      "A data and forecasting project that collects COVID-19 data, processes it through Python-based workflows, and uses ARIMA and Prophet to explore trends through an interactive dashboard.",
     technologies: [
       "Python",
       "Apache Airflow",
@@ -186,9 +186,9 @@ export const projects: Project[] = [
       "ARIMA",
     ],
     highlights: [
-      "Developed Python data-ingestion and processing workflows.",
-      "Applied ARIMA and Prophet for time-series forecasting.",
-      "Built interactive visualizations using React and D3.js.",
+      "Built Python workflows to ingest and prepare COVID-19 data.",
+      "Used ARIMA and Prophet to explore time-series trends and forecasts.",
+      "Presented the processed data through React and D3 visualizations.",
     ],
     architecture: [
       {
@@ -204,11 +204,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Connect data processing, trend forecasting and interactive exploration.",
+      goal: "Turn raw COVID-19 data into a workflow that could be processed, explored, and forecasted.",
       focus:
-        "Academic project \u00b7 data pipelines, forecasting and visualization.",
+        "I worked on data processing, time-series forecasting, and the visualization flow.",
       outcome:
-        "Combined data-engineering and time-series techniques in an analytics project.",
+        "The project brought data engineering, forecasting, and frontend visualization together in one workflow.",
     },
     filters: ["AI & ML", "Data"],
     github: "https://github.com/ramsrisaikotari/covid-rate-tracker",
@@ -220,7 +220,7 @@ export const projects: Project[] = [
     category: "Cloud Infrastructure",
     featured: false,
     summary:
-      "Supported migration and production operation of 150+ APIs and microservices across multi-account, multi-region AWS environments.",
+      "Worked on the migration and production support of 150+ APIs and microservices across four AWS accounts and two regions. My work covered ECS, Lambda, API Gateway, deployments, configuration, monitoring, and post-deployment checks.",
     technologies: [
       "AWS",
       "ECS Fargate",
@@ -232,8 +232,8 @@ export const projects: Project[] = [
     ],
     highlights: [
       "Supported 150+ APIs and microservices across four AWS accounts and two regions.",
-      "Worked across containerized services, serverless workloads, networking and secrets.",
-      "Participated in deployments and post-deployment validation.",
+      "Worked with ECS/Fargate, Lambda, API Gateway, networking, configuration, and secrets.",
+      "Supported releases and checked application health after deployments.",
     ],
     architecture: [
       {
@@ -253,11 +253,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Support migration and reliable operation across AWS environments.",
+      goal: "Help move API workloads to AWS and keep them stable after migration.",
       focus:
-        "Cloud infrastructure \u00b7 deployment support and operational validation.",
+        "I worked across cloud infrastructure, deployment support, and production checks.",
       outcome:
-        "Supported migration and ongoing production operations across distributed workloads.",
+        "The work gave me hands-on experience supporting distributed AWS workloads across multiple environments and regions.",
     },
     filters: ["Cloud & DevOps"],
     confidential: true,
@@ -276,7 +276,7 @@ export const projects: Project[] = [
     category: "Observability / Automation",
     featured: false,
     summary:
-      "Supported migration of AWS log delivery across accounts and regions using CloudWatch, Amazon Data Firehose, Python automation and Dynatrace.",
+      "Worked on moving AWS log delivery to a new CloudWatch and Firehose-based flow across multiple accounts and regions. I also updated Python automation used to check whether logs were active, delivered successfully, backed up correctly, and visible in Dynatrace.",
     technologies: [
       "AWS",
       "CloudWatch",
@@ -286,9 +286,9 @@ export const projects: Project[] = [
       "S3",
     ],
     highlights: [
-      "Automated checks for log activity, delivery health and data freshness.",
-      "Validated success/failure signals, throttling and backup delivery.",
-      "Verified downstream Dynatrace ingestion.",
+      "Used Python checks to confirm log activity, delivery status, and data freshness.",
+      "Checked Firehose delivery, throttling, and S3 backup behavior.",
+      "Verified that the expected logs were reaching Dynatrace.",
     ],
     architecture: [
       {
@@ -313,11 +313,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Validate log delivery and downstream ingestion during an observability migration.",
+      goal: "Move log delivery to the new AWS-to-Dynatrace path without losing visibility into delivery health.",
       focus:
-        "Observability automation \u00b7 delivery and ingestion validation.",
+        "I focused on delivery validation and the Python checks used to verify each step of the log path.",
       outcome:
-        "Used automated validation to support investigation of log-pipeline health.",
+        "The validation helped separate source-log issues from Firehose delivery problems and downstream Dynatrace ingestion issues.",
     },
     filters: ["Cloud & DevOps"],
     confidential: true,
@@ -329,7 +329,7 @@ export const projects: Project[] = [
     category: "Monitoring / SRE",
     featured: false,
     summary:
-      "Implemented and supported cloud observability using metrics, logs, dashboards, alerting and production monitoring across multiple platforms.",
+      "Worked with Dynatrace, Datadog, CloudWatch, Elasticsearch, and Kibana to onboard logs and metrics, create monitoring, and investigate production issues.",
     technologies: [
       "Dynatrace",
       "Datadog",
@@ -338,9 +338,9 @@ export const projects: Project[] = [
       "Kibana",
     ],
     highlights: [
-      "Supported application and infrastructure monitoring.",
-      "Onboarded logs and metrics and worked with dashboards and alerts.",
-      "Used observability signals in production troubleshooting and service-health investigations.",
+      "Onboarded logs and metrics for cloud-hosted applications.",
+      "Worked with dashboards and alerts in Dynatrace, Datadog, and CloudWatch.",
+      "Used logs and metrics to investigate service-health and production issues.",
     ],
     architecture: [
       {
@@ -356,11 +356,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Make service health and operational signals available for troubleshooting.",
+      goal: "Make it easier to see what applications and infrastructure were doing in production.",
       focus:
-        "Monitoring and SRE \u00b7 log onboarding, dashboards and investigations.",
+        "I worked on log and metric onboarding, dashboards, alerts, and production troubleshooting.",
       outcome:
-        "Supported production investigations with application and infrastructure signals.",
+        "This gave the team more useful signals to work with during monitoring and incident investigation.",
     },
     filters: ["Cloud & DevOps"],
     confidential: true,
@@ -372,7 +372,7 @@ export const projects: Project[] = [
     category: "CI/CD / Developer Infrastructure",
     featured: false,
     summary:
-      "Built and operated CI/CD workflows for application promotion through production, including container builds, approvals, blue-green releases, rollback handling and validation.",
+      "Supported release pipelines that moved applications from Dev through Production. This included container builds, approval gates, ECS blue-green deployments, failed deployment troubleshooting, rollbacks, and post-release checks.",
     technologies: [
       "Jenkins",
       "GitHub",
@@ -383,9 +383,9 @@ export const projects: Project[] = [
       "Docker",
     ],
     highlights: [
-      "Supported near-daily releases through Dev, Test, Stage and Production.",
-      "Troubleshot build failures, task-definition mismatches and failed deployments.",
-      "Supported approval gates, blue-green releases, rollback handling and validation.",
+      "Supported near-daily releases through Dev, Test, Stage, and Production.",
+      "Troubleshot image builds, task-definition mismatches, and failed deployments.",
+      "Worked with approval gates, blue-green releases, rollback scenarios, and post-release checks.",
     ],
     architecture: [
       {
@@ -404,11 +404,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Support repeatable application promotion and production release operations.",
+      goal: "Make application releases predictable from Dev through Production.",
       focus:
-        "Release engineering \u00b7 pipeline operation and deployment troubleshooting.",
+        "I worked on pipeline operation, deployment troubleshooting, blue-green releases, approvals, and post-release checks.",
       outcome:
-        "Supported application delivery and post-release validation across environments.",
+        "This work gave me regular hands-on experience with release failures, rollbacks, and production validation.",
     },
     filters: ["Cloud & DevOps"],
     confidential: true,
@@ -421,7 +421,7 @@ export const projects: Project[] = [
     category: "Site Reliability Engineering",
     featured: false,
     summary:
-      "Supported production reliability for distributed AWS applications, troubleshooting application, container, database, networking and infrastructure failures.",
+      "Supported more than 30 production incidents involving ECS services, APIs, databases, networking, load balancers, and application failures. I worked with application, database, network, and platform teams to troubleshoot issues and support root-cause analysis.",
     technologies: [
       "AWS ECS",
       "Lambda",
@@ -432,9 +432,9 @@ export const projects: Project[] = [
       "HTTP",
     ],
     highlights: [
-      "Supported 30+ production incidents and cross-team root-cause analysis.",
-      "Investigated service communication, database connectivity and timeouts.",
-      "Troubleshot request paths, VPC routing, security groups, load balancing and HTTP 4xx/5xx failures.",
+      "Supported 30+ production incidents and root-cause analysis.",
+      "Investigated service communication, database connectivity, timeouts, routing, security groups, and load balancing.",
+      "Worked across application, database, network, and platform teams to narrow down failures.",
     ],
     architecture: [
       {
@@ -448,11 +448,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Investigate distributed failures across application and infrastructure boundaries.",
+      goal: "Restore service quickly and understand where failures were occurring across the stack.",
       focus:
-        "Production reliability \u00b7 incident response and troubleshooting.",
+        "I worked on incident triage and troubleshooting across application, container, network, database, and AWS layers.",
       outcome:
-        "Supported incident investigations with application, database, network and platform teams.",
+        "The incidents strengthened my ability to follow a problem across multiple layers instead of treating each component in isolation.",
     },
     filters: ["Cloud & DevOps"],
     confidential: true,
@@ -470,7 +470,7 @@ export const projects: Project[] = [
     category: "CI/CD / Test Automation",
     featured: false,
     summary:
-      "Enhanced CI workflows for automated browser testing and post-build reporting, providing build context, test artifacts and execution results to engineering teams.",
+      "Added Playwright test reporting to Jenkins pipelines so teams could quickly see build status, execution details, and test artifacts after a run.",
     technologies: [
       "Jenkins",
       "Playwright",
@@ -479,9 +479,9 @@ export const projects: Project[] = [
       "HTML Reports",
     ],
     highlights: [
-      "Integrated Playwright execution with Jenkins workflows.",
+      "Ran Playwright tests in Jenkins pipelines.",
       "Added reporting for success, failure and unstable build states.",
-      "Packaged test artifacts with environment, branch and build context for investigation.",
+      "Packaged test artifacts with environment, branch, and build details to help troubleshoot failures.",
     ],
     architecture: [
       {
@@ -497,11 +497,11 @@ export const projects: Project[] = [
       },
     ],
     detail: {
-      goal: "Make automated test execution and post-build results easier to investigate.",
+      goal: "Make Playwright results easier for teams to review after a Jenkins run.",
       focus:
-        "CI integration \u00b7 browser-test execution and artifact reporting.",
+        "I worked on test execution, post-build reporting, and packaging the artifacts needed for troubleshooting.",
       outcome:
-        "Provided engineering teams with build context and packaged execution artifacts.",
+        "The workflow brought useful build context and test outputs together for easier investigation.",
     },
     filters: ["Cloud & DevOps"],
     confidential: true,
@@ -513,7 +513,7 @@ export const projects: Project[] = [
     category: "Software Engineering",
     featured: false,
     summary:
-      "Designed a database-backed car rental application supporting vehicle search, reservations, booking management, authentication and administrative workflows.",
+      "Built a database-backed car rental application for vehicle search, reservations, booking management, authentication, and administrative workflows.",
     technologies: [],
     highlights: [
       "Vehicle search and reservations.",
@@ -534,7 +534,7 @@ export const projects: Project[] = [
     category: "Software Engineering / Testing",
     featured: false,
     summary:
-      "Developed a Kanban task-management application with authenticated APIs, authorization, persistent storage and automated functional testing.",
+      "Built a Kanban-style task management application with REST APIs, JWT authentication, role-based access, MySQL storage, and automated testing.",
     technologies: [
       "Spring Boot",
       "REST APIs",
@@ -577,7 +577,7 @@ export const projects: Project[] = [
     category: "Machine Learning",
     featured: false,
     summary:
-      "Built and evaluated diabetes risk prediction models using structured healthcare data, preprocessing, feature selection and hyperparameter tuning.",
+      "Compared several machine-learning models for diabetes risk prediction, including preprocessing, feature selection, hyperparameter tuning, and model evaluation.",
     technologies: [
       "Python",
       "Pandas",
@@ -622,7 +622,7 @@ export const projects: Project[] = [
     category: "Machine Learning / Data Analytics",
     featured: false,
     summary:
-      "Applied unsupervised learning to segment customers by behavioral and demographic characteristics and identify meaningful groups.",
+      "Used K-Means, hierarchical clustering, and PCA to group customers based on behavioral and demographic data and compare the resulting segments.",
     technologies: [
       "Python",
       "Pandas",
@@ -662,7 +662,7 @@ export const projects: Project[] = [
     category: "AI / NLP",
     featured: false,
     summary:
-      "Developed an NLP chatbot for intent identification and entity extraction, with messaging-platform integrations.",
+      "Built an NLP chatbot that identifies user intent, extracts entities, and connects with Slack and Telegram.",
     technologies: [
       "Python",
       "NLP",
@@ -702,7 +702,7 @@ export const projects: Project[] = [
     category: "Software Engineering",
     featured: false,
     summary:
-      "Developed a desktop loan calculator with structured financial calculations, input validation and an interactive interface.",
+      "Built a Java Swing application for calculating loan payments with input validation and a simple desktop interface.",
     technologies: ["Java", "Swing"],
     highlights: ["Financial calculations and input validation."],
     architecture: [],
@@ -720,7 +720,7 @@ export const projects: Project[] = [
     category: "Software Engineering / Database",
     featured: false,
     summary:
-      "Developed an inventory application supporting record creation, updates, search, deletion, validation and persistent data storage.",
+      "Built an inventory application for adding, updating, searching, and deleting records with validation and persistent storage.",
     technologies: [],
     highlights: [
       "Inventory CRUD and search.",
