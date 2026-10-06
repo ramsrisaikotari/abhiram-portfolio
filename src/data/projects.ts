@@ -329,7 +329,7 @@ export const projects: Project[] = [
     category: "Monitoring / SRE",
     featured: false,
     summary:
-      "Worked with Dynatrace, Datadog, CloudWatch, Elasticsearch, and Kibana to onboard logs and metrics, create monitoring, and investigate production issues.",
+      "Worked with Dynatrace, Datadog, CloudWatch, Elasticsearch, and Kibana to onboard logs and metrics, set up monitoring, and investigate production issues.",
     technologies: [
       "Dynatrace",
       "Datadog",
