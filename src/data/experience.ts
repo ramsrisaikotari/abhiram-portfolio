@@ -1,14 +1,30 @@
-export interface ExperienceItem { company: string; role: string; period?: string; bullets: string[] }
-export const experience: ExperienceItem[] = [{
-  company: 'Cyber Nirvana', role: 'DevOps & Site Reliability Engineer',
-  // TODO: Add verified employment dates as `period` if desired.
-  bullets: [
-    'Supported migration and production operations for 150+ APIs and microservices across enterprise AWS environments.',
-    'Supported AWS environments across Dev, Test, Stage, and Production.',
-    'Managed production deployments and CI/CD pipelines.',
-    'Troubleshot ECS, Lambda, API Gateway, networking, database connectivity, HTTP errors, and distributed application issues.',
-    'Worked with AWS ECS, Lambda, API Gateway, CloudWatch, S3, Step Functions, Secrets Manager, SSM, VPC, NLB, and WAF.',
-    'Built and supported observability using Dynatrace, Datadog, CloudWatch, and centralized logging.',
-    'Participated in production incident response and root-cause analysis.',
-  ],
-}];
+export interface ExperienceItem {
+  company: string;
+  role: string;
+  period?: string;
+  bullets: string[];
+  technologies: string[];
+}
+export const experience: ExperienceItem[] = [
+  {
+    company: "Cyber Nirvana",
+    role: "DevOps & Site Reliability Engineer",
+    bullets: [
+      "Supported the migration and day-to-day production support of 150+ APIs and microservices across four AWS accounts and two regions.",
+      "Worked on releases from Dev through Production, including failed deployment troubleshooting and post-release checks.",
+      "Troubleshot ECS/Fargate, Lambda, and API Gateway workloads, including application, network, and database connectivity issues.",
+      "Built and supported monitoring, centralized logging, and Python automation used for operational checks.",
+      "Supported 30+ production incidents and worked with application, database, network, and platform teams on root-cause analysis.",
+    ],
+    technologies: [
+      "AWS",
+      "ECS / Fargate",
+      "Lambda",
+      "API Gateway",
+      "Jenkins",
+      "Python",
+      "CloudWatch",
+      "Dynatrace",
+    ],
+  },
+];
