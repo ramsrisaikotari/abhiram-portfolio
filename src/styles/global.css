@@ -5,16 +5,22 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  color: #dfe8ef;
-  background: #0b1623;
+  color: var(--text);
+  background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --bg: #0b1623;
-  --text: #dfe8ef;
-  --muted: #a2b1c2;
-  --accent: #7de2c3;
-  --line: #263545;
+  --bg: #0b1320;
+  --surface: #111e2f;
+  --surface-elevated: #0f1b2b;
+  --surface-professional: #0d1928;
+  --text: #e7edf4;
+  --muted: #a6b5c5;
+  --accent: #6dd6b4;
+  --accent-hover: #8be3c6;
+  --line: #26384a;
+  --line-strong: #375365;
+  --section-space: 76px;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 * {
@@ -59,8 +65,8 @@ ul {
   margin: 0;
 }
 ::selection {
-  background: #294f4a;
-  color: #fff;
+  background: var(--line-strong);
+  color: var(--text);
 }
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -97,10 +103,10 @@ svg {
 }
 .button-solid {
   background: var(--accent);
-  color: #0b1623;
+  color: var(--bg);
 }
 .button-solid:hover {
-  background: #9becd5;
+  background: var(--accent-hover);
   transform: translateY(-2px);
 }
 .button-outline {
@@ -108,7 +114,7 @@ svg {
   color: var(--accent);
 }
 .button-outline:hover {
-  background: #7de2c310;
+  background: var(--surface-elevated);
   transform: translateY(-2px);
 }
 .icon-button {
@@ -142,8 +148,8 @@ svg {
   position: fixed;
   inset: 0 0 auto;
   z-index: 20;
-  background: var(--bg);
-  border-bottom: 1px solid #26354580;
+  background: var(--surface-elevated);
+  border-bottom: 1px solid var(--line);
 }
 .nav-shell {
   height: 100%;
@@ -236,7 +242,7 @@ main:focus {
   letter-spacing: -0.04em;
   font-weight: 600;
   margin-top: 18px;
-  color: #a2b1c2;
+  color: var(--muted);
 }
 .hero-description {
   max-width: 565px;
@@ -275,7 +281,7 @@ main:focus {
   margin-bottom: 18px;
   border: 1px solid var(--line);
   border-radius: 3px;
-  background: #0e1c2b;
+  background: var(--surface);
 }
 .system-node:not(:last-child)::after {
   content: "";
@@ -284,7 +290,7 @@ main:focus {
   left: 26px;
   width: 1px;
   height: 19px;
-  background: #42675e;
+  background: var(--line-strong);
 }
 .system-node svg {
   color: var(--accent);
@@ -302,7 +308,7 @@ main:focus {
   letter-spacing: 0.045em;
 }
 .node-cloud {
-  border-color: #48796d;
+  border-color: var(--line-strong);
 }
 .diagram-caption {
   font-family: var(--mono);
@@ -491,13 +497,13 @@ main:focus {
   padding: 32px;
   border: 1px solid var(--line);
   border-radius: 4px;
-  background: #0e1b2a;
+  background: var(--surface);
   transition:
     border-color 0.25s,
     transform 0.25s;
 }
 .project:hover {
-  border-color: #48796d;
+  border-color: var(--line-strong);
   transform: translateY(-4px);
 }
 .project-top {
@@ -510,7 +516,7 @@ main:focus {
 }
 .project-number {
   margin-left: auto;
-  color: #90a1b4;
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.75rem;
 }
@@ -601,7 +607,7 @@ main:focus {
   transform: translateY(18px);
 }
 .resume-dialog {
-  background: #101f2e;
+  background: var(--surface-elevated);
   color: var(--text);
   padding: 40px;
   border: 1px solid var(--line);
@@ -660,7 +666,7 @@ main:focus {
     top: 75px;
     left: 0;
     right: 0;
-    background: #0e1b2a;
+    background: var(--surface);
     border-bottom: 1px solid var(--line);
     padding: 20px 6% 28px;
     align-items: stretch;
@@ -878,8 +884,8 @@ main > * {
 }
 .hero {
   min-height: auto;
-  padding-top: 170px;
-  padding-bottom: 105px;
+  padding-top: 142px;
+  padding-bottom: 88px;
   grid-template-columns: minmax(0, 1fr) 250px;
   gap: 50px;
 }
@@ -919,8 +925,8 @@ main > * {
   bottom: 10px;
 }
 .section {
-  padding-top: 90px;
-  padding-bottom: 12px;
+  padding-top: var(--section-space);
+  padding-bottom: 8px;
 }
 .section-heading {
   margin-bottom: 28px;
@@ -946,9 +952,15 @@ main > * {
   margin: 0;
 }
 .impact dl > div {
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
+  grid-template-rows: auto 1fr;
   gap: 9px;
+}
+.impact dt {
+  grid-row: 2;
+}
+.impact dd {
+  grid-row: 1;
 }
 .impact dt {
   font-size: 0.8rem;
@@ -985,10 +997,10 @@ main > * {
 }
 .tags li {
   border: 1px solid var(--line);
-  background: #101f2e;
+  background: var(--surface-elevated);
   border-radius: 4px;
   padding: 5px 9px;
-  color: #becbd7;
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.69rem;
   line-height: 1.5;
@@ -1017,7 +1029,7 @@ main > * {
   border: 1px solid var(--line);
   padding: 22px;
   border-radius: 6px;
-  background: #0e1b2a;
+  background: var(--surface);
 }
 .skill-group h3 {
   line-height: 1.4;
@@ -1036,11 +1048,11 @@ main > * {
   border-radius: 7px;
   min-width: 0;
   transition: border-color 0.2s;
-  background: #0e1b2a;
+  background: var(--surface);
 }
 .project:hover {
   transform: none;
-  border-color: #48796d;
+  border-color: var(--line-strong);
 }
 .project-meta {
   display: flex;
@@ -1055,11 +1067,11 @@ main > * {
 .type-badge {
   font-family: var(--mono);
   text-transform: uppercase;
-  font-size: 0.61rem;
+  font-size: 0.65rem;
   letter-spacing: 0.045em;
   padding: 5px 8px;
-  border: 1px solid #42675e;
-  color: var(--accent);
+  border: 1px solid var(--line-strong);
+  color: var(--muted);
   border-radius: 3px;
 }
 .project h3 {
@@ -1097,7 +1109,7 @@ main > * {
   min-height: 48px;
 }
 .project-details summary:hover {
-  color: #b3f1df;
+  color: var(--accent-hover);
 }
 .detail-content {
   padding-top: 20px;
@@ -1120,11 +1132,11 @@ main > * {
   padding-left: 12px;
 }
 .project-professional {
-  background: #0c1926;
+  background: var(--surface-professional);
 }
 .project-professional .type-badge {
-  color: #c4d0dd;
-  border-color: #45576b;
+  color: var(--muted);
+  border-color: var(--line-strong);
 }
 .project-links {
   display: flex;
@@ -1168,12 +1180,12 @@ main > * {
   min-width: 0;
 }
 .flow-node {
-  border: 1px solid #3b5363;
+  border: 1px solid var(--line-strong);
   border-radius: 4px;
   padding: 8px 10px;
   font-size: 0.72rem;
   line-height: 1.5;
-  background: #122333;
+  background: var(--surface-elevated);
   overflow-wrap: anywhere;
   min-width: 0;
 }
@@ -1233,8 +1245,8 @@ main > * {
   gap: 8px;
 }
 .contact {
-  padding-top: 115px;
-  padding-bottom: 90px;
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
 }
 @media (max-width: 1100px) {
   .hero {
@@ -1251,7 +1263,7 @@ main > * {
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 145px;
+    padding-top: 128px;
   }
   .hero h1 {
     font-size: clamp(2.7rem, 7vw, 4rem);
@@ -1275,8 +1287,8 @@ main > * {
 @media (max-width: 600px) {
   .hero {
     min-height: auto;
-    padding-top: 125px;
-    padding-bottom: 120px;
+    padding-top: 114px;
+    padding-bottom: 98px;
   }
   .hero h1 {
     font-size: clamp(2.5rem, 9vw, 3.5rem);
@@ -1301,8 +1313,8 @@ main > * {
   .impact dt {
     font-size: 0.75rem;
   }
-  .section {
-    padding-top: 70px;
+  :root {
+    --section-space: 60px;
   }
   .about-layout {
     grid-template-columns: 1fr;
@@ -1343,7 +1355,77 @@ main > * {
     max-width: 70px;
   }
   .contact {
-    padding-top: 80px;
-    padding-bottom: 70px;
+    padding-top: var(--section-space);
+    padding-bottom: var(--section-space);
+  }
+}
+
+/* Restrained emphasis: featured work, supporting professional work, archive. */
+.project-featured {
+  border-color: var(--line-strong);
+  padding: 32px;
+}
+.project-featured h3 {
+  font-size: 1.5rem;
+  letter-spacing: -0.035em;
+}
+.project-featured:hover {
+  border-color: var(--muted);
+}
+.project-links {
+  gap: 12px;
+}
+.project-links a {
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  font-weight: 500;
+}
+.project-links a:hover {
+  color: var(--accent-hover);
+  background: var(--surface-elevated);
+}
+.skill-group {
+  background: var(--surface-elevated);
+}
+.tags li {
+  padding: 4px 8px;
+}
+.additional-work {
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.additional-work > h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.additional-work .project {
+  max-width: 840px;
+}
+.additional-work .project-meta {
+  margin-bottom: 12px;
+}
+.additional-work .project-details {
+  margin-top: 16px;
+}
+.archive-grid .project {
+  background: var(--surface-elevated);
+}
+.archive-grid .project-meta {
+  margin-bottom: 14px;
+}
+.archive-grid .project-description {
+  margin-bottom: 16px;
+}
+@media (max-width: 900px) {
+  .project-featured {
+    padding: 26px;
+  }
+}
+@media (max-width: 600px) {
+  .project-featured h3 {
+    font-size: 1.35rem;
   }
 }

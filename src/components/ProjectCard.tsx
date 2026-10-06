@@ -18,7 +18,7 @@ export default function ProjectCard({
   ];
   return (
     <article
-      className={`project ${compact ? "project-compact" : ""} ${project.confidential ? "project-professional" : ""}`}
+      className={`project ${project.featured && !compact ? "project-featured" : ""} ${compact ? "project-compact" : ""} ${project.confidential ? "project-professional" : ""}`}
       aria-labelledby={`${project.slug}-title`}
     >
       <div className="project-meta">
@@ -41,7 +41,7 @@ export default function ProjectCard({
           ))}
         </ul>
       )}
-      {!compact && project.detail && (
+      {(!compact || project.confidential) && project.detail && (
         <details className="project-details">
           <summary>
             Details / Architecture

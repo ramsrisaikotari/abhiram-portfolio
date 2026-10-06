@@ -52,11 +52,26 @@ export default function Projects() {
         </p>
         <div className="projects-grid case-grid">
           {projects
-            .filter((p) => p.kind === "professional-case-study")
+            .filter(
+              (p) =>
+                p.kind === "professional-case-study" &&
+                p.slug !== "test-reporting",
+            )
             .map((p) => (
               <ProjectCard key={p.slug} project={p} />
             ))}
         </div>
+        <section
+          className="additional-work"
+          aria-labelledby="additional-work-title"
+        >
+          <h3 id="additional-work-title">Additional Engineering Work</h3>
+          {projects
+            .filter((p) => p.slug === "test-reporting")
+            .map((p) => (
+              <ProjectCard key={p.slug} project={p} compact />
+            ))}
+        </section>
       </section>
       <section id="archive" className="section" aria-label="Project archive">
         <SectionHeading number="05">Project Archive</SectionHeading>
