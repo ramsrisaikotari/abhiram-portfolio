@@ -1,7 +1,7 @@
 export const profile = {
   name: "Abhi Ram Kotari",
   description:
-    "I’m a DevOps and Site Reliability Engineer working mainly with AWS. My day-to-day work includes deployments, cloud infrastructure, monitoring, automation, and troubleshooting production issues across applications, networking, and platform services. I’m also building my skills in AI and MLOps.",
+    "I’m a DevOps and Site Reliability Engineer working mainly with AWS. My day-to-day work includes deployments, monitoring, automation, and troubleshooting production issues across applications, networking, and cloud infrastructure. I’m also building my skills in AI and MLOps.",
   email: "mailto:ramsrisaikotari@gmail.com",
   github: "https://github.com/ramsrisaikotari",
   linkedin: "https://www.linkedin.com/in/abhi-ram-kotari-bb4bb9323/",

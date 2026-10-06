@@ -125,7 +125,7 @@ export const projects: Project[] = [
   },
   {
     slug: "phishing-url-detection",
-    title: "Machine Learning Phishing URL Detection",
+    title: "Phishing URL Detection with Machine Learning",
     kind: "academic",
     category: "Machine Learning / Security",
     featured: true,
@@ -208,7 +208,7 @@ export const projects: Project[] = [
       focus:
         "I worked on data processing, time-series forecasting, and the visualization flow.",
       outcome:
-        "The project brought data engineering, forecasting, and frontend visualization together in one workflow.",
+        "I used the project to connect data processing, forecasting, and visualization in one application.",
     },
     filters: ["AI & ML", "Data"],
     github: "https://github.com/ramsrisaikotari/covid-rate-tracker",
@@ -257,7 +257,7 @@ export const projects: Project[] = [
       focus:
         "I worked across cloud infrastructure, deployment support, and production checks.",
       outcome:
-        "The work gave me hands-on experience supporting distributed AWS workloads across multiple environments and regions.",
+        "I supported these workloads across multiple environments and regions, from deployment through production troubleshooting.",
     },
     filters: ["Cloud & DevOps"],
     confidential: true,

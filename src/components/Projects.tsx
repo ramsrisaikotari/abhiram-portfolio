@@ -47,7 +47,7 @@ export default function Projects() {
         <SectionHeading number="04">Engineering Case Studies</SectionHeading>
         <p className="section-intro">
           Examples of the cloud, monitoring, deployment, and production support
-          work I’ve handled in enterprise environments.
+          work I’ve handled on real-world systems.
         </p>
         <p className="confidential-note">
           Professional work is summarized at a high level to avoid exposing
