@@ -1429,3 +1429,6 @@ main > * {
     font-size: 1.35rem;
   }
 }
+
+/* Optional engineering experience; keep recruiter actions primary. */
+.nav-links .experience-entry{border:1px solid #365046;border-radius:4px;padding:.4rem .6rem;font-size:.75rem}

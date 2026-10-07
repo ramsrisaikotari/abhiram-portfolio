@@ -30,6 +30,7 @@ export default function Navbar() {
     <button ref={toggle} className="menu-toggle icon-button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="navigation-links" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
     <div ref={menu} id="navigation-links" className={`nav-links ${open ? 'is-open' : ''}`}>
       {navigation.map(item => <a key={item.id} href={`#${item.id}`} aria-current={active === item.id ? 'location' : undefined} onClick={() => setOpen(false)}><span>{item.number}.</span> {item.label}</a>)}
+      <a href="/experience-3d" data-experience-route className="experience-entry">3D Experience</a>
       <ResumeButton />
     </div>
   </nav></header>;
