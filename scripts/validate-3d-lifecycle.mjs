@@ -106,12 +106,15 @@ for (let i = 0; i < 24; i++) {
   if (i === 0) {
     for (const id of [
       "intro",
+      "impact",
       "infrastructure",
+      "modules",
       "case-studies",
       "observability",
       "delivery",
       "diagnostic",
       "components",
+      "standby",
     ]) {
       await page.locator(`#${id}`).scrollIntoViewIfNeeded();
       await page.waitForTimeout(1000);
@@ -131,6 +134,7 @@ for (let i = 0; i < 24; i++) {
   assert.equal(await page.locator("canvas").count(), 0);
   assert.equal(state.contexts, 0);
   assert.equal(state.raf, 0);
+  assert(state.peakFrameCalls <= 45, "Investigate scene draw calls above 45");
 }
 const exits = snapshots.filter((s) => s.cycle);
 assert.deepEqual(exits[0].listeners, exits.at(-1).listeners);

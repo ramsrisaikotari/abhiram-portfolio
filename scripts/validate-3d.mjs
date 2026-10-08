@@ -1,4 +1,4 @@
-/* global process, console, document, HTMLCanvasElement, innerWidth, URL */
+/* global process, console, document, HTMLCanvasElement, innerWidth, URL, window */
 const { chromium } = await import(
   process.env.PLAYWRIGHT_MODULE || "playwright"
 );
@@ -7,6 +7,88 @@ import fs from "node:fs";
 const baseUrl = process.env.PORTFOLIO_TEST_URL || "http://127.0.0.1:4173";
 fs.mkdirSync("/tmp/portfolio-3d-validation", { recursive: true });
 const browser = await chromium.launch({ headless: true });
+async function activate(page, id, width) {
+  await page.evaluate(
+    ({ id, width }) => {
+      const section = document.getElementById(id);
+      const offset =
+        width <= 768
+          ? document.querySelector(".scene-stage").getBoundingClientRect()
+              .bottom + 20
+          : 56;
+      window.scrollTo({
+        top: section.getBoundingClientRect().top + window.scrollY - offset,
+        behavior: "instant",
+      });
+    },
+    { id, width },
+  );
+  await page.locator(`.system-nav a[aria-current][href="#${id}"]`).waitFor();
+  await page.waitForTimeout(1600);
+}
+async function assertComposition(page, width) {
+  const problems = await page.evaluate(() => {
+    const stage = document
+      .querySelector(".scene-stage")
+      .getBoundingClientRect();
+    const labels = [
+      ...document.querySelectorAll(".scene-node,.scene-readout"),
+    ].map((node) => ({
+      name: node.textContent,
+      rect: node.getBoundingClientRect(),
+    }));
+    return labels
+      .filter(
+        ({ rect }) =>
+          rect.width &&
+          (rect.left < stage.left + 3 ||
+            rect.right > stage.right - 3 ||
+            rect.top < stage.top + 3 ||
+            rect.bottom > stage.bottom - 3),
+      )
+      .map(({ name }) => name);
+  });
+  const overlaps = await page.evaluate(() => {
+    const labels = [...document.querySelectorAll(".scene-node")].map(
+      (node) => ({
+        name: node.textContent,
+        rect: node.getBoundingClientRect(),
+      }),
+    );
+    return labels.flatMap((a, index) =>
+      labels
+        .slice(index + 1)
+        .filter(
+          (b) =>
+            Math.min(a.rect.right, b.rect.right) -
+              Math.max(a.rect.left, b.rect.left) >
+              1 &&
+            Math.min(a.rect.bottom, b.rect.bottom) -
+              Math.max(a.rect.top, b.rect.top) >
+              1,
+        )
+        .map((b) => `${a.name} / ${b.name}`),
+    );
+  });
+  assert.deepEqual(overlaps, [], `Scene labels must not overlap at ${width}px`);
+  assert.deepEqual(
+    problems,
+    [],
+    `Scene labels must remain inside safe bounds at ${width}px`,
+  );
+  if (width <= 768)
+    assert(
+      await page.evaluate(
+        () =>
+          Math.abs(
+            document.querySelector(".scene-stage").getBoundingClientRect().top -
+              document.querySelector(".system-header").getBoundingClientRect()
+                .bottom,
+          ) < 1,
+      ),
+      "Mobile header and scene must meet",
+    );
+}
 const results = [];
 for (const width of [1440, 1024, 768, 390, 375, 320]) {
   const page = await browser.newPage({ viewport: { width, height: 900 } });
@@ -71,6 +153,7 @@ for (const width of [1440, 1024, 768, 390, 375, 320]) {
     path: `/tmp/portfolio-3d-validation/intro-${width}.png`,
   });
   for (const id of [
+    "impact",
     "infrastructure",
     "modules",
     "case-studies",
@@ -80,14 +163,28 @@ for (const width of [1440, 1024, 768, 390, 375, 320]) {
     "components",
     "standby",
   ]) {
-    await page.locator(`#${id}`).scrollIntoViewIfNeeded();
-    await page.waitForTimeout(250);
+    await activate(page, id, width);
+    await assertComposition(page, width);
     assert(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
       `${id} overflow ${width}`,
     );
+  }
+  await activate(page, "components", width);
+  await page
+    .locator("#components .system-flow button")
+    .filter({ hasText: "Observability" })
+    .click();
+  await page.waitForTimeout(1600);
+  await assertComposition(page, width);
+  await activate(page, "case-studies", width);
+  const caseButtons = page.locator("#case-studies > .system-flow button");
+  for (let index = 0; index < (await caseButtons.count()); index++) {
+    await caseButtons.nth(index).click();
+    await page.waitForTimeout(1600);
+    await assertComposition(page, width);
   }
   await page.locator("#case-studies").scrollIntoViewIfNeeded();
   await page.locator("#case-studies .system-flow button").first().click();

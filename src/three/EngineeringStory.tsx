@@ -2,7 +2,6 @@ import { skillLabel } from "./skillLabels";
 import { profile } from "../data/profile";
 import { projects, type Project } from "../data/projects";
 import { skills } from "../data/skills";
-import { impact } from "../data/impact";
 import EngineeringImpact from "../components/EngineeringImpact";
 import Experience from "../components/Experience";
 import ProjectCard from "../components/ProjectCard";
@@ -17,6 +16,8 @@ const heroNodes = [
   "AI / MLOPS",
 ];
 interface StoryProps {
+  skillCategory: string | null;
+  onSkillSelect: (value: string) => void;
   boot: boolean;
   reduced: boolean;
   selected: string;
@@ -28,6 +29,8 @@ interface StoryProps {
   release: Project;
 }
 export default function EngineeringStory({
+  skillCategory,
+  onSkillSelect,
   boot,
   reduced,
   selected,
@@ -68,12 +71,6 @@ export default function EngineeringStory({
       <section id="impact" data-system-section>
         <p className="system-kicker">02 / SYSTEM TELEMETRY</p>
         <EngineeringImpact />
-        <SystemFlow
-          label="Select telemetry"
-          steps={impact.map(([value, label]) => `${value} ${label}`)}
-          selected={selected}
-          onSelect={setSelected}
-        />
       </section>
       <section id="infrastructure" data-system-section>
         <p className="system-kicker">03 / MECHANICAL INFRASTRUCTURE</p>
@@ -215,16 +212,18 @@ export default function EngineeringStory({
         <SystemFlow
           label="Skill categories"
           steps={skills.map((skill) => skillLabel(skill.category))}
-          selected={selected}
-          onSelect={setSelected}
+          selected={skillCategory ?? ""}
+          onSelect={onSkillSelect}
         />
         <div className="system-skills">
           {skills.map((skill) => (
             <details
               key={skill.category}
-              open={selected === skillLabel(skill.category)}
+              open={skillCategory === skillLabel(skill.category)}
             >
-              <summary onClick={() => setSelected(skillLabel(skill.category))}>
+              <summary
+                onClick={() => onSkillSelect(skillLabel(skill.category))}
+              >
                 {skill.category}
               </summary>
               <ul className="tags">

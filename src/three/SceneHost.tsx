@@ -8,6 +8,7 @@ export interface SceneProps {
   projectSlug: string;
   onProjectSelect: (slug: string) => void;
   phase: string;
+  skillCategory?: string | null;
   selected: string;
   steps: string[];
   reduced: boolean;
@@ -36,7 +37,7 @@ export default function SceneHost(props: SceneProps) {
       <Canvas
         aria-label="Engineering system visualization"
         dpr={props.mobile ? [1, 1.25] : [1, 1.5]}
-        camera={{ position: [0, 0, 10], fov: 42 }}
+        camera={{ position: [0, 0, 10], fov: 40 }}
         frameloop={!props.visible ? "never" : "demand"}
         gl={{
           antialias: !props.mobile,

@@ -32,6 +32,7 @@ export default function Experience3D() {
   const reduced = useMedia("(prefers-reduced-motion: reduce)");
   const mobile = useMedia("(max-width: 768px)");
   const { active, visible } = useSceneController(mobile);
+  const [skillCategory, setSkillCategory] = useState<string | null>(null);
   const [selected, setSelected] = useState("AWS");
   const [projectSlug, setProjectSlug] = useState("enterprise-api-migration");
   const [boot, setBoot] = useState(!reduced);
@@ -51,9 +52,17 @@ export default function Experience3D() {
   const caseStudies = projects
     .filter((project) => project.kind === "professional-case-study")
     .slice(0, 5);
+  const visualProjectSlug =
+    active === "modules" &&
+    !projects.find((project) => project.slug === projectSlug)?.featured
+      ? projects.find((project) => project.featured)!.slug
+      : active === "case-studies" &&
+          !caseStudies.some((project) => project.slug === projectSlug)
+        ? caseStudies[0].slug
+        : projectSlug;
   const current =
     (active === "case-studies" ? caseStudies : projects).find(
-      (project) => project.slug === projectSlug,
+      (project) => project.slug === visualProjectSlug,
     ) ?? caseStudies[0];
   const observability =
     projects.find(
@@ -65,7 +74,7 @@ export default function Experience3D() {
   )!;
   const flow =
     active === "impact"
-      ? impact.map(([value, label]) => `${value} ${label}`)
+      ? impact.map(([, label]) => label)
       : active === "infrastructure"
         ? ["Cloud", "Delivery", "Services", "Observability", "Reliability"]
         : active === "observability"
@@ -77,9 +86,16 @@ export default function Experience3D() {
               : active === "case-studies" || active === "modules"
                 ? current.architecture.flatMap((flow) => flow.steps)
                 : active === "components"
-                  ? (skills.find(
-                      (skill) => skillLabel(skill.category) === selected,
-                    )?.technologies ?? skills[0].technologies)
+                  ? skillCategory
+                    ? (skills
+                        .find(
+                          (skill) =>
+                            skillLabel(skill.category) === skillCategory,
+                        )
+                        ?.technologies.filter(
+                          (technology) => technology !== skillCategory,
+                        ) ?? [])
+                    : skills.map((skill) => skillLabel(skill.category))
                   : heroNodes;
   const phase = ["infrastructure", "delivery"].includes(active)
     ? "mechanical"
@@ -102,7 +118,8 @@ export default function Experience3D() {
       </header>
       <div className="scene-stage">
         <SceneHost
-          projectSlug={projectSlug}
+          skillCategory={skillCategory}
+          projectSlug={visualProjectSlug}
           onProjectSelect={setProjectSlug}
           active={active}
           phase={phase}
@@ -118,7 +135,14 @@ export default function Experience3D() {
                 ? current.architecture[0]?.steps.length
                 : undefined
           }
-          onSelect={setSelected}
+          onSelect={(value) => {
+            if (
+              active === "components" &&
+              skills.some((skill) => skillLabel(skill.category) === value)
+            )
+              setSkillCategory(value);
+            setSelected(value);
+          }}
         />
       </div>
       <div className="scene-caption" aria-hidden="true">
@@ -140,10 +164,15 @@ export default function Experience3D() {
         ))}
       </nav>
       <EngineeringStory
+        skillCategory={skillCategory}
+        onSkillSelect={(value) => {
+          setSkillCategory(value);
+          setSelected(value);
+        }}
         boot={boot}
         reduced={reduced}
         selected={selected}
-        projectSlug={projectSlug}
+        projectSlug={visualProjectSlug}
         setSelected={setSelected}
         setProjectSlug={setProjectSlug}
         caseStudies={caseStudies}

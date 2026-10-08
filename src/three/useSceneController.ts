@@ -22,7 +22,7 @@ export function useSceneController(mobile: boolean) {
       },
       {
         rootMargin: mobile
-          ? `-${Math.round(innerHeight * 0.27 + 56)}px 0px -15% 0px`
+          ? `-${Math.round(Math.min(184, Math.max(160, innerHeight * 0.21)) + 48)}px 0px -15% 0px`
           : "-15% 0px -45% 0px",
         threshold: [0, 0.2, 0.5],
       },
