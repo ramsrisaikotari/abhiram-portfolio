@@ -85,3 +85,43 @@
     opacity: 1;
   }
 }
+
+.guardian-mode-hud {
+  animation: none;
+  pointer-events: none;
+  z-index: 10;
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  color: #74969b;
+}
+@media (max-width: 768px) {
+  .guardian-mode-hud {
+    top: 8px;
+    bottom: auto;
+    left: 14px;
+    font-size: 7px;
+    padding: 3px 6px;
+  }
+}
+@media (min-width: 769px) {
+  .scene-pipeline-label {
+    width: 52px;
+    min-width: 0;
+    font-size: 8px;
+    padding: 4px 2px;
+  }
+}
+.operational-components .scene-category-label {
+  width: 78px;
+  min-width: 0;
+  font-size: 9px;
+}
+@media (max-width: 768px) {
+  .operational-components .scene-category-label,
+  .operational-components .scene-technology-label {
+    width: 60px;
+    min-width: 0;
+    font-size: 8px;
+  }
+}

@@ -5,10 +5,12 @@ export default function HeroBinary({
   mobile,
   reduced,
   visible,
+  mode = "intro",
 }: {
   mobile: boolean;
   reduced: boolean;
   visible: boolean;
+  mode?: string;
 }) {
   const textures = useMemo(
     () =>
@@ -33,7 +35,14 @@ export default function HeroBinary({
   );
   return (
     <group>
-      {(mobile ? [0, 1] : [0, 1, 2]).map((layer) => (
+      {(mode === "intro"
+        ? mobile
+          ? [0, 1]
+          : [0, 1, 2]
+        : mode === "observability"
+          ? [0, 1]
+          : [0]
+      ).map((layer) => (
         <StreamLayer
           key={layer}
           layer={layer}
@@ -41,6 +50,7 @@ export default function HeroBinary({
           texture={textures[layer]}
           reduced={reduced}
           visible={visible}
+          speed={mode === "standby" ? 0.12 : 1}
         />
       ))}
     </group>
@@ -52,12 +62,14 @@ function StreamLayer({
   texture,
   reduced,
   visible,
+  speed,
 }: {
   layer: number;
   count: number;
   texture: CanvasTexture;
   reduced: boolean;
   visible: boolean;
+  speed: number;
 }) {
   const mesh = useRef<InstancedMesh>(null);
   const dummy = useMemo(() => new Object3D(), []);
@@ -79,7 +91,7 @@ function StreamLayer({
   useFrame((state) => {
     if (mesh.current && !reduced && visible && !document.hidden)
       mesh.current.position.y = -(
-        (state.clock.elapsedTime * [0.045, 0.09, 0.12][layer]) %
+        (state.clock.elapsedTime * [0.045, 0.09, 0.12][layer] * speed) %
         1.5
       );
   });

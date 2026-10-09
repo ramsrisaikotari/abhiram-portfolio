@@ -104,7 +104,9 @@ export default function Experience3D() {
       ? "digital"
       : "command";
   return (
-    <div className={`experience-3d phase-${phase}${active === "intro" ? " cinematic-intro" : ""}`}>
+    <div
+      className={`experience-3d phase-${phase} operational-${active}${active === "intro" ? " cinematic-intro" : ""}`}
+    >
       <a className="skip-link" href="#system-title">
         Skip to engineering story
       </a>

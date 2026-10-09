@@ -3,6 +3,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { AdaptiveDpr } from "@react-three/drei";
 import { SceneBoundary, WebGLFallback } from "./WebGLFallback";
 import EngineeringScene from "./EngineeringScene";
+import { modeReadout } from "./cinematic/modeComposition";
 export interface SceneProps {
   active: string;
   projectSlug: string;
@@ -50,6 +51,17 @@ export default function SceneHost(props: SceneProps) {
         <AdaptiveDpr pixelated />
         <EngineeringScene {...props} />
       </Canvas>
+      {props.active !== "intro" && (
+        <span
+          className="guardian-hud scene-readout guardian-mode-hud"
+          aria-hidden="true"
+        >
+          {modeReadout[props.active]}
+          {props.active === "components" && props.skillCategory
+            ? ` / ${props.skillCategory.toUpperCase()}`
+            : ""}
+        </span>
+      )}
     </SceneBoundary>
   );
 }
