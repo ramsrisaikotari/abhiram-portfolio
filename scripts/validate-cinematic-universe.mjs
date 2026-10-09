@@ -59,6 +59,7 @@ async function measureBounds(page) {
       ...document.querySelectorAll(".scene-node,.scene-readout"),
     ].map((el) => ({
       label: el.textContent,
+      control: el.getAttribute("aria-label"),
       rect: el.getBoundingClientRect(),
     }));
     return {
@@ -72,23 +73,22 @@ async function measureBounds(page) {
               r.top < stage.top + 3 ||
               r.bottom > stage.bottom - 3),
         )
-        .map((x) => x.label),
-      overlaps: labels
-        .filter((x) => x.label)
-        .flatMap((a, i) =>
-          labels
-            .slice(i + 1)
-            .filter(
-              (b) =>
-                Math.min(a.rect.right, b.rect.right) -
-                  Math.max(a.rect.left, b.rect.left) >
-                  1 &&
-                Math.min(a.rect.bottom, b.rect.bottom) -
-                  Math.max(a.rect.top, b.rect.top) >
-                  1,
-            )
-            .map((b) => `${a.label}/${b.label}`),
-        ),
+        .map((x) => x.label || x.control),
+      overlaps: labels.flatMap((a, i) =>
+        labels
+          .slice(i + 1)
+          .filter(
+            (b) =>
+              Math.min(a.rect.right, b.rect.right) -
+                Math.max(a.rect.left, b.rect.left) >
+                1 &&
+              Math.min(a.rect.bottom, b.rect.bottom) -
+                Math.max(a.rect.top, b.rect.top) >
+                1,
+          )
+          .map((b) => `${a.label}/${b.label}`),
+      ),
+      visibleLabels: labels.filter((x) => x.label).length,
       gap: Math.abs(
         stage.top -
           document.querySelector(".system-header").getBoundingClientRect()
@@ -195,6 +195,10 @@ for (const [engine, driver] of [
       assert.equal(await page.locator("canvas").count(), 1);
       const bounds = await measureBounds(page);
       assert(!bounds.overflow, `${engine}/${width}/${mode} overflow`);
+      assert(
+        bounds.visibleLabels <= 3,
+        `${engine}/${width}/${mode} label hierarchy`,
+      );
       assert.deepEqual(
         bounds.clipped,
         [],
@@ -244,6 +248,15 @@ for (const [engine, driver] of [
       await page.waitForTimeout(1600);
       const bounds = await measureBounds(page);
       assert(!bounds.overflow, `${engine}/${width}/skill-${index} overflow`);
+      assert(
+        bounds.visibleLabels <= 3,
+        `${engine}/${width}/skill-${index} label hierarchy`,
+      );
+      if (width < 768)
+        assert(
+          (await page.locator(".scene-node").count()) <= 3,
+          "Mobile skills show no more than three child controls",
+        );
       assert.deepEqual(
         bounds.clipped,
         [],
@@ -269,8 +282,8 @@ for (const [engine, driver] of [
       0,
       "Unrelated skill modules must retract",
     );
-    if (engine === "chromium" && width === 390) {
-      const name = "390-components-selected.png";
+    if (engine === "chromium" && (width === 390 || width === 1440)) {
+      const name = `${width}-components-selected.png`;
       await page.screenshot({ path: `${output}/${name}` });
       captures.push({
         engine,
@@ -347,7 +360,7 @@ for (const [engine, driver] of [
 fs.writeFileSync(`${output}/results.json`, JSON.stringify(results, null, 2));
 fs.writeFileSync(`${output}/manifest.json`, JSON.stringify(captures, null, 2));
 const images = captures
-  .filter((c) => c.width === 1440)
+  .filter((c) => c.width === 1440 && c.mode !== "components-selected")
   .map(
     (c) =>
       `<figure><figcaption>${c.mode.toUpperCase()}</figcaption><img src="data:image/png;base64,${fs.readFileSync(`${output}/${c.file}`).toString("base64")}" /></figure>`,

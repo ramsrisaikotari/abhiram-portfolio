@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
-import { MathUtils, Group, Vector3, type DirectionalLight } from "three";
+import { Color, MathUtils, Group, Vector3, type DirectionalLight } from "three";
 import type { SceneProps } from "../SceneHost";
 import { useGuardianModel } from "./GuardianModel";
 import HeroEnvironment from "./HeroEnvironment";
@@ -94,22 +94,46 @@ export default function CinematicHero(props: SceneProps) {
     if (asset) {
       const t = time.current;
       if (intro) {
-        if (keyLight.current)
+        if (keyLight.current) {
+          keyLight.current.color.set("#a5c4d2");
           keyLight.current.intensity = 0.25 + 2.55 * smooth(t, 0.15, 1.5);
-        if (rimLight.current)
+        }
+        if (rimLight.current) {
+          rimLight.current.color.set("#4c99b5");
           rimLight.current.intensity = 0.35 + 3.45 * smooth(t, 0.25, 1.45);
+        }
         applyGuardianPose(asset, t);
       } else {
         settleOperationalPose(asset, active, dt, reduced);
         if (keyLight.current) {
           const target =
             active === "standby" ? 1.5 : active === "diagnostic" ? 2 : 2.8;
+          keyLight.current.color.lerp(
+            new Color(
+              active === "observability"
+                ? "#96bbb3"
+                : active === "infrastructure" || active === "delivery"
+                  ? "#94b1ce"
+                  : "#a5c4d2",
+            ),
+            reduced ? 1 : 1 - Math.exp(-dt * 6),
+          );
           keyLight.current.intensity = reduced
             ? target
             : MathUtils.damp(keyLight.current.intensity, target, 6, dt);
         }
         if (rimLight.current) {
           const target = active === "standby" ? 2 : 3.8;
+          rimLight.current.color.lerp(
+            new Color(
+              active === "observability"
+                ? "#488f83"
+                : active === "delivery"
+                  ? "#4c7fa7"
+                  : "#4c99b5",
+            ),
+            reduced ? 1 : 1 - Math.exp(-dt * 6),
+          );
           rimLight.current.intensity = reduced
             ? target
             : MathUtils.damp(rimLight.current.intensity, target, 6, dt);
@@ -127,61 +151,50 @@ export default function CinematicHero(props: SceneProps) {
     {
       const aspect = size.width / Math.max(1, size.height);
       const distance = mobile ? 6.6 : Math.max(10.6, 10.3 / aspect);
-      // The hero camera stays exact. Operational projections use a nearly
-      // frontal, elevated bay view so their sequential labels remain readable.
-      const wide = [
-        "modules",
-        "case-studies",
-        "observability",
-        "components",
-      ].includes(active);
-      const target = new Vector3(
-        intro
-          ? mobile
-            ? 2.5
-            : (5 * distance) / 10.6
-          : mobile
-            ? 0.1
-            : active === "delivery"
-              ? 0.8
-              : active === "observability"
-                ? -1.1
-                : active === "standby"
-                  ? 3
-                  : active === "infrastructure"
-                    ? 2.5
-                    : active === "impact"
-                      ? 2.8
-                      : 1.5,
-        intro
-          ? mobile
-            ? 1.35
-            : (2.7 * distance) / 10.6
-          : mobile
-            ? 2
-            : active === "delivery"
-              ? 1.6
-              : active === "standby"
-                ? 2.4
-                : active === "infrastructure"
-                  ? 1.7
-                  : 2,
-        intro
-          ? distance
-          : mobile
-            ? 6.3
-            : Math.max(
-                active === "standby" ? 14.2 : wide ? 12.8 : 12,
-                11.6 / aspect,
-              ),
-      );
+      // Preserve the approved hero camera; each operational mode has its own
+      // restrained composition instead of a shared frontal diagram view.
+      const shots: Record<string, [number, number, number]> = {
+        impact: [2.4, 1.8, 11.4],
+        infrastructure: [4, 1.3, 11.4],
+        modules: [2.1, 3.1, 13],
+        "case-studies": [1.4, 1.6, 12.4],
+        observability: [-3.1, 1.9, 12.6],
+        delivery: [3.5, 0.65, 12.4],
+        diagnostic: [2.2, 1.3, 11.4],
+        components: [3, 2.4, 12.4],
+        standby: [3, 2.4, 14.2],
+      };
+      const shot = shots[active] ?? shots.impact;
+      const target = intro
+        ? new Vector3(
+            mobile ? 2.5 : (5 * distance) / 10.6,
+            mobile ? 1.35 : (2.7 * distance) / 10.6,
+            distance,
+          )
+        : new Vector3(
+            mobile ? 0.1 : shot[0],
+            mobile ? 1.7 : shot[1],
+            mobile ? 6.3 : Math.max(shot[2], 11.6 / aspect),
+          );
       if (!mobile && !reduced) {
         target.x += pointer.x * 0.16;
         target.y += pointer.y * 0.08;
       }
       camera.position.lerp(target, reduced ? 1 : 1 - Math.exp(-dt * 4));
       aim.current.lerp(
-        new Vector3(0, intro ? (mobile ? 0.4 : 0) : 0.1, intro ? 0 : 0.4),
+        new Vector3(
+          !mobile && active === "case-studies" ? 0.45 : 0,
+          intro
+            ? mobile
+              ? 0.4
+              : 0
+            : active === "delivery"
+              ? -0.2
+              : active === "observability"
+                ? 0.35
+                : 0.1,
+          intro ? 0 : 0.4,
+        ),
         reduced ? 1 : 1 - Math.exp(-dt * 4),
       );
       camera.lookAt(aim.current);
