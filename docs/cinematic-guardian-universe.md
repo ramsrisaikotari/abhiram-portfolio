@@ -77,7 +77,7 @@ The transition timeout counts elapsed activation time independently of bounded d
 
 ## Changed files and assets
 
-The implementation touches only `src/three`: the scene dispatcher, host overlay, operational class, shared labels, hero controller/binary/CSS, and four new `cinematic` helpers. Validation adds `scripts/validate-cinematic-universe.mjs` and strengthens `scripts/validate-3d-lifecycle.mjs`. This report is the only documentation addition.
+The implementation touches only `src/three`: the scene dispatcher, host overlay, operational class, shared labels, hero controller/binary/CSS, and four new `cinematic` helpers. Validation adds `scripts/validate-cinematic-universe.mjs` and strengthens `scripts/validate-3d-lifecycle.mjs`. The review documentation now includes this report and the final acceptance PNGs linked below; the PNGs are documentation-only artifacts, with no runtime imports.
 
 No model, texture, dependency, portfolio-data, resume, default-portfolio, deployment, or infrastructure files changed. The approved Guardian asset remains the same Git blob (`ef1cda7122d9059ee308250f281d260920db5b80`) and retains its existing original-model license in `public/models/LICENSE.txt`.
 
@@ -90,3 +90,23 @@ No model, texture, dependency, portfolio-data, resume, default-portfolio, deploy
 - Lifecycle: all 24 loaded-model entry/exit cycles pass. Every exit leaves zero WebGL contexts, RAFs, and standby intervals; document pointer-move listeners return to zero and other listeners remain stable. Post-GC heap growth across the run is 1,301,480 bytes, within the existing 5 MB guard. Complete-experience peak is 49 draw calls.
 - Complete-universe suite: Chromium and Playwright WebKit pass at 1440×900, 390×844, and 375×812, with every Skills category checked for clipping/overlap. No console errors, no horizontal overflow, one Canvas, one Guardian request across modes, and working Back/Escape/history/resume are confirmed. Both engines pass reduced-motion and forced-WebGL-unavailable fallback checks.
 - Review captures: nine desktop + six mobile required frames, one additional selected-Skills mobile frame, and desktop contact sheet are generated. Review-gallery HTML embeds the unmodified captures for full-size inspection.
+
+## Visual acceptance captures
+
+These are the unmodified final complete-universe review captures. Desktop frames are 1440×900; mobile frames are 390×844. They are stored only under `docs/` and are not imported or served by the application runtime.
+
+[Desktop contact sheet](cinematic-guardian-universe/desktop-contact-sheet.png)
+
+![Desktop contact sheet](cinematic-guardian-universe/desktop-contact-sheet.png)
+
+| Section | Desktop | Mobile (390px) |
+| --- | --- | --- |
+| Engineering Impact | [View](cinematic-guardian-universe/impact.png) | — |
+| Experience | [View](cinematic-guardian-universe/experience.png) | [View](cinematic-guardian-universe/experience-mobile.png) |
+| Featured Projects | [View](cinematic-guardian-universe/projects.png) | — |
+| AWS Case Study | [View](cinematic-guardian-universe/case-study.png) | [View](cinematic-guardian-universe/case-study-mobile.png) |
+| Observability | [View](cinematic-guardian-universe/observability.png) | [View](cinematic-guardian-universe/observability-mobile.png) |
+| CI/CD | [View](cinematic-guardian-universe/cicd.png) | [View](cinematic-guardian-universe/cicd-mobile.png) |
+| Incident Response | [View](cinematic-guardian-universe/incident.png) | — |
+| Skills | [View](cinematic-guardian-universe/skills.png) | [View](cinematic-guardian-universe/skills-mobile.png) |
+| Contact / Standby | [View](cinematic-guardian-universe/standby.png) | [View](cinematic-guardian-universe/standby-mobile.png) |
