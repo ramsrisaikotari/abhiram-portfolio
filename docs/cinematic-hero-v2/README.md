@@ -1,5 +1,7 @@
 # Cinematic hero V2 — visual approval prototype
 
+> **Latest hero refinement:** See [current refinement, comparison and measurements](refinement/README.md). The original prototype report below is retained as the pre-refinement baseline; its asset/performance/capture figures are superseded by that report.
+
 This PR changes only the optional 3D intro. It is a visual-approval checkpoint,
 not approval to propagate this art direction to the other nine sections.
 

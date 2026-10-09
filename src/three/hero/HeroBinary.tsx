@@ -10,26 +10,35 @@ export default function HeroBinary({
   reduced: boolean;
   visible: boolean;
 }) {
-  const texture = useMemo(() => {
-    const canvas = document.createElement("canvas");
-    canvas.width = 64;
-    canvas.height = 256;
-    const ctx = canvas.getContext("2d")!;
-    ctx.font = "19px monospace";
-    ctx.fillStyle = "#69bd82";
-    for (let i = 0; i < 9; i++)
-      ctx.fillText(i % 3 === 0 ? "1" : "0", 24, 24 + i * 26);
-    return new CanvasTexture(canvas);
-  }, []);
-  useEffect(() => () => texture.dispose(), [texture]);
+  const textures = useMemo(
+    () =>
+      [0, 1, 2].map((layer) => {
+        const canvas = document.createElement("canvas");
+        canvas.width = 64;
+        canvas.height = 384;
+        const ctx = canvas.getContext("2d")!;
+        ctx.font = `${layer === 1 ? 22 : 19}px monospace`;
+        ctx.shadowColor = "#69bd82";
+        ctx.shadowBlur = layer === 2 ? 3 : 0;
+        ctx.fillStyle = "#69bd82";
+        for (let i = 0; i < 13; i++)
+          ctx.fillText(i % 3 === 0 ? "1" : "0", 24, 24 + i * 26);
+        return new CanvasTexture(canvas);
+      }),
+    [],
+  );
+  useEffect(
+    () => () => textures.forEach((texture) => texture.dispose()),
+    [textures],
+  );
   return (
     <group>
       {(mobile ? [0, 1] : [0, 1, 2]).map((layer) => (
         <StreamLayer
           key={layer}
           layer={layer}
-          count={(mobile ? [12, 4] : [42, 18, 4])[layer]}
-          texture={texture}
+          count={(mobile ? [12, 6] : [72, 22, 3])[layer]}
+          texture={textures[layer]}
           reduced={reduced}
           visible={visible}
         />
@@ -55,13 +64,13 @@ function StreamLayer({
   useEffect(() => {
     for (let i = 0; i < count; i++) {
       dummy.position.set(
-        ((i * 19 + layer * 7) % 41) / 5 - 4,
+        ((i * 19 + layer * 7) % 47) / 5 - 4.6,
         ((i * 13) % 37) / 6 - 2.8,
-        [-5.15, -3.3, 1.0][layer],
+        [-7.8, -1.5, 1.2][layer],
       );
       // Foreground data stays at bay edges, clear of the central machine.
-      if (layer === 2) dummy.position.setX((i % 2 ? 1 : -1) * (2.6 + i * 0.14));
-      dummy.scale.setScalar([0.65, 0.8, 0.68][layer]);
+      if (layer === 2) dummy.position.setX((i % 2 ? 1 : -1) * (3.7 + i * 0.16));
+      dummy.scale.setScalar([0.78, 0.92, 0.72][layer]);
       dummy.updateMatrix();
       mesh.current?.setMatrixAt(i, dummy.matrix);
     }
@@ -70,16 +79,16 @@ function StreamLayer({
   useFrame((state) => {
     if (mesh.current && !reduced && visible && !document.hidden)
       mesh.current.position.y = -(
-        (state.clock.elapsedTime * [0.045, 0.065, 0.085][layer]) %
+        (state.clock.elapsedTime * [0.045, 0.09, 0.12][layer]) %
         1.5
       );
   });
   return (
     <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
-      <planeGeometry args={[0.23, 1.1]} />
+      <planeGeometry args={[0.26, 1.7]} />
       <meshBasicMaterial
         map={texture}
-        opacity={[0.18, 0.22, 0.24][layer]}
+        opacity={[0.24, 0.33, 0.18][layer]}
         transparent
         depthWrite={false}
       />

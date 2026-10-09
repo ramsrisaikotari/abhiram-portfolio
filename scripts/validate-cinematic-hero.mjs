@@ -9,15 +9,15 @@ const output = process.env.HERO_REVIEW_DIR || "/tmp/cinematic-hero-v2";
 fs.mkdirSync(output, { recursive: true });
 const results = [];
 for (const [engine, widths] of [
-  [chromium, [1440, 390, 375, 320]],
-  [webkit, [1440, 390, 375]],
+  [chromium, [1440, 1024, 390, 375, 320]],
+  [webkit, [1440, 1024, 390, 375]],
 ]) {
   const browser = await engine.launch({ headless: true });
   for (const width of widths) {
     const page = await browser.newPage({
       viewport: {
         width,
-        height: width === 1440 ? 900 : width === 375 ? 812 : 844,
+        height: width >= 768 ? 900 : width === 375 ? 812 : 844,
       },
       isMobile: width < 768,
       hasTouch: width < 768,

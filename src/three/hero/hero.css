@@ -73,7 +73,7 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .guardian-hud {
-    animation: guardian-hud-enter 2.2s ease-out both;
+    animation: guardian-hud-enter 2.45s ease-out both;
   }
 }
 @keyframes guardian-hud-enter {

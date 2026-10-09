@@ -1,27 +1,18 @@
 import { useEffect, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
-import {
-  Color,
-  MathUtils,
-  type DirectionalLight,
-  type MeshBasicMaterial,
-} from "three";
+import { MathUtils, type DirectionalLight } from "three";
 import type { SceneProps } from "../SceneHost";
 import { useGuardianModel } from "./GuardianModel";
 import HeroEnvironment from "./HeroEnvironment";
 import HeroBinary from "./HeroBinary";
+import { applyGuardianPose } from "./guardianTimeline";
+import HeroTargeting from "./HeroTargeting";
 
 const smooth = (time: number, start: number, length: number) => {
   const x = MathUtils.clamp((time - start) / length, 0, 1);
   return x * x * x * (x * (x * 6 - 15) + 10);
 };
-const baseLights = {
-  "Coolant light": new Color("#4facc5"),
-  "Data indicator": new Color("#42764f"),
-  "Amber practical": new Color("#927140"),
-};
-
 export default function CinematicHero({
   mobile,
   reduced,
@@ -37,8 +28,12 @@ export default function CinematicHero({
   useEffect(() => {
     // Tight, lower mobile view; desktop shows the entire infrastructure chassis.
     const aspect = size.width / Math.max(1, size.height);
-    const distance = mobile ? 5.2 : Math.max(9.2, 5.4 / aspect);
-    camera.position.set(mobile ? 2.2 : 4.5, mobile ? 1.3 : 2.8, distance);
+    const distance = mobile ? 6.6 : Math.max(10.6, 10.3 / aspect);
+    camera.position.set(
+      mobile ? 2.5 : (5 * distance) / 10.6,
+      mobile ? 1.35 : (2.7 * distance) / 10.6,
+      distance,
+    );
     camera.lookAt(0, mobile ? 0.4 : 0, 0);
     camera.updateProjectionMatrix();
     invalidate();
@@ -76,49 +71,26 @@ export default function CinematicHero({
     if (asset) {
       const t = time.current;
       if (keyLight.current)
-        keyLight.current.intensity = 0.35 + 2.05 * smooth(t, 0.15, 1.25);
+        keyLight.current.intensity = 0.25 + 2.55 * smooth(t, 0.15, 1.5);
       if (rimLight.current)
-        rimLight.current.intensity = 0.5 + 2.2 * smooth(t, 0.25, 1.1);
-      for (const name of ["left_sled", "right_sled"]) {
-        const part = asset.parts.get(name)!;
-        const side = name === "left_sled" ? -1 : 1;
-        const p = smooth(t, name === "left_sled" ? 0.35 : 0.55, 0.85);
-        part.position.x = side * (1.1 + (1 - p) * 0.45);
-        part.position.z = (1 - p) * -0.5;
-        part.rotation.y = side * (1 - p) * -0.22;
-        part.rotation.z = side * (1 - p) * 0.12;
-      }
-      const top = asset.parts.get("top_armor")!,
-        lower = asset.parts.get("lower_armor")!;
-      const a = smooth(t, 0.8, 0.7),
-        b = smooth(t, 1.05, 0.65);
-      top.position.y = 1.3 + (1 - a) * 0.24;
-      top.rotation.x = (1 - a) * -0.28;
-      lower.position.y = -1.1 - (1 - b) * 0.18;
-      lower.rotation.x = (1 - b) * 0.18;
-      asset.lights.forEach((material, name) => {
-        const factor =
-          name === "Coolant light"
-            ? 0.13 + 0.87 * smooth(t, 1.2, 0.75)
-            : 0.25 + 0.75 * smooth(t, 0.15, 0.8);
-        (material as MeshBasicMaterial).color
-          .copy(baseLights[name as keyof typeof baseLights])
-          .multiplyScalar(factor);
-      });
+        rimLight.current.intensity = 0.35 + 3.45 * smooth(t, 0.25, 1.45);
+      applyGuardianPose(asset, t);
     }
     if (!reduced) {
       const aspect = size.width / Math.max(1, size.height);
-      const distance = mobile ? 5.2 : Math.max(9.2, 5.4 / aspect);
+      const distance = mobile ? 6.6 : Math.max(10.6, 10.3 / aspect);
       camera.position.set(
         MathUtils.damp(
           camera.position.x,
-          (mobile ? 2.2 : 4.5) + (!mobile ? pointer.x * 0.16 : 0),
+          (mobile ? 2.5 : (5 * distance) / 10.6) +
+            (!mobile ? pointer.x * 0.16 : 0),
           4,
           dt,
         ),
         MathUtils.damp(
           camera.position.y,
-          (mobile ? 1.3 : 2.8) + (!mobile ? pointer.y * 0.08 : 0),
+          (mobile ? 1.35 : (2.7 * distance) / 10.6) +
+            (!mobile ? pointer.y * 0.08 : 0),
           4,
           dt,
         ),
@@ -132,36 +104,37 @@ export default function CinematicHero({
   return (
     <>
       <color attach="background" args={["#03090c"]} />
-      <fog attach="fog" args={["#03090c", 11, 24]} />
-      <ambientLight intensity={0.27} color="#7b8d96" />
+      <fog attach="fog" args={["#03090c", 12, 32]} />
+      <ambientLight intensity={0.16} color="#7b8d96" />
       <directionalLight
         ref={keyLight}
-        position={[2, 6, 5]}
-        intensity={2.4}
+        position={[-3, 6, 5]}
+        intensity={2.8}
         color="#a5c4d2"
       />
       <directionalLight
         ref={rimLight}
-        position={[-4, 2, -3]}
-        intensity={2.7}
-        color="#26728d"
+        position={[4, 3, -2]}
+        intensity={3.8}
+        color="#4c99b5"
       />
       <pointLight
-        position={[2, -0.4, 2]}
-        intensity={5}
+        position={[-2, -0.4, 1]}
+        intensity={3.5}
         distance={6}
         decay={2}
         color="#469272"
       />
       <pointLight
-        position={[-2, 1.2, 0]}
-        intensity={2}
+        position={[3, -1.7, 1]}
+        intensity={3}
         distance={4}
         decay={2}
         color="#b5894c"
       />
       <HeroEnvironment mobile={mobile} />
       <HeroBinary mobile={mobile} reduced={reduced} visible={visible} />
+      {!mobile && <HeroTargeting />}
       {asset && <primitive object={asset.scene} dispose={null} />}
       {asset && (
         <group>
@@ -178,7 +151,7 @@ export default function CinematicHero({
           ) : (
             <Html
               center
-              position={[0.1, 2.5, 0.1]}
+              position={[0.1, 3.08, 0.1]}
               style={{ pointerEvents: "none" }}
             >
               <span className="guardian-hud scene-readout">SYSTEM ONLINE</span>
@@ -187,7 +160,7 @@ export default function CinematicHero({
           {!mobile && (
             <Html
               center
-              position={[-2.05, -1.28, 0.15]}
+              position={[-2.65, -1.48, 0.15]}
               style={{ pointerEvents: "none" }}
             >
               <span className="guardian-hud scene-readout">

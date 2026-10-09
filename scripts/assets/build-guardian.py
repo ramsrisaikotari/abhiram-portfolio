@@ -68,84 +68,74 @@ def conduit(group,mat,points,r=.045):
         for i in range(8):
             j=(i+1)%8;face(group,mat,loops[i],loops[j],loops[8+j]);face(group,mat,loops[i],loops[8+j],loops[8+i])
 
-# Central hull: staggered longitudinal armor, structural spine, recessed core.
-armor('body',0,[(-.82,-1.65),(.82,-1.65),(1.12,-.85),(.98,1.42),(.53,1.94),(-.53,1.94),(-.98,1.42),(-1.12,-.85)],-.25,.88)
-# Four inset bay liners leave the central core aperture physically open.
-for side in [-1,1]: plate('body',2,side*.81,.45,.16,2.1,.35,.22)
-for yy in [-.57,1.46]: plate('body',2,0,yy,1.55,.15,.35,.22)
+# Open load-bearing spine. No closed rectangular cabinet shell.
+armor('body',0,[(-.45,-1.72),(.45,-1.72),(.73,-.80),(.68,1.45),(.28,1.90),(-.28,1.90),(-.68,1.45),(-.73,-.80)],-.55,.62)
 for side in [-1,1]:
-    armor('body',1,[(side*.78,-1.3),(side*1.18,-.78),(side*1.05,1.2),(side*.77,1.65),(side*.57,1.35),(side*.63,-.8)],.18,.38)
-    conduit('body',1,[(side*.78,-1.3,.42),(side*1.25,-.9,.2),(side*1.34,.8,.12),(side*.85,1.5,.25)],.075)
-    for i in range(7): plate('body',2,side*.83,-.65+i*.13,.27,.065,.5,.08,.015)
-    for y in [-1.02,1.37]:
-        turned('body',1,(side*.77,y,.43),[(.09,0),(.09,.065),(.045,.08),(.045,0)],16)
-        turned('body',2,(side*.77,y,.50),[(.035,0),(.035,.02),(.01,.02),(.01,0)],12)
-# Core retaining bezel with discrete armored teeth and deeply inset luminous cells.
-turned('body',0,(0,.46,.40),[(.72,-.15),(.86,-.10),(.91,.04),(.86,.22),(.69,.25),(.63,.12)],64)
-turned('body',1,(0,.46,.41),[(.69,.12),(.7,.18),(.64,.20),(.63,.12)],64)
-turned('body',2,(0,.46,.41),[(.62,-.16),(.62,.11),(.53,.08),(.53,-.16)],64)
-plate('body',1,0,.46,.70,.84,.36,.12,.15)
-plate('body',2,0,.46,.51,.66,.43,.08,.10)
-for x in [-.13,0,.13]:
-    plate('core',4,x,.46,.046,.35,.5,.035,.008)
-    plate('core',4,x,.69,.045,.026,.5,.035,.004)
+    conduit('body',1,[(side*.42,-1.60,-.2),(side*.83,-.75,-.4),(side*.95,.55,-.5),(side*.52,1.65,-.35)],.09)
+    for i in range(9): plate('body',2,side*.52,-1.15+i*.13,.24,.045,-.13,.09,.008)
+    for y in [-1.4,1.6]: turned('body',1,(side*.4,y,-.05),[(.105,0),(.105,.09),(.05,.12),(.05,0)],24)
+    conduit('body',2,[(side*.45,-1.1,-.65),(side*.9,-.6,-.95),(side*.9,1.1,-.9),(side*.4,1.8,-.65)],.065)
+    plate('body',5,side*.5,-1.2,.08,.027,.08,.04,.005)
+# A deep physical core chamber: stepped walls, retainers and exposed turbine fins.
+turned('body',0,(0,.45,.10),[(1.05,-.35),(1.25,-.20),(1.28,.10),(1.19,.28),(1.08,.34),(.98,.20),(.95,-.30)],96)
+turned('body',1,(0,.45,.11),[(1.09,.16),(1.12,.22),(1.10,.34),(1.04,.36),(1.02,.25)],96)
+turned('body',2,(0,.45,.15),[(.99,-.22),(.99,.22),(.84,.10),(.80,-.24)],80)
+turned('core',1,(0,.45,.06),[(.77,-.15),(.83,-.03),(.78,.15),(.69,.21),(.64,.09)],80)
+turned('core',4,(0,.45,.06),[(.69,.095),(.70,.125),(.66,.16),(.64,.12)],80)
+turned('core',0,(0,.45,.06),[(.29,-.12),(.34,.03),(.28,.26),(.12,.33),(.11,-.12)],64)
 for i in range(12):
     a=i*math.tau/12
-    x,y=.78*math.cos(a),.46+.78*math.sin(a)
-    plate('body',3,x,y,.18,.24,.69,.13,.035)
-    x,y=.43*math.cos(a),.46+.43*math.sin(a)
-    plate('core',4,x,y,.048,.105,.5,.04,.01)
-# Lower service chassis, split armored fins and grille.
-plate('body',0,0,-1.4,1.1,.48,.22,.35)
-for i in range(13): plate('body',1,(i-6)*.064,-1.38,.022,.23,.43,.04,.004)
-for s in [-1,1]:
-    armor('lower_armor',3,[(s*.12,-1.18),(s*.61,-1.12),(s*.95,-1.65),(s*.65,-2.13),(s*.18,-1.87)],.44,.24)
-    conduit('body',1,[(s*.3,-1.4,-.2),(s*.62,-2.03,-.1)],.09)
-    plate('body',6,s*.38,-1.93,.08,.11,.60,.035,.01)
-# Crown: three overlapping plates, louvres and inset digital light.
-armor('top_armor',3,[(-.75,1.23),(.75,1.23),(.92,1.82),(.48,2.12),(-.48,2.12),(-.92,1.82)],.34,.30)
-plate('top_armor',0,0,1.74,1.2,.44,.55,.16)
-for i in range(11): plate('top_armor',2,(i-5)*.095,1.72,.034,.25,.66,.05,.005)
-plate('top_armor',5,0,1.44,.68,.038,.67,.028,.004)
-# Twin articulated infrastructure sleds, not humanoid limbs.
-for s,group in [(-1,'left_sled'),(1,'right_sled')]:
-    conduit('body',1,[(s*.92,.85,-.17),(s*1.65,1.04,-.1)],.13)
-    conduit('body',2,[(s*.9,-.6,.0),(s*1.46,-.2,.35),(s*1.68,.68,.12)],.065)
-    armor(group,0,[(s*1.15,-.35),(s*1.87,-.56),(s*2.23,.0),(s*2.1,1.44),(s*1.57,1.8),(s*1.21,1.40)],-.10,.72)
-    armor(group,3,[(s*1.40,.08),(s*2.16,.22),(s*2.23,1.18),(s*1.76,1.58),(s*1.33,1.34)],.39,.25)
-    armor(group,1,[(s*1.47,-.42),(s*1.99,-.25),(s*2.14,.15),(s*1.86,.19),(s*1.51,.03)],.40,.16)
-    for i in range(8): plate(group,2,s*1.77,.34+i*.1,.48,.044,.55,.035,.008)
-    plate(group,4,s*1.78,1.23,.41,.035,.56,.03,.005)
-    turned(group,1,(s*1.40,.80,.38),[(.17,-.04),(.17,.10),(.11,.12),(.11,-.04)],24)
-    turned(group,2,(s*1.40,.80,.49),[(.09,0),(.09,.025),(.025,.025),(.025,0)],16)
-    for i in range(4):
-        y=.18+i*.23
-        conduit(group,1,[(s*1.23,y,-.45),(s*1.33,y+.10,-.68),(s*1.88,y+.12,-.67)],.042)
-    for i in range(3):
-        conduit(group,0,[(s*1.04,-.3+i*.15,.02),(s*1.2,-.53+i*.14,.3),(s*1.4,-.43+i*.14,.36)],.035)
-# Authored seams, fasteners and external coolant conduits.
-for s,group in [(-1,'left_sled'),(1,'right_sled')]:
-    for x,y in [(1.52,1.38),(2.04,1.05),(2.04,.29),(1.62,-.25)]:
-        turned(group,1,(s*x,y,.58),[(.052,0),(.052,.034),(.027,.045),(.027,0)],12)
-        plate(group,2,s*x,y,.027,.007,.628,.012,.001)
-    for i in range(4):
-        x=s*(2.05+i*.035)
-        conduit(group,2,[(x,.15,-.35),(x+s*.16,-.10,-.30),(x+s*.16,-.45,.0),(x,-.6,.25)],.018)
-    armor(group,1,[(s*1.54,1.59),(s*1.92,1.35),(s*2.14,1.29),(s*1.92,1.64),(s*1.64,1.83)],.07,.08,.025)
-    for i in range(5): plate(group,1,s*2.18,.36+i*.12,.10,.025,.35,.32,.003)
-    conduit(group,0,[(s*1.47,1.36,.60),(s*1.93,1.14,.61),(s*2.1,1.03,.59)],.014)
+    x,y=.54*math.cos(a),.45+.54*math.sin(a)
+    # Separate radial turbine/compute cartridges at different depths.
+    plate('core',1,x,y,.12,.19,.13+(i%3)*.028,.12,.025)
+    conduit('core',0,[(.33*math.cos(a),.45+.33*math.sin(a),.19),(.68*math.cos(a+.12),.45+.68*math.sin(a+.12),.12)],.035)
+    plate('core',4,.58*math.cos(a),.45+.58*math.sin(a),.022,.066,.22,.025,.003)
+    x,y=1.14*math.cos(a),.45+1.14*math.sin(a)
+    plate('body',3,x,y,.13,.21,.53,.20,.035)
+    turned('body',1,(x,y,.64),[(.055,0),(.055,.035),(.024,.045),(.024,0)],16)
+# Split protective cheeks part away from the core instead of presenting a UI face.
+for side,group in [(-1,'left_housing'),(1,'right_housing')]:
+    armor(group,0,[(side*.78,-.45),(side*1.32,-.22),(side*1.45,.8),(side*1.13,1.42),(side*.91,1.30),(side*1.12,.65),(side*.97,.05)],.28,.29)
+    conduit(group,3,[(side*1.21,-.19,.45),(side*1.35,.50,.46),(side*1.05,1.29,.42)],.055)
+# Raised crown is an open gantry, not a flat cabinet lid.
 for side in [-1,1]:
-    for y in [-.8,-.5,-.2,.1,1.17]:
-        turned('body',1,(side*.98,y,.47),[(.042,0),(.042,.03),(.02,.036),(.02,0)],12)
-    conduit('body',2,[(side*.7,1.52,-.25),(side*.88,1.95,-.5),(side*1.18,1.93,-.56),(side*1.38,1.45,-.5)],.055)
-    conduit('body',1,[(side*.60,-.86,.39),(side*.58,-.3,.46)],.029)
-# More physical detail: rear power rack, stacked cooling fins and service fasteners.
-for i in range(15): plate('body',1,0,-.55+i*.115,1.30,.036,-.75,.35,.007)
-for x in [-.53,.53]:
-    conduit('body',0,[(x,-1.13,-.73),(x,1.05,-.77)],.1)
-for x in [-.45,0,.45]:
-    plate('body',3,x,-1.08,.28,.26,.51,.12,.03)
-    plate('body',5,x,-1.06,.09,.025,.58,.025,.004)
+    conduit('top_armor',0,[(side*.48,1.48,-.40),(side*.80,2.10,-.33),(side*.61,2.50,-.23)],.12)
+    armor('top_armor',3,[(side*.18,2.2),(side*.67,2.5),(side*1.17,2.19),(side*.88,1.93),(side*.52,2.06)],-.09,.31)
+    for i in range(4):plate('top_armor',0,side*(.55+i*.10),2.2-i*.045,.045,.16,.12,.065,.006)
+plate('top_armor',5,0,2.30,.25,.025,.11,.05,.005)
+conduit('top_armor',0,[(-.62,2.50,-.26),(0,2.67,-.28),(.62,2.50,-.26)],.08)
+# Broad lower support cradle with triangular negative spaces and floor skids.
+for side in [-1,1]:
+    group = "left_support" if side < 0 else "right_support"
+    conduit(group,0,[(side*.30,-1.1,-.3),(side*1.34,-1.83,-.42),(side*2.2,-2.03,-.08)],.16)
+    conduit(group,1,[(side*.30,-1.1,-.1),(side*.60,-1.95,.38),(side*2.2,-2.03,-.08)],.055)
+    armor(group,0,[(side*1.18,-1.89),(side*2.4,-2.13),(side*2.52,-2.3),(side*1.87,-2.27),(side*1.03,-2.02)],-.08,.52)
+    turned(group,1,(side*1.24,-1.82,-.05),[(.13,-.02),(.13,.10),(.07,.12),(.07,-.02)],32)
+    plate('body',6,side*.28,-1.45,.055,.032,.05,.04,.005)
+# Articulated side infrastructure arms. The gaps around core and trusses are real.
+for side,group,brace in [(-1,'left_sled','left_brace'),(1,'right_sled','right_brace')]:
+    conduit(brace,0,[(side*.88,.85,-.44),(side*1.55,1.36,-.55),(side*2.37,1.18,-.40)],.14)
+    conduit(brace,1,[(side*.91,.70,-.27),(side*1.58,.96,-.31),(side*2.37,1.18,-.25)],.055)
+    conduit(brace,0,[(side*.90,-.12,-.56),(side*1.58,.22,-.7),(side*2.4,.6,-.52)],.07)
+    for x,y in [(1.0,.82),(1.56,1.20),(2.38,1.12)]:
+        turned(brace,1,(side*x,y,-.17),[(.16,-.12),(.18,-.03),(.16,.13),(.08,.15),(.08,-.12)],32)
+    # Open, canted outer frame with a raised armored blade and hanging service pod.
+    conduit(group,0,[(side*2.32,.10,-.15),(side*2.65,1.48,-.40),(side*3.30,1.90,-.31),(side*3.63,1.04,.02),(side*3.41,-.24,.17)],.13)
+    conduit(group,1,[(side*2.52,.08,.06),(side*2.82,1.30,-.04),(side*3.21,1.60,.03)],.045)
+    armor(group,3,[(side*2.52,1.48),(side*3.14,1.91),(side*3.65,1.28),(side*3.42,.91),(side*2.96,1.18)],.14,.33)
+    armor(group,0,[(side*2.7,.35),(side*3.25,.65),(side*3.5,.22),(side*3.28,-.55),(side*2.84,-.42)],.26,.44)
+    plate(group,2,side*3.10,.12,.31,.62,.50,.07,.04)
+    for i in range(7):plate(group,1,side*3.09,-.13+i*.075,.30,.024,.55,.045,.004)
+    conduit(group,0,[(side*2.54,1.19,-.07),(side*2.82,.27,.13)],.10)
+    conduit(group,1,[(side*2.59,.98,.05),(side*2.78,.34,.23)],.042)
+    turned(group,1,(side*2.57,1.2,.09),[(.17,-.07),(.19,0),(.16,.15),(.09,.18),(.09,-.07)],48)
+    for x,y in [(2.91,1.53),(3.47,1.13),(2.88,-.33),(3.32,.3)]:
+        turned(group,1,(side*x,y,.51),[(.047,0),(.047,.04),(.020,.05),(.020,0)],20)
+    plate(group,4,side*3.13,1.34,.33,.028,.36,.038,.005)
+    for i in range(3):
+        conduit(group,2,[(side*(2.38+i*.065),.15,-.4),(side*(2.42+i*.06),-.4,-.2),(side*(2.96+i*.025),-.68,.10),(side*3.16,-.43,.23)],.026)
+# Rear heat-exchange stack remains exposed around the slim spine.
+for i in range(12):plate('body',1,0,-.72+i*.15,.70,.035,-.87,.30,.005)
 
 # GLB serialization: one primitive/material per assembly, flat authored normals.
 bin_data=bytearray();views=[];accessors=[];meshes=[];nodes=[];groups={}

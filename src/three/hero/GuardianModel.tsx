@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useThree } from "@react-three/fiber";
+import { guardianPivots } from "./guardianTimeline";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import {
   Color,
@@ -75,7 +76,15 @@ export function useGuardianModel() {
                         : "#927140",
                 })
               : new MeshPhongMaterial({
-                  color: source.color.clone().multiplyScalar(0.66),
+                  color: source.color
+                    .clone()
+                    .multiplyScalar(
+                      source.name === "Brushed steel"
+                        ? 0.82
+                        : source.name === "Recess"
+                          ? 0.5
+                          : 0.62,
+                    ),
                   specular: new Color(
                     source.name === "Brushed steel" ? "#657782" : "#26363d",
                   ),
@@ -89,27 +98,12 @@ export function useGuardianModel() {
         });
         converted.forEach((_, source) => source.dispose());
         const parts = new Map<string, Group>();
-        for (const name of [
-          "left_sled",
-          "right_sled",
-          "top_armor",
-          "lower_armor",
-          "core",
-        ]) {
+        for (const name of Object.keys(guardianPivots)) {
           const part = scene.getObjectByName(name);
           if (part) {
             const pivot = new Group();
             pivot.name = `${name}_hinge`;
-            const origin =
-              name === "left_sled"
-                ? [-1.1, 0.8, 0]
-                : name === "right_sled"
-                  ? [1.1, 0.8, 0]
-                  : name === "top_armor"
-                    ? [0, 1.3, 0.1]
-                    : name === "lower_armor"
-                      ? [0, -1.1, 0.1]
-                      : [0, 0.46, 0.4];
+            const origin = guardianPivots[name];
             pivot.position.set(origin[0], origin[1], origin[2]);
             part.position.set(-origin[0], -origin[1], -origin[2]);
             scene.add(pivot);
