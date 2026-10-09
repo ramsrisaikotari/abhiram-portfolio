@@ -26,6 +26,8 @@ for (const width of [1440, 390]) {
 const page = await browser.newPage({ reducedMotion: "reduce" });
 await page.goto(`${baseUrl}/experience-3d`);
 await page.locator("canvas").waitFor();
+// The V2 GLB arrives asynchronously; begin idle assertions after model readiness.
+await page.locator(".guardian-hud").first().waitFor();
 await page.waitForTimeout(300);
 await page.evaluate(() => {
   window.__calls = 0;

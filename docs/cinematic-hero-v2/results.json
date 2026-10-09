@@ -1,0 +1,50 @@
+[
+  {
+    "width": 1440,
+    "default": "pass",
+    "immersive": "pass",
+    "canvas": 1,
+    "errors": []
+  },
+  {
+    "width": 1024,
+    "default": "pass",
+    "immersive": "pass",
+    "canvas": 1,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "default": "pass",
+    "immersive": "pass",
+    "canvas": 1,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "default": "pass",
+    "immersive": "pass",
+    "canvas": 1,
+    "errors": []
+  },
+  {
+    "width": 375,
+    "default": "pass",
+    "immersive": "pass",
+    "canvas": 1,
+    "errors": []
+  },
+  {
+    "width": 320,
+    "default": "pass",
+    "immersive": "pass",
+    "canvas": 1,
+    "errors": []
+  },
+  {
+    "reducedMotion": "pass"
+  },
+  {
+    "webglFallback": "pass"
+  }
+]

@@ -1,0 +1,87 @@
+/* Hero-only art direction. V1 section compositions remain unchanged. */
+.cinematic-intro {
+  --system-accent: #82b9bb;
+  background: #03090c;
+}
+@media (min-width: 769px) {
+  .cinematic-intro .scene-stage {
+    width: calc(57% - 54px);
+    right: 54px;
+    top: var(--system-header-height);
+    height: calc(100dvh - var(--system-header-height) - 54px);
+  }
+  .cinematic-intro .scene-caption {
+    width: calc(57% - 54px);
+    right: 54px;
+  }
+  .experience-3d #intro {
+    width: 80%;
+    padding-top: clamp(5rem, 12dvh, 8rem);
+  }
+  .experience-3d #system-title {
+    font-size: clamp(2.7rem, 4.8vw, 4.8rem);
+    max-width: 8ch;
+  }
+}
+.experience-3d #intro .system-role {
+  color: #b0c6cd;
+  letter-spacing: 0.075em;
+  line-height: 1.7;
+}
+.experience-3d #intro .system-flow {
+  gap: 0.4rem;
+}
+.experience-3d #intro .system-flow button {
+  padding: 0.55rem 0.65rem;
+  background: #0b141b;
+  font-size: 0.7rem;
+  border-color: #263c43;
+}
+.experience-3d #intro .system-flow button[aria-pressed="true"] {
+  border-color: #577e8b;
+  background: #102029;
+}
+.guardian-hud {
+  color: #7eacae;
+  padding: 6px 10px;
+  border-left: 1px solid #426369;
+  background: #071017b8;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+@media (max-width: 768px) {
+  .experience-3d #intro {
+    padding-top: 1.3rem;
+  }
+  .experience-3d #system-title {
+    max-width: 10ch;
+    font-size: clamp(2.5rem, 10vw, 3.2rem);
+  }
+  .guardian-hud {
+    font-size: 7px;
+    padding: 3px 6px;
+  }
+}
+
+.experience-3d #system-title:focus {
+  outline: none;
+}
+.guardian-mobile-hud {
+  position: absolute;
+  left: 14px;
+  bottom: 8px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .guardian-hud {
+    animation: guardian-hud-enter 2.2s ease-out both;
+  }
+}
+@keyframes guardian-hud-enter {
+  0%,
+  72% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

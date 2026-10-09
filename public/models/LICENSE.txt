@@ -1,0 +1,8 @@
+Cloud Infrastructure Guardian
+Copyright 2026 Abhi Ram Kotari. All rights reserved.
+
+Original artwork authored specifically for this portfolio from the reproducible
+polygon, lathe and swept-conduit source in scripts/assets/build-guardian.py.
+No third-party models, textures, franchise assets, or character designs are used.
+No third-party asset licensing dependencies apply. Rights to the original model
+and its authoring source remain with the portfolio owner.

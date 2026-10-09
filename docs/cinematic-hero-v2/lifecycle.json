@@ -1,0 +1,402 @@
+[
+  {
+    "scene": "intro",
+    "drawCallsPerSecond": 512
+  },
+  {
+    "scene": "impact",
+    "drawCallsPerSecond": 96
+  },
+  {
+    "scene": "infrastructure",
+    "drawCallsPerSecond": 248
+  },
+  {
+    "scene": "modules",
+    "drawCallsPerSecond": 2040
+  },
+  {
+    "scene": "case-studies",
+    "drawCallsPerSecond": 1596
+  },
+  {
+    "scene": "observability",
+    "drawCallsPerSecond": 884
+  },
+  {
+    "scene": "delivery",
+    "drawCallsPerSecond": 1624
+  },
+  {
+    "scene": "diagnostic",
+    "drawCallsPerSecond": 1848
+  },
+  {
+    "scene": "components",
+    "drawCallsPerSecond": 2028
+  },
+  {
+    "scene": "standby",
+    "drawCallsPerSecond": 1320
+  },
+  {
+    "cycle": 1,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 19248,
+    "peakFrameCalls": 39,
+    "heap": 8484984
+  },
+  {
+    "cycle": 2,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 20184,
+    "peakFrameCalls": 39,
+    "heap": 8631796
+  },
+  {
+    "cycle": 3,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 20960,
+    "peakFrameCalls": 39,
+    "heap": 8747068
+  },
+  {
+    "cycle": 4,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 21788,
+    "peakFrameCalls": 39,
+    "heap": 8859668
+  },
+  {
+    "cycle": 5,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 22756,
+    "peakFrameCalls": 39,
+    "heap": 8943648
+  },
+  {
+    "cycle": 6,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 23734,
+    "peakFrameCalls": 39,
+    "heap": 8985788
+  },
+  {
+    "cycle": 7,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 24702,
+    "peakFrameCalls": 39,
+    "heap": 9022956
+  },
+  {
+    "cycle": 8,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 25466,
+    "peakFrameCalls": 39,
+    "heap": 9076264
+  },
+  {
+    "cycle": 9,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 26178,
+    "peakFrameCalls": 39,
+    "heap": 9371280
+  },
+  {
+    "cycle": 10,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 27198,
+    "peakFrameCalls": 39,
+    "heap": 9404864
+  },
+  {
+    "cycle": 11,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 27920,
+    "peakFrameCalls": 39,
+    "heap": 9458376
+  },
+  {
+    "cycle": 12,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 28728,
+    "peakFrameCalls": 39,
+    "heap": 9472832
+  },
+  {
+    "cycle": 13,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 29496,
+    "peakFrameCalls": 39,
+    "heap": 9490912
+  },
+  {
+    "cycle": 14,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 30326,
+    "peakFrameCalls": 39,
+    "heap": 9509984
+  },
+  {
+    "cycle": 15,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 31454,
+    "peakFrameCalls": 39,
+    "heap": 9520596
+  },
+  {
+    "cycle": 16,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 32190,
+    "peakFrameCalls": 39,
+    "heap": 9533096
+  },
+  {
+    "cycle": 17,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 33064,
+    "peakFrameCalls": 39,
+    "heap": 9582276
+  },
+  {
+    "cycle": 18,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 33800,
+    "peakFrameCalls": 39,
+    "heap": 9590772
+  },
+  {
+    "cycle": 19,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 34610,
+    "peakFrameCalls": 39,
+    "heap": 9607468
+  },
+  {
+    "cycle": 20,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 35290,
+    "peakFrameCalls": 39,
+    "heap": 9635724
+  },
+  {
+    "cycle": 21,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 36154,
+    "peakFrameCalls": 39,
+    "heap": 9642432
+  },
+  {
+    "cycle": 22,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 37314,
+    "peakFrameCalls": 39,
+    "heap": 9677004
+  },
+  {
+    "cycle": 23,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 38186,
+    "peakFrameCalls": 39,
+    "heap": 9718132
+  },
+  {
+    "cycle": 24,
+    "raf": 0,
+    "contexts": 0,
+    "listeners": {
+      "popstate": 1,
+      "click": 2,
+      "visibilitychange": 0,
+      "keydown": 0,
+      "pointerdown": 1
+    },
+    "drawCalls": 39124,
+    "peakFrameCalls": 39,
+    "heap": 9733440
+  }
+]

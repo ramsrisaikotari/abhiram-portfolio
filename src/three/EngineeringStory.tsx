@@ -48,11 +48,9 @@ export default function EngineeringStory({
           {boot && !reduced ? "SYSTEM INITIALIZING" : "SYSTEM ONLINE"} / 01
         </p>
         <h1 id="system-title" tabIndex={-1}>
-          Engineering
-          <br />
-          <span>in motion.</span>
+          {profile.name}
         </h1>
-        <p className="system-role">DEVOPS & SITE RELIABILITY ENGINEERING</p>
+        <p className="system-role">DEVOPS & SITE RELIABILITY ENGINEER</p>
         <p>{profile.description}</p>
         <a className="system-enter" href="#impact">
           Enter System ↓

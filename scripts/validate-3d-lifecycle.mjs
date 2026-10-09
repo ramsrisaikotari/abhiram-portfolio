@@ -102,6 +102,8 @@ const snapshots = [];
 for (let i = 0; i < 24; i++) {
   await page.getByRole("link", { name: "3D Experience", exact: true }).click();
   await page.locator("canvas").waitFor();
+  // Exercise disposal of the loaded GLB, not just an aborted initial request.
+  await page.locator(".guardian-hud").first().waitFor();
   await page.waitForTimeout(600);
   if (i === 0) {
     for (const id of [
