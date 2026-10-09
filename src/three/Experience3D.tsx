@@ -8,6 +8,7 @@ import SceneHost from "./SceneHost";
 import EngineeringStory from "./EngineeringStory";
 import { useMedia, useSceneController } from "./useSceneController";
 import "./experience.css";
+import "./hero/hero.css";
 const sections = [
   "intro",
   "impact",
@@ -103,7 +104,9 @@ export default function Experience3D() {
       ? "digital"
       : "command";
   return (
-    <div className={`experience-3d phase-${phase}`}>
+    <div
+      className={`experience-3d phase-${phase} operational-${active}${active === "intro" ? " cinematic-intro" : ""}`}
+    >
       <a className="skip-link" href="#system-title">
         Skip to engineering story
       </a>

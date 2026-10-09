@@ -34,7 +34,7 @@ async function assertComposition(page, width) {
     const labels = [
       ...document.querySelectorAll(".scene-node,.scene-readout"),
     ].map((node) => ({
-      name: node.textContent,
+      name: node.textContent || node.getAttribute("aria-label"),
       rect: node.getBoundingClientRect(),
     }));
     return labels
@@ -51,7 +51,7 @@ async function assertComposition(page, width) {
   const overlaps = await page.evaluate(() => {
     const labels = [...document.querySelectorAll(".scene-node")].map(
       (node) => ({
-        name: node.textContent,
+        name: node.textContent || node.getAttribute("aria-label"),
         rect: node.getBoundingClientRect(),
       }),
     );

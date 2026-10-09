@@ -1,0 +1,93 @@
+[
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "modelReadyMs": 2492,
+    "overflow": false,
+    "gap": 0,
+    "labels": [],
+    "calls": 32,
+    "triangles": 15910,
+    "peak": 32,
+    "peakTriangles": 15910,
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 390,
+    "modelReadyMs": 2074,
+    "overflow": false,
+    "gap": 0,
+    "labels": [],
+    "calls": 30,
+    "triangles": 15752,
+    "peak": 30,
+    "peakTriangles": 15752,
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 375,
+    "modelReadyMs": 1406,
+    "overflow": false,
+    "gap": 0,
+    "labels": [],
+    "calls": 30,
+    "triangles": 15752,
+    "peak": 30,
+    "peakTriangles": 15752,
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 320,
+    "modelReadyMs": 868,
+    "overflow": false,
+    "gap": 0,
+    "labels": [],
+    "calls": 30,
+    "triangles": 15752,
+    "peak": 30,
+    "peakTriangles": 15752,
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 1440,
+    "modelReadyMs": 954,
+    "overflow": false,
+    "gap": 0,
+    "labels": [],
+    "calls": 32,
+    "triangles": 15910,
+    "peak": 32,
+    "peakTriangles": 15910,
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 390,
+    "modelReadyMs": 865,
+    "overflow": false,
+    "gap": 0,
+    "labels": [],
+    "calls": 30,
+    "triangles": 15752,
+    "peak": 30,
+    "peakTriangles": 15752,
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 375,
+    "modelReadyMs": 830,
+    "overflow": false,
+    "gap": 0,
+    "labels": [],
+    "calls": 30,
+    "triangles": 15752,
+    "peak": 30,
+    "peakTriangles": 15752,
+    "errors": []
+  }
+]

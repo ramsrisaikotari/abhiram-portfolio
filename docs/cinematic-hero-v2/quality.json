@@ -1,0 +1,28 @@
+[
+  {
+    "width": 1440,
+    "dpr": 1.4997452878247581
+  },
+  {
+    "width": 390,
+    "dpr": 1.2487179487179487
+  },
+  {
+    "reducedMotionStatic": "pass"
+  },
+  {
+    "hiddenDocumentPaused": "pass"
+  },
+  {
+    "skillsAndModules": "pass"
+  },
+  {
+    "settledMechanicalPaused": "pass"
+  },
+  {
+    "contextLoss": "pass"
+  },
+  {
+    "resume": "pass"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "path": "activation-200.png",
+    "elapsedMs": 1932
+  },
+  {
+    "path": "activation-600.png",
+    "elapsedMs": 2906
+  },
+  {
+    "path": "activation-1000.png",
+    "elapsedMs": 3733
+  },
+  {
+    "path": "activation-1500.png",
+    "elapsedMs": 4524
+  },
+  {
+    "path": "activation-2200.png",
+    "elapsedMs": 5289
+  }
+]

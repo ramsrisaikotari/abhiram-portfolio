@@ -13,6 +13,18 @@ await page.addInitScript(() => {
     nativeCancel = window.cancelAnimationFrame.bind(window);
   const pending = new Set();
   const contexts = new Set();
+  const intervals = new Set();
+  const interval = window.setInterval.bind(window),
+    clearInterval = window.clearInterval.bind(window);
+  window.setInterval = (...args) => {
+    const id = interval(...args);
+    intervals.add(id);
+    return id;
+  };
+  window.clearInterval = (id) => {
+    intervals.delete(id);
+    clearInterval(id);
+  };
   const listeners = new Map();
   let drawCalls = 0;
   let frameCalls = 0;
@@ -71,6 +83,7 @@ await page.addInitScript(() => {
           "visibilitychange",
           "keydown",
           "pointerdown",
+          "pointermove",
           "change",
           "popstate",
           "click",
@@ -89,6 +102,7 @@ await page.addInitScript(() => {
   window.__audit = () => ({
     raf: pending.size,
     contexts: contexts.size,
+    intervals: intervals.size,
     listeners: Object.fromEntries(
       [...listeners].map(([name, set]) => [name, set.size]),
     ),
@@ -102,6 +116,8 @@ const snapshots = [];
 for (let i = 0; i < 24; i++) {
   await page.getByRole("link", { name: "3D Experience", exact: true }).click();
   await page.locator("canvas").waitFor();
+  // Exercise disposal of the loaded GLB, not just an aborted initial request.
+  await page.locator(".guardian-hud").first().waitFor();
   await page.waitForTimeout(600);
   if (i === 0) {
     for (const id of [
@@ -134,7 +150,13 @@ for (let i = 0; i < 24; i++) {
   assert.equal(await page.locator("canvas").count(), 0);
   assert.equal(state.contexts, 0);
   assert.equal(state.raf, 0);
-  assert(state.peakFrameCalls <= 45, "Investigate scene draw calls above 45");
+  assert.equal(state.intervals, 0, "Standby interval must be released on exit");
+  // The complete persistent Guardian modes have a reviewed 50-call budget.
+  // The approved hero retains its separate <=45 guard.
+  assert(
+    state.peakFrameCalls <= 50,
+    `Investigate scene draw calls above 50: ${state.peakFrameCalls}`,
+  );
 }
 const exits = snapshots.filter((s) => s.cycle);
 assert.deepEqual(exits[0].listeners, exits.at(-1).listeners);

@@ -52,6 +52,7 @@ export function NodeLabel({
   display,
   size,
   mobile = false,
+  className = "",
 }: {
   label: string;
   onSelect: () => void;
@@ -61,11 +62,12 @@ export function NodeLabel({
   display?: string;
   size?: "category" | "technology";
   mobile?: boolean;
+  className?: string;
 }) {
   return (
     <Html position={position} center zIndexRange={[10, 0]}>
       <button
-        className={`scene-node ${project ? "scene-project-label" : ""} ${label.toLowerCase() === "observability" ? "scene-node-wide" : ""} ${size ? `scene-${size}-label` : ""}`}
+        className={`scene-node ${className} ${project ? "scene-project-label" : ""} ${label.toLowerCase() === "observability" ? "scene-node-wide" : ""} ${size ? `scene-${size}-label` : ""}`}
         aria-label={`${project ? "Activate" : "Trace"} ${label}`}
         aria-pressed={selected}
         onFocus={onSelect}
