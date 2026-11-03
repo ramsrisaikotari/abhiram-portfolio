@@ -1,4 +1,4 @@
-Last completed iteration: 93
+Last completed iteration: 94
 
 ## Pre-iteration work
 
@@ -384,3 +384,7 @@ Last completed iteration: 93
 ### 93 — QA: verify the tablet release layout
 
 - Rechecked the complete 768 px page with no horizontal overflow or content-integrity failures.
+
+### 94 — QA: verify the desktop release layout
+
+- Rechecked the complete 1440 px page with no horizontal overflow or content-integrity failures.
