@@ -1,4 +1,4 @@
-Last completed iteration: 75
+Last completed iteration: 76
 
 ## Pre-iteration work
 
@@ -312,3 +312,7 @@ Last completed iteration: 75
 ### 75 — QA: verify project coverage
 
 - Verified that the three supplied personal and academic projects are present.
+
+### 76 — QA: verify project-link privacy
+
+- Verified that only the portfolio project has supplied public links.
