@@ -1,4 +1,4 @@
-Last completed iteration: 80
+Last completed iteration: 81
 
 ## Pre-iteration work
 
@@ -332,3 +332,7 @@ Last completed iteration: 80
 ### 80 — QA: verify the deferred-content ledger
 
 - Verified exactly three deferred items: location, KubeReliability link, and education.
+
+### 81 — QA: verify production asset copies
+
+- Verified that production output includes the resume, favicon, social images, robots file, and sitemap.
