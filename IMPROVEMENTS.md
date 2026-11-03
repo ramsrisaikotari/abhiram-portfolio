@@ -1,4 +1,4 @@
-Last completed iteration: 77
+Last completed iteration: 78
 
 ## Pre-iteration work
 
@@ -320,3 +320,7 @@ Last completed iteration: 77
 ### 77 — QA: verify skills coverage
 
 - Verified six populated skill groups including the explicitly labeled lab-learning group.
+
+### 78 — QA: verify contact destinations
+
+- Verified the supplied email, GitHub, and LinkedIn destinations remain available.
