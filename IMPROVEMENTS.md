@@ -1,4 +1,4 @@
-Last completed iteration: 23
+Last completed iteration: 24
 
 ## Pre-iteration work
 
@@ -104,3 +104,7 @@ Last completed iteration: 23
 ### 23 — QA: verify hidden markers stay unpublished
 
 - Verified that no HIDDEN marker is present in published source or metadata.
+
+### 24 — QA: verify Education stays unpublished
+
+- Verified that the Education section remains absent from the published page.
