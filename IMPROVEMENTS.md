@@ -1,4 +1,4 @@
-Last completed iteration: 38
+Last completed iteration: 39
 
 ## Pre-iteration work
 
@@ -164,3 +164,7 @@ Last completed iteration: 38
 ### 38 — QA: verify published static assets
 
 - Verified that the résumé, favicon, social PNG, and social SVG are present and non-empty.
+
+### 39 — QA: verify the email destination
+
+- Verified that the supplied email destination is preserved in the central content source.
