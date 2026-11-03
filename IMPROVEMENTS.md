@@ -1,4 +1,4 @@
-Last completed iteration: 87
+Last completed iteration: 88
 
 ## Pre-iteration work
 
@@ -360,3 +360,7 @@ Last completed iteration: 87
 ### 87 — QA: verify the stylesheet budget
 
 - Verified the production stylesheet stays below 10 kB uncompressed.
+
+### 88 — QA: verify the production chunk inventory
+
+- Verified one application JavaScript chunk and one stylesheet, with no 3D chunk.
