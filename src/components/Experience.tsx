@@ -1,35 +1,33 @@
-import { experience } from "../data/experience";
-import SectionHeading from "./SectionHeading";
+import { experience } from "../data/siteContent";
+
 export default function Experience() {
   return (
-    <section id="experience" className="section reveal" aria-label="Experience">
-      <SectionHeading number="02">Experience</SectionHeading>
-      <div className="experience-list">
-        {experience.map((job) => (
-          <article className="experience-item" key={job.company + job.role}>
-            <div className="company-label">
-              <span className="eyebrow">EXPERIENCE</span>
-              <h3>{job.company}</h3>
-              {job.period && <p>{job.period}</p>}
+    <section id="experience" className="section section-tinted" aria-labelledby="experience-title">
+      <div className="section-shell">
+        <div className="section-heading">
+          <p className="section-kicker"><span>01</span> / Experience</p>
+          <h2 id="experience-title">Where I work</h2>
+        </div>
+
+        <article className="experience-block">
+          <header className="experience-header">
+            <div>
+              <h3>{experience.role}</h3>
+              <p className="company">{experience.company}</p>
             </div>
-            <div className="job-detail">
-              <h4>{job.role}</h4>
-              <ul>
-                {job.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
-              </ul>
-              <ul
-                className="tags experience-tags"
-                aria-label="Relevant technologies"
-              >
-                {job.technologies.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        ))}
+            <p className="dates">{experience.dates}</p>
+          </header>
+          <p className="experience-summary">{experience.summary}</p>
+          <ul className="responsibility-list">
+            {experience.responsibilities.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p className="tools-line">
+            <span>Tools</span>
+            {experience.tools}
+          </p>
+        </article>
       </div>
     </section>
   );

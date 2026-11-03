@@ -1,6 +1,6 @@
 # Abhi Ram Kotari — Engineering Portfolio
 
-An original, responsive DevOps and Site Reliability Engineering portfolio built with React, TypeScript, Vite, and plain CSS. No backend, database, or external font dependency is needed.
+A responsive DevOps and Site Reliability Engineering portfolio using React, TypeScript, Vite, and plain CSS. No backend or database is needed.
 
 ## Development and deployment
 
@@ -57,13 +57,10 @@ These identifiers are configuration values, so the workflow reads them from GitH
 
 ## Architecture
 
-- `src/components/`: navigation, hero, about, experience, skills, projects, contact, footer, shared section headings, and résumé link.
-- `src/data/profile.ts`: biography, navigation, contact links, and résumé configuration.
-- `src/data/experience.ts`: typed list of employers and responsibilities; optional employment dates.
-- `src/data/projects.ts`: typed featured projects with optional GitHub links.
-- `src/data/skills.ts`: technology categories.
-- `src/hooks/useReveal.ts`: progressive scroll reveal using IntersectionObserver.
-- `src/styles/global.css`: palette, layout, responsive rules, and reduced-motion overrides.
+- `src/components/`: navigation, hero, experience, selected work, projects, skills, contact, and footer sections.
+- `src/data/siteContent.ts`: the single source for published page copy and link destinations.
+- `src/styles/global.css`: design tokens, mobile-first layout, responsive rules, focus states, and reduced-motion behavior.
+- `CONTENT_TODO.md`: private or incomplete content that stays off the published page.
 - `src/App.tsx` / `src/main.tsx`: application composition and entry point.
 - `index.html`: SEO and Open Graph metadata; `public/favicon.svg`: original AK mark.
 
@@ -73,8 +70,7 @@ The fixed navbar uses native anchor links and marks the visible section. The mob
 
 1. Contact links are configured in `src/data/profile.ts`; update them there if they change.
 2. Replace `public/resume.pdf` whenever the résumé changes; the configured `/resume.pdf` URL can stay the same.
-3. Add optional `github` fields to projects only for publicly shareable repositories.
-4. Add verified employment dates to the optional `period` field in `src/data/experience.ts` if desired.
-5. The canonical production URL is `https://abhiramkotari.com/`. Update `index.html`, `public/robots.txt`, and `public/sitemap.xml` together if the domain changes. A social preview image can be added later with an absolute `og:image` URL.
+3. Keep incomplete or private content in `CONTENT_TODO.md` until it is ready to publish.
+4. The canonical production URL is `https://abhiramkotari.com/`. Update `index.html`, `public/robots.txt`, and `public/sitemap.xml` together if the domain changes.
 
 Test every contact link before publishing.

@@ -1,26 +1,23 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import EngineeringImpact from "./components/EngineeringImpact";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Experience from "./components/Experience";
 import Footer from "./components/Footer";
-import useReveal from "./hooks/useReveal";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Projects from "./components/Projects";
+import SelectedWork from "./components/SelectedWork";
+import Skills from "./components/Skills";
+
 export default function App() {
-  useReveal();
   return (
     <>
-      <a className="skip-link" href="#main">
+      <a className="skip-link" href="#main-content">
         Skip to content
       </a>
       <Navbar />
-      <main id="main" tabIndex={-1}>
+      <main id="main-content">
         <Hero />
-        <EngineeringImpact />
-        <About />
         <Experience />
+        <SelectedWork />
         <Projects />
         <Skills />
         <Contact />
