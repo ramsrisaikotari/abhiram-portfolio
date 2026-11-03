@@ -1,4 +1,4 @@
-Last completed iteration: 50
+Last completed iteration: 51
 
 ## Pre-iteration work
 
@@ -212,3 +212,7 @@ Last completed iteration: 50
 ### 50 — QA: verify reduced-motion support
 
 - Verified that the reduced-motion media query removes smooth scrolling and suppresses motion for users who request it.
+
+### 51 — QA: verify the design-token palette
+
+- Verified that the stylesheet defines the exact warm-neutral, navy, green, and rust design tokens.
