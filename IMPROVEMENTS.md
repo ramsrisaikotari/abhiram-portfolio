@@ -1,4 +1,4 @@
-Last completed iteration: 24
+Last completed iteration: 25
 
 ## Pre-iteration work
 
@@ -108,3 +108,7 @@ Last completed iteration: 24
 ### 24 — QA: verify Education stays unpublished
 
 - Verified that the Education section remains absent from the published page.
+
+### 25 — QA: verify the private KubeReliability link
+
+- Verified that KubeReliability is shown without a public link.
