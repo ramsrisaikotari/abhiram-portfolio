@@ -1,4 +1,4 @@
-Last completed iteration: 6
+Last completed iteration: 7
 
 ## Pre-iteration work
 
@@ -36,3 +36,7 @@ Last completed iteration: 6
 ### 6 — Accessibility: align the logo's text and name
 
 - Updated the logo's accessible name to begin with its visible `AK.` label, resolving the Lighthouse label-in-name finding.
+
+### 7 — Accessibility: move focus with the skip link
+
+- Made the main content a focusable skip-link destination so keyboard users move focus and viewport together.
