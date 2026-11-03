@@ -1,4 +1,4 @@
-Last completed iteration: 28
+Last completed iteration: 29
 
 ## Pre-iteration work
 
@@ -124,3 +124,7 @@ Last completed iteration: 28
 ### 28 — QA: verify the meta description
 
 - Verified that the meta description matches the supplied wording exactly.
+
+### 29 — QA: verify the canonical URL
+
+- Verified that the canonical link points to the production HTTPS URL.
