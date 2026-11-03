@@ -1,4 +1,4 @@
-Last completed iteration: 57
+Last completed iteration: 58
 
 ## Pre-iteration work
 
@@ -240,3 +240,7 @@ Last completed iteration: 57
 ### 57 — QA: verify the retired-route redirect
 
 - Verified that Firebase retains the sole required 301 redirect from the retired 3D route to the homepage.
+
+### 58 — QA: verify production dependency security
+
+- Verified that the production dependency audit reports no high-severity vulnerabilities.
