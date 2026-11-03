@@ -1,4 +1,4 @@
-Last completed iteration: 37
+Last completed iteration: 38
 
 ## Pre-iteration work
 
@@ -160,3 +160,7 @@ Last completed iteration: 37
 ### 37 — QA: verify the résumé asset
 
 - Verified that the published résumé asset is a readable PDF.
+
+### 38 — QA: verify published static assets
+
+- Verified that the résumé, favicon, social PNG, and social SVG are present and non-empty.
