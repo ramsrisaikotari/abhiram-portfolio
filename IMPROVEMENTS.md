@@ -1,4 +1,4 @@
-Last completed iteration: 9
+Last completed iteration: 10
 
 ## Pre-iteration work
 
@@ -48,3 +48,7 @@ Last completed iteration: 9
 ### 9 — SEO: complete social image metadata
 
 - Declared the Open Graph image type and added Twitter-specific alternative text for more reliable, accessible link previews.
+
+### 10 — QA: verify responsive content integrity
+
+- Verified 320 px, 390 px, and 1440 px layouts with no horizontal overflow; all navigation anchors resolve, hidden content stays absent, the footer is exact, and the résumé and social image load locally.
