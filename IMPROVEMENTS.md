@@ -1,4 +1,4 @@
-Last completed iteration: 26
+Last completed iteration: 27
 
 ## Pre-iteration work
 
@@ -116,3 +116,7 @@ Last completed iteration: 26
 ### 26 — QA: verify the exact footer
 
 - Verified that the footer contains only the supplied copyright line.
+
+### 27 — QA: verify the document title
+
+- Verified that the document title matches the supplied metadata exactly.
