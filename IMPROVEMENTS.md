@@ -1,4 +1,4 @@
-Last completed iteration: 39
+Last completed iteration: 40
 
 ## Pre-iteration work
 
@@ -168,3 +168,7 @@ Last completed iteration: 39
 ### 39 — QA: verify the email destination
 
 - Verified that the supplied email destination is preserved in the central content source.
+
+### 40 — QA: verify external-link protection
+
+- Verified that every explicit new-tab link also carries the noreferrer relationship.
