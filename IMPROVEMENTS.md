@@ -1,4 +1,4 @@
-Last completed iteration: 53
+Last completed iteration: 54
 
 ## Pre-iteration work
 
@@ -224,3 +224,7 @@ Last completed iteration: 53
 ### 53 — QA: verify the shadow-free system
 
 - Verified that the published styles use no glow, box-shadow, text-shadow, or drop-shadow effects.
+
+### 54 — QA: verify softened color extremes
+
+- Verified that the published source avoids pure black and pure white color literals.
