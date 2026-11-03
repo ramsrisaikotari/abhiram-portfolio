@@ -16,6 +16,18 @@ export default function Hero() {
           <span className="hero-name">{hero.name}</span>
           <span className="hero-headline">{hero.headline}</span>
         </h1>
+      </div>
+
+      <dl className="impact-grid" aria-label="Professional impact">
+        {hero.impact.map((item) => (
+          <div className="impact-item" key={item.label}>
+            <dt>{item.label}</dt>
+            <dd>{item.value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div className="hero-details">
         <p className="hero-intro">{hero.intro}</p>
         <p className="relocation">{hero.relocation}</p>
         <ul className="text-links" aria-label="Profile links">
@@ -38,14 +50,6 @@ export default function Hero() {
         </ul>
       </div>
 
-      <dl className="impact-grid" aria-label="Professional impact">
-        {hero.impact.map((item) => (
-          <div className="impact-item" key={item.label}>
-            <dt>{item.label}</dt>
-            <dd>{item.value}</dd>
-          </div>
-        ))}
-      </dl>
     </section>
   );
 }

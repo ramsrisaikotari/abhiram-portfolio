@@ -225,7 +225,9 @@ h4 {
   padding-block: 3.25rem 4rem;
 }
 
-.hero-copy {
+.hero-copy,
+.hero-details {
+  min-width: 0;
   max-width: var(--prose-width);
 }
 
@@ -247,7 +249,7 @@ h4 {
 }
 
 .hero h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .hero-name,
@@ -656,6 +658,34 @@ footer {
 }
 
 @media (min-width: 64rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    grid-template-areas: "heading impact" "details impact";
+    gap: 2rem 3rem;
+  }
+
+  .hero-copy {
+    grid-area: heading;
+  }
+
+  .hero-details {
+    grid-area: details;
+  }
+
+  .hero-name {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .hero-headline {
+    font-size: clamp(1.65rem, 3.5vw, 3rem);
+  }
+
+  .hero .impact-grid {
+    grid-area: impact;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-self: center;
+  }
+
   .case-study-grid {
     grid-template-columns: minmax(12rem, 0.75fr) minmax(20rem, 1.45fr) minmax(12rem, 0.8fr);
     align-items: start;

@@ -1,4 +1,4 @@
-Last completed iteration: 103
+Last completed iteration: 104
 
 ## Pre-iteration work
 
@@ -424,6 +424,11 @@ Last completed iteration: 103
 ### 103 — QA: move KubeReliability status into its label
 
 - Set the exact KubeReliability title and Personal lab project · In progress label.
+
+### 104 — QA: reflow the hero across phone and desktop layouts
+
+- Placed impact immediately after the headline on phones and in a right-hand 2×2 grid from 1024 px.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
