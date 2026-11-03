@@ -1,4 +1,4 @@
-Last completed iteration: 2
+Last completed iteration: 3
 
 ## Pre-iteration work
 
@@ -20,3 +20,7 @@ Last completed iteration: 2
 ### 2 — Typography: make Inter consistent
 
 - Added the Latin variable Inter font as a local application asset so the intended typography does not depend on a visitor's installed fonts.
+
+### 3 — Navigation: show the current section
+
+- Added an active-section state to the main navigation with matching visual and `aria-current` cues.

@@ -3,8 +3,26 @@ import { navigation, siteLinks } from "../data/siteContent";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState("");
   const toggle = useRef<HTMLButtonElement>(null);
   const menu = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.find((entry) => entry.isIntersecting);
+        if (visible) setActiveHref(`#${visible.target.id}`);
+      },
+      { rootMargin: "-20% 0px -65% 0px" },
+    );
+
+    navigation.forEach((item) => {
+      const section = document.querySelector(item.href);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -57,7 +75,12 @@ export default function Navbar() {
           className={`nav-links${open ? " is-open" : ""}`}
         >
           {navigation.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <a
+              key={item.href}
+              href={item.href}
+              aria-current={activeHref === item.href ? "location" : undefined}
+              onClick={() => setOpen(false)}
+            >
               {item.label}
             </a>
           ))}
