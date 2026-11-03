@@ -1,4 +1,4 @@
-Last completed iteration: 98
+Last completed iteration: 99
 
 ## Pre-iteration work
 
@@ -404,3 +404,7 @@ Last completed iteration: 98
 ### 98 — QA: verify the hosting output configuration
 
 - Verified Firebase publishes dist and routes application requests to index.html.
+
+### 99 — QA: verify source and release asset parity
+
+- Verified the production resume and social PNG are byte-identical to their source assets.
