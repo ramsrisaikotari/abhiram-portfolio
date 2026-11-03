@@ -1,4 +1,4 @@
-Last completed iteration: 4
+Last completed iteration: 5
 
 ## Pre-iteration work
 
@@ -28,3 +28,7 @@ Last completed iteration: 4
 ### 4 — SEO: add structured profile data
 
 - Added a minimal Person schema using only the published name, role, site, GitHub, and LinkedIn details.
+
+### 5 — Responsiveness: surface impact sooner on mobile
+
+- Tightened only the small-screen hero spacing so the impact summary begins earlier without changing the desktop layout.

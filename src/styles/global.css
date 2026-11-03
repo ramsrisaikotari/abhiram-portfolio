@@ -217,8 +217,8 @@ h4 {
 
 .hero {
   display: grid;
-  gap: clamp(3rem, 9vw, 6.5rem);
-  padding-block: clamp(4rem, 12vw, 8rem) clamp(3.5rem, 10vw, 6rem);
+  gap: 2rem;
+  padding-block: 3.25rem 4rem;
 }
 
 .hero-copy {
@@ -584,6 +584,11 @@ footer {
 
   .impact-item {
     padding: 1.75rem;
+  }
+
+  .hero {
+    gap: clamp(3rem, 9vw, 6.5rem);
+    padding-block: clamp(4rem, 12vw, 8rem) clamp(3.5rem, 10vw, 6rem);
   }
 
   .experience-header {
