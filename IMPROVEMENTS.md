@@ -1,4 +1,4 @@
-Last completed iteration: 82
+Last completed iteration: 83
 
 ## Pre-iteration work
 
@@ -340,3 +340,7 @@ Last completed iteration: 82
 ### 82 — QA: verify social image geometry
 
 - Verified the social PNG is 1200 by 630 pixels.
+
+### 83 — QA: verify resume delivery
+
+- Verified the published resume asset retains a valid PDF header.
