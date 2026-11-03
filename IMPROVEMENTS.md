@@ -1,4 +1,4 @@
-Last completed iteration: 84
+Last completed iteration: 85
 
 ## Pre-iteration work
 
@@ -348,3 +348,7 @@ Last completed iteration: 84
 ### 84 — QA: verify font rendering fallback
 
 - Verified the variable font uses swap rendering and declares its full weight range.
+
+### 85 — QA: verify local font delivery
+
+- Verified exactly one local WOFF2 font is emitted, with no remote font stylesheet.
