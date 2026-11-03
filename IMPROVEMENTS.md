@@ -1,4 +1,4 @@
-Last completed iteration: 91
+Last completed iteration: 92
 
 ## Pre-iteration work
 
@@ -376,3 +376,7 @@ Last completed iteration: 91
 ### 91 — QA: verify the narrow release layout
 
 - Rechecked the complete 320 px page with no horizontal overflow or content-integrity failures.
+
+### 92 — QA: verify the phone release layout
+
+- Rechecked the complete 390 px page with no horizontal overflow or content-integrity failures.
