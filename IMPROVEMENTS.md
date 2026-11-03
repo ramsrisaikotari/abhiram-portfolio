@@ -1,4 +1,4 @@
-Last completed iteration: 52
+Last completed iteration: 53
 
 ## Pre-iteration work
 
@@ -220,3 +220,7 @@ Last completed iteration: 52
 ### 52 — QA: verify the gradient-free system
 
 - Verified that the published styles contain no gradients.
+
+### 53 — QA: verify the shadow-free system
+
+- Verified that the published styles use no glow, box-shadow, text-shadow, or drop-shadow effects.
