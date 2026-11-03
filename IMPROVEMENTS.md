@@ -1,4 +1,4 @@
-Last completed iteration: 74
+Last completed iteration: 75
 
 ## Pre-iteration work
 
@@ -308,3 +308,7 @@ Last completed iteration: 74
 ### 74 — QA: verify case-study structure
 
 - Verified context, actions, outcome, and stack content for every case study.
+
+### 75 — QA: verify project coverage
+
+- Verified that the three supplied personal and academic projects are present.
