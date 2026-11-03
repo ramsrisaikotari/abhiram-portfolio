@@ -1,4 +1,4 @@
-Last completed iteration: 73
+Last completed iteration: 74
 
 ## Pre-iteration work
 
@@ -304,3 +304,7 @@ Last completed iteration: 73
 ### 73 — QA: verify selected-work coverage
 
 - Verified the three supplied professional case studies remain in their original order.
+
+### 74 — QA: verify case-study structure
+
+- Verified context, actions, outcome, and stack content for every case study.
