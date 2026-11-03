@@ -1,4 +1,4 @@
-Last completed iteration: 106
+Last completed iteration: 107
 
 ## Pre-iteration work
 
@@ -416,29 +416,35 @@ Last completed iteration: 106
 ### 101 — QA: replace experience bullets with supplied wording
 
 - Replaced the seven experience bullets with the four exact supplied statements.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 
 ### 102 — QA: update impact numbers and labels
 
 - Updated the impact values and labels to the four supplied items in their requested order.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 
 ### 103 — QA: move KubeReliability status into its label
 
 - Set the exact KubeReliability title and Personal lab project · In progress label.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 
 ### 104 — QA: reflow the hero across phone and desktop layouts
 
 - Placed impact immediately after the headline on phones and in a right-hand 2×2 grid from 1024 px.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 
 ### 105 — QA: promote hero Resume and Email actions
 
 - Styled Resume as a primary button and Email as a secondary button, retaining GitHub and LinkedIn as text links.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 
 ### 106 — QA: synchronize navigation with the visible section
 
 - Recomputed the active link from all page sections on scroll and resize; cleared it at the top and in sections without navigation links.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 107 — QA: keep desktop contact actions below the text
+
+- Removed the desktop split-column contact layout so Email and social links stay directly below the contact text.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
-- Verification: build, lint, TypeScript, and whitespace checks passed.
-- Verification: build, lint, TypeScript, and whitespace checks passed.
-- Verification: build, lint, TypeScript, and whitespace checks passed.
-- Verification: build, lint, TypeScript, and whitespace checks passed.
+- Round verification: production browser checks passed at 320, 390, 768, 1023, 1024, and 1440 px for hero placement, overflow, contact alignment, actions, and navigation through sections in both scroll directions. Reviewed 390, 1024, and 1440 px screenshots.

@@ -656,14 +656,6 @@ footer {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .contact-inner {
-    grid-template-columns: minmax(0, 1.5fr) minmax(15rem, 0.5fr);
-    align-items: end;
-  }
-
-  .contact-links {
-    justify-content: flex-end;
-  }
 }
 
 @media (min-width: 64rem) {
