@@ -1,4 +1,4 @@
-Last completed iteration: 83
+Last completed iteration: 84
 
 ## Pre-iteration work
 
@@ -344,3 +344,7 @@ Last completed iteration: 83
 ### 83 — QA: verify resume delivery
 
 - Verified the published resume asset retains a valid PDF header.
+
+### 84 — QA: verify font rendering fallback
+
+- Verified the variable font uses swap rendering and declares its full weight range.
