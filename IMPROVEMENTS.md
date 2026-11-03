@@ -1,4 +1,4 @@
-Last completed iteration: 86
+Last completed iteration: 87
 
 ## Pre-iteration work
 
@@ -356,3 +356,7 @@ Last completed iteration: 86
 ### 86 — QA: verify the JavaScript budget
 
 - Verified the production JavaScript bundle stays below 250 kB uncompressed.
+
+### 87 — QA: verify the stylesheet budget
+
+- Verified the production stylesheet stays below 10 kB uncompressed.
