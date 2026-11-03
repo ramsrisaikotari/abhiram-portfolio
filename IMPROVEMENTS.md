@@ -1,4 +1,4 @@
-Last completed iteration: 8
+Last completed iteration: 9
 
 ## Pre-iteration work
 
@@ -44,3 +44,7 @@ Last completed iteration: 8
 ### 8 — Code quality: guard production dependencies
 
 - Added a CI audit that fails on high-severity production dependency vulnerabilities; the current production audit reports zero findings.
+
+### 9 — SEO: complete social image metadata
+
+- Declared the Open Graph image type and added Twitter-specific alternative text for more reliable, accessible link previews.
