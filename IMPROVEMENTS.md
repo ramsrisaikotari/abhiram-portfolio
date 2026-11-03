@@ -1,4 +1,4 @@
-Last completed iteration: 43
+Last completed iteration: 44
 
 ## Pre-iteration work
 
@@ -184,3 +184,7 @@ Last completed iteration: 43
 ### 43 — QA: verify the single page heading
 
 - Verified that the page has exactly one h1.
+
+### 44 — QA: verify heading progression
+
+- Verified that rendered headings do not skip levels.
