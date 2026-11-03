@@ -1,4 +1,4 @@
-Last completed iteration: 71
+Last completed iteration: 72
 
 ## Pre-iteration work
 
@@ -296,3 +296,7 @@ Last completed iteration: 71
 ### 71 — QA: verify experience identity
 
 - Verified the supplied company, role, dates, AWS-account scope, and two-region context in the central content source.
+
+### 72 — QA: verify experience responsibility coverage
+
+- Verified that all seven supplied responsibility statements and the tools line remain present.
