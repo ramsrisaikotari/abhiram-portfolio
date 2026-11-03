@@ -1,4 +1,4 @@
-Last completed iteration: 56
+Last completed iteration: 57
 
 ## Pre-iteration work
 
@@ -236,3 +236,7 @@ Last completed iteration: 56
 ### 56 — QA: verify 3D source stays removed
 
 - Verified that no 3D source directory, model directory, or GLB asset remains in the repository.
+
+### 57 — QA: verify the retired-route redirect
+
+- Verified that Firebase retains the sole required 301 redirect from the retired 3D route to the homepage.
