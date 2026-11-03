@@ -1,4 +1,4 @@
-Last completed iteration: 30
+Last completed iteration: 31
 
 ## Pre-iteration work
 
@@ -132,3 +132,7 @@ Last completed iteration: 30
 ### 30 — QA: verify Open Graph metadata
 
 - Verified the Open Graph type, title, description, URL, image, dimensions, type, and alternative text.
+
+### 31 — QA: verify Twitter card metadata
+
+- Verified the large Twitter card, title, description, image, and image alternative text.
