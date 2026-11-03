@@ -1,4 +1,4 @@
-Last completed iteration: 25
+Last completed iteration: 26
 
 ## Pre-iteration work
 
@@ -112,3 +112,7 @@ Last completed iteration: 25
 ### 25 — QA: verify the private KubeReliability link
 
 - Verified that KubeReliability is shown without a public link.
+
+### 26 — QA: verify the exact footer
+
+- Verified that the footer contains only the supplied copyright line.
