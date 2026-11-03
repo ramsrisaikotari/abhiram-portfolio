@@ -1,4 +1,4 @@
-Last completed iteration: 69
+Last completed iteration: 70
 
 ## Pre-iteration work
 
@@ -288,3 +288,7 @@ Last completed iteration: 69
 ### 69 — QA: verify hero content integrity
 
 - Verified that the hero retains its supplied name, role, relocation line, introduction, and four impact statements.
+
+### 70 — QA: verify retired-route containment
+
+- Verified that the retired route appears only in its required Firebase redirect and this audit ledger.
