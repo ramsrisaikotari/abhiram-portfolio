@@ -1,4 +1,4 @@
-Last completed iteration: 96
+Last completed iteration: 97
 
 ## Pre-iteration work
 
@@ -396,3 +396,7 @@ Last completed iteration: 96
 ### 96 — QA: verify the release dependency audit
 
 - Rechecked the production dependency graph with no high-severity audit findings.
+
+### 97 — QA: verify published-copy hygiene at release
+
+- Rechecked that hidden markers, placeholder copy, credits, and the retired route are absent from published source.
