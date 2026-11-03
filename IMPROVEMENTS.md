@@ -1,4 +1,4 @@
-Last completed iteration: 76
+Last completed iteration: 77
 
 ## Pre-iteration work
 
@@ -316,3 +316,7 @@ Last completed iteration: 76
 ### 76 — QA: verify project-link privacy
 
 - Verified that only the portfolio project has supplied public links.
+
+### 77 — QA: verify skills coverage
+
+- Verified six populated skill groups including the explicitly labeled lab-learning group.
