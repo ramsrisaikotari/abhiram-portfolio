@@ -1,4 +1,4 @@
-Last completed iteration: 32
+Last completed iteration: 33
 
 ## Pre-iteration work
 
@@ -140,3 +140,7 @@ Last completed iteration: 32
 ### 32 — QA: parse the structured profile data
 
 - Parsed the Person JSON-LD and verified its type, name, role, site URL, and two published profile links.
+
+### 33 — QA: verify the sitemap
+
+- Verified that the sitemap contains the canonical production URL.
