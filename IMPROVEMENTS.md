@@ -1,4 +1,4 @@
-Last completed iteration: 61
+Last completed iteration: 62
 
 ## Pre-iteration work
 
@@ -256,3 +256,7 @@ Last completed iteration: 61
 ### 61 — QA: verify lockfile format integrity
 
 - Verified that the npm lockfile uses the current format and records the portfolio as its root package.
+
+### 62 — QA: verify locked dependency parity
+
+- Verified that every declared runtime dependency is represented in the lockfile root package with the same requested range.
