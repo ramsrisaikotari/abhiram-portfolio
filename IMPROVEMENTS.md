@@ -1,4 +1,4 @@
-Last completed iteration: 68
+Last completed iteration: 69
 
 ## Pre-iteration work
 
@@ -284,3 +284,7 @@ Last completed iteration: 68
 ### 68 — QA: verify the legacy route is unpublished
 
 - Verified that the retired 3D route is absent from application source, assets, HTML, and package manifests.
+
+### 69 — QA: verify hero content integrity
+
+- Verified that the hero retains its supplied name, role, relocation line, introduction, and four impact statements.
