@@ -1,4 +1,4 @@
-Last completed iteration: 85
+Last completed iteration: 86
 
 ## Pre-iteration work
 
@@ -352,3 +352,7 @@ Last completed iteration: 85
 ### 85 — QA: verify local font delivery
 
 - Verified exactly one local WOFF2 font is emitted, with no remote font stylesheet.
+
+### 86 — QA: verify the JavaScript budget
+
+- Verified the production JavaScript bundle stays below 250 kB uncompressed.
