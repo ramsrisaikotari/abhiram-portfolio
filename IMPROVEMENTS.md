@@ -1,4 +1,4 @@
-Last completed iteration: 46
+Last completed iteration: 47
 
 ## Pre-iteration work
 
@@ -196,3 +196,7 @@ Last completed iteration: 46
 ### 46 — QA: verify the skip-link target
 
 - Verified that the skip link resolves to the focusable main content region.
+
+### 47 — QA: verify main-region focus
+
+- Verified that the main region remains programmatically focusable without entering the normal tab order.
