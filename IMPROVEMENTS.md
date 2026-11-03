@@ -1,4 +1,4 @@
-Last completed iteration: 81
+Last completed iteration: 82
 
 ## Pre-iteration work
 
@@ -336,3 +336,7 @@ Last completed iteration: 81
 ### 81 — QA: verify production asset copies
 
 - Verified that production output includes the resume, favicon, social images, robots file, and sitemap.
+
+### 82 — QA: verify social image geometry
+
+- Verified the social PNG is 1200 by 630 pixels.
