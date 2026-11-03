@@ -1,4 +1,4 @@
-Last completed iteration: 70
+Last completed iteration: 71
 
 ## Pre-iteration work
 
@@ -292,3 +292,7 @@ Last completed iteration: 70
 ### 70 — QA: verify retired-route containment
 
 - Verified that the retired route appears only in its required Firebase redirect and this audit ledger.
+
+### 71 — QA: verify experience identity
+
+- Verified the supplied company, role, dates, AWS-account scope, and two-region context in the central content source.
