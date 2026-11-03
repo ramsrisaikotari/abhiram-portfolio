@@ -1,4 +1,4 @@
-Last completed iteration: 21
+Last completed iteration: 22
 
 ## Pre-iteration work
 
@@ -96,3 +96,7 @@ Last completed iteration: 21
 ### 21 — QA: verify navigation anchors
 
 - Verified that every hash link in the main navigation resolves to a unique section target.
+
+### 22 — QA: verify section order
+
+- Verified that Experience, Selected work, Projects, Skills, and Contact remain in the required vertical order.
