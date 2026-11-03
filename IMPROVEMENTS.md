@@ -1,4 +1,4 @@
-Last completed iteration: 63
+Last completed iteration: 64
 
 ## Pre-iteration work
 
@@ -264,3 +264,7 @@ Last completed iteration: 63
 ### 63 — QA: verify the lean source inventory
 
 - Verified that the published app contains only the current entry points, eight page components, one content module, and two stylesheets.
+
+### 64 — QA: verify the runtime dependency budget
+
+- Verified that the app has only three runtime dependencies: React, React DOM, and the self-hosted variable font.
