@@ -1,4 +1,4 @@
-Last completed iteration: 60
+Last completed iteration: 61
 
 ## Pre-iteration work
 
@@ -252,3 +252,7 @@ Last completed iteration: 60
 ### 60 — QA: verify reproducible installation
 
 - Verified that the locked dependency graph installs cleanly with npm ci.
+
+### 61 — QA: verify lockfile format integrity
+
+- Verified that the npm lockfile uses the current format and records the portfolio as its root package.
