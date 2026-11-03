@@ -1,4 +1,4 @@
-Last completed iteration: 5
+Last completed iteration: 6
 
 ## Pre-iteration work
 
@@ -32,3 +32,7 @@ Last completed iteration: 5
 ### 5 — Responsiveness: surface impact sooner on mobile
 
 - Tightened only the small-screen hero spacing so the impact summary begins earlier without changing the desktop layout.
+
+### 6 — Accessibility: align the logo's text and name
+
+- Updated the logo's accessible name to begin with its visible `AK.` label, resolving the Lighthouse label-in-name finding.

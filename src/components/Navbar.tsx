@@ -56,7 +56,7 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <nav className="nav-shell" aria-label="Main navigation">
-        <a className="logo" href="#home" aria-label="Abhi Ram Kotari, home">
+        <a className="logo" href="#home" aria-label="AK. — Abhi Ram Kotari, home">
           AK<span aria-hidden="true">.</span>
         </a>
         <button
