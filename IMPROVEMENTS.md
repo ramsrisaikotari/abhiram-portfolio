@@ -1,4 +1,4 @@
-Last completed iteration: 41
+Last completed iteration: 42
 
 ## Pre-iteration work
 
@@ -176,3 +176,7 @@ Last completed iteration: 41
 ### 41 — QA: verify external-link names
 
 - Verified new-tab link naming through the browser accessibility audit and component source.
+
+### 42 — QA: verify unique element IDs
+
+- Verified that every rendered element ID is unique.
