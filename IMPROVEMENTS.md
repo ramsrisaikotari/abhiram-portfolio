@@ -1,4 +1,4 @@
-Last completed iteration: 66
+Last completed iteration: 67
 
 ## Pre-iteration work
 
@@ -276,3 +276,7 @@ Last completed iteration: 66
 ### 66 — QA: verify placeholder-free published copy
 
 - Verified that published source and metadata contain no Lorem Ipsum, TBD, or placeholder copy.
+
+### 67 — QA: verify credit-free presentation
+
+- Verified that the published page contains no generator credit, AI credit, watermark, or template attribution.
