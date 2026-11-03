@@ -1,4 +1,4 @@
-Last completed iteration: 48
+Last completed iteration: 49
 
 ## Pre-iteration work
 
@@ -204,3 +204,7 @@ Last completed iteration: 48
 ### 48 — QA: verify mobile menu controls
 
 - Verified in the browser that the mobile menu button controls the published navigation element.
+
+### 49 — QA: verify mobile menu keyboard recovery
+
+- Verified that the mobile menu opens, closes with Escape, updates its expanded state, and restores focus to its button.
