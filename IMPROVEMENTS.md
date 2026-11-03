@@ -1,4 +1,4 @@
-Last completed iteration: 31
+Last completed iteration: 32
 
 ## Pre-iteration work
 
@@ -136,3 +136,7 @@ Last completed iteration: 31
 ### 31 — QA: verify Twitter card metadata
 
 - Verified the large Twitter card, title, description, image, and image alternative text.
+
+### 32 — QA: parse the structured profile data
+
+- Parsed the Person JSON-LD and verified its type, name, role, site URL, and two published profile links.
