@@ -1,4 +1,4 @@
-Last completed iteration: 34
+Last completed iteration: 35
 
 ## Pre-iteration work
 
@@ -148,3 +148,7 @@ Last completed iteration: 34
 ### 34 — QA: verify robots discovery
 
 - Verified that robots.txt allows crawling and points to the production sitemap.
+
+### 35 — QA: verify favicon palette
+
+- Verified that the favicon uses only the new surface and accent palette colors.
