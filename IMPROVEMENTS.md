@@ -1,4 +1,4 @@
-Last completed iteration: 94
+Last completed iteration: 95
 
 ## Pre-iteration work
 
@@ -388,3 +388,7 @@ Last completed iteration: 94
 ### 94 — QA: verify the desktop release layout
 
 - Rechecked the complete 1440 px page with no horizontal overflow or content-integrity failures.
+
+### 95 — QA: verify navigation interaction at release
+
+- Rechecked mobile-menu expansion, Escape dismissal, and focus restoration.
