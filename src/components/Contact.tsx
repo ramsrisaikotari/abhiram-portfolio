@@ -14,10 +14,20 @@ export default function Contact() {
             <a className="button button-primary" href={siteLinks.email}>Email</a>
           </li>
           <li>
-            <a href={siteLinks.github} target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a
+              href={siteLinks.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub (opens in a new tab)"
+            >GitHub ↗</a>
           </li>
           <li>
-            <a href={siteLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a
+              href={siteLinks.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn (opens in a new tab)"
+            >LinkedIn ↗</a>
           </li>
         </ul>
       </div>

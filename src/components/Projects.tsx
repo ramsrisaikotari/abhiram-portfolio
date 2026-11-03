@@ -23,7 +23,12 @@ export default function Projects() {
                 <ul className="project-links" aria-label={`${project.title} links`}>
                   {project.links.map((link) => (
                     <li key={link.label}>
-                      <a href={link.href} target="_blank" rel="noreferrer">
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.title}: ${link.label} (opens in a new tab)`}
+                      >
                         {link.label} <span aria-hidden="true">↗</span>
                       </a>
                     </li>
@@ -34,7 +39,13 @@ export default function Projects() {
           ))}
         </div>
 
-        <a className="more-projects" href={siteLinks.github} target="_blank" rel="noreferrer">
+        <a
+          className="more-projects"
+          href={siteLinks.github}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="More projects on GitHub (opens in a new tab)"
+        >
           More projects on GitHub <span aria-hidden="true">↗</span>
         </a>
       </div>

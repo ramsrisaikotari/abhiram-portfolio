@@ -66,6 +66,7 @@ export default function Navbar() {
             href={siteLinks.resume}
             target="_blank"
             rel="noreferrer"
+            aria-label="Resume (opens in a new tab)"
           >
             Resume
           </a>

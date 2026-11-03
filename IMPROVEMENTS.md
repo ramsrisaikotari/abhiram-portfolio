@@ -1,4 +1,4 @@
-Last completed iteration: 0
+Last completed iteration: 1
 
 ## Pre-iteration work
 
@@ -10,3 +10,9 @@ Last completed iteration: 0
 
 - Phase 2 rebuilt the homepage from the supplied content, added the editorial design system, created the social preview image, and moved hidden items to `CONTENT_TODO.md`.
 - The rebuilt page passes build, lint, and TypeScript checks. True 360 px and 390 px browser emulation show no horizontal overflow.
+
+## Iterations
+
+### 1 — Accessibility: clarify new-tab links
+
+- Added spoken descriptions to every link that opens a new tab while keeping the visible labels concise.

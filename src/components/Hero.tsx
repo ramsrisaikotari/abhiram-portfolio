@@ -27,6 +27,7 @@ export default function Hero() {
                   href={link.href}
                   target={external ? "_blank" : undefined}
                   rel={external ? "noreferrer" : undefined}
+                  aria-label={external ? `${link.label} (opens in a new tab)` : undefined}
                 >
                   {link.label}
                   {external && <span aria-hidden="true"> ↗</span>}
