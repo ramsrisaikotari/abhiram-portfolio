@@ -1,4 +1,4 @@
-Last completed iteration: 45
+Last completed iteration: 46
 
 ## Pre-iteration work
 
@@ -192,3 +192,7 @@ Last completed iteration: 45
 ### 45 — QA: verify page landmarks
 
 - Verified one top-level banner, navigation, main region, and footer.
+
+### 46 — QA: verify the skip-link target
+
+- Verified that the skip link resolves to the focusable main content region.
