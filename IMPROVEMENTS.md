@@ -1,4 +1,4 @@
-Last completed iteration: 27
+Last completed iteration: 28
 
 ## Pre-iteration work
 
@@ -120,3 +120,7 @@ Last completed iteration: 27
 ### 27 — QA: verify the document title
 
 - Verified that the document title matches the supplied metadata exactly.
+
+### 28 — QA: verify the meta description
+
+- Verified that the meta description matches the supplied wording exactly.
