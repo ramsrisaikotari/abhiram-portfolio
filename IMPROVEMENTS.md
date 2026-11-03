@@ -1,4 +1,4 @@
-Last completed iteration: 78
+Last completed iteration: 79
 
 ## Pre-iteration work
 
@@ -324,3 +324,7 @@ Last completed iteration: 78
 ### 78 — QA: verify contact destinations
 
 - Verified the supplied email, GitHub, and LinkedIn destinations remain available.
+
+### 79 — QA: verify the confidentiality note
+
+- Verified the exact supplied confidentiality note.
