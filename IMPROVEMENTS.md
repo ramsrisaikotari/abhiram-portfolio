@@ -1,4 +1,4 @@
-Last completed iteration: 100
+Last completed iteration: 101
 
 ## Pre-iteration work
 
@@ -412,3 +412,8 @@ Last completed iteration: 100
 ### 100 — QA: verify the final release matrix
 
 - Verified responsive content integrity, mobile keyboard recovery, production assets, build, lint, TypeScript, and whitespace checks at the final checkpoint.
+
+### 101 — QA: replace experience bullets with supplied wording
+
+- Replaced the seven experience bullets with the four exact supplied statements.
+- Verification: build, lint, TypeScript, and whitespace checks passed.

@@ -37,13 +37,10 @@ export const experience = {
   summary:
     "I work on enterprise APIs and applications running on AWS, across four accounts (Dev, Test, Stage and Production) and two regions.",
   responsibilities: [
-    "Own 10 applications from development through production as the team's DevOps engineer and SRE. They run on ECS/Fargate, Lambda, Step Functions and a scheduler, with Jenkins builds and on-call support.",
-    "Carried out Stage and Production migration deployments moving enterprise APIs from MuleSoft to AWS, and helped with production cutovers and rollbacks.",
-    "Updated infrastructure and configuration in both regions, including disaster-recovery settings changed through AWS CDK.",
+    "Own 10 applications from development through production as the team's DevOps engineer and SRE, running on ECS/Fargate, Lambda, Step Functions and a scheduler, with on-call support.",
     "Ran and troubleshot release pipelines in AWS CodePipeline, CodeBuild, CodeDeploy and Jenkins, and raised 140+ change requests.",
-    "Built monitoring and alerting in Dynatrace and Kibana, including alert matrices that define thresholds, severity and who gets notified.",
-    "Wrote a Python tool that checks log delivery across accounts and regions, replacing a repetitive manual check.",
     "Investigated 30+ production incidents, from ECS task failures and database connection timeouts to HTTP errors and network issues, working with application, database, network and platform teams on recovery and root-cause analysis.",
+    "My main 2026 work was the MuleSoft-to-AWS migration, disaster-recovery configuration and alerting, described in Selected work below.",
   ],
   tools:
     "AWS, ECS/Fargate, Lambda, AWS CDK, Jenkins, Python, Dynatrace, Kibana, CloudWatch",
