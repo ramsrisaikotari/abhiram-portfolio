@@ -1,4 +1,4 @@
-Last completed iteration: 47
+Last completed iteration: 48
 
 ## Pre-iteration work
 
@@ -200,3 +200,7 @@ Last completed iteration: 47
 ### 47 — QA: verify main-region focus
 
 - Verified that the main region remains programmatically focusable without entering the normal tab order.
+
+### 48 — QA: verify mobile menu controls
+
+- Verified in the browser that the mobile menu button controls the published navigation element.
