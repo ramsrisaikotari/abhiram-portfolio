@@ -1,4 +1,4 @@
-Last completed iteration: 88
+Last completed iteration: 89
 
 ## Pre-iteration work
 
@@ -364,3 +364,7 @@ Last completed iteration: 88
 ### 88 — QA: verify the production chunk inventory
 
 - Verified one application JavaScript chunk and one stylesheet, with no 3D chunk.
+
+### 89 — QA: verify the recorded performance audit
+
+- Verified the production Lighthouse report for the unchanged application code scores 100 for performance.
