@@ -1,4 +1,4 @@
-Last completed iteration: 17
+Last completed iteration: 18
 
 ## Pre-iteration work
 
@@ -80,3 +80,7 @@ Last completed iteration: 17
 ### 17 — QA: verify the 1024 px layout
 
 - Verified the complete page at 1024 px with no horizontal overflow, valid anchors, correct content counts, and intact semantic structure.
+
+### 18 — QA: verify the 1280 px layout
+
+- Verified the complete page at 1280 px with no horizontal overflow, valid anchors, correct content counts, and intact semantic structure.
