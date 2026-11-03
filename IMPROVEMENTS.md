@@ -1,4 +1,4 @@
-Last completed iteration: 92
+Last completed iteration: 93
 
 ## Pre-iteration work
 
@@ -380,3 +380,7 @@ Last completed iteration: 92
 ### 92 — QA: verify the phone release layout
 
 - Rechecked the complete 390 px page with no horizontal overflow or content-integrity failures.
+
+### 93 — QA: verify the tablet release layout
+
+- Rechecked the complete 768 px page with no horizontal overflow or content-integrity failures.
