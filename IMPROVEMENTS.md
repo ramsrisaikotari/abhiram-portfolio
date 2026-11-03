@@ -1,4 +1,4 @@
-Last completed iteration: 1
+Last completed iteration: 2
 
 ## Pre-iteration work
 
@@ -16,3 +16,7 @@ Last completed iteration: 1
 ### 1 — Accessibility: clarify new-tab links
 
 - Added spoken descriptions to every link that opens a new tab while keeping the visible labels concise.
+
+### 2 — Typography: make Inter consistent
+
+- Added the Latin variable Inter font as a local application asset so the intended typography does not depend on a visitor's installed fonts.
