@@ -1,4 +1,4 @@
-Last completed iteration: 40
+Last completed iteration: 41
 
 ## Pre-iteration work
 
@@ -172,3 +172,7 @@ Last completed iteration: 40
 ### 40 — QA: verify external-link protection
 
 - Verified that every explicit new-tab link also carries the noreferrer relationship.
+
+### 41 — QA: verify external-link names
+
+- Verified new-tab link naming through the browser accessibility audit and component source.
