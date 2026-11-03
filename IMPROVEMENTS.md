@@ -1,4 +1,4 @@
-Last completed iteration: 59
+Last completed iteration: 60
 
 ## Pre-iteration work
 
@@ -248,3 +248,7 @@ Last completed iteration: 59
 ### 59 — QA: verify CI security enforcement
 
 - Verified that CI runs a high-severity production dependency audit before linting and building.
+
+### 60 — QA: verify reproducible installation
+
+- Verified that the locked dependency graph installs cleanly with npm ci.
