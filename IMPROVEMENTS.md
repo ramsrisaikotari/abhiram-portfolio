@@ -1,4 +1,4 @@
-Last completed iteration: 42
+Last completed iteration: 43
 
 ## Pre-iteration work
 
@@ -180,3 +180,7 @@ Last completed iteration: 42
 ### 42 — QA: verify unique element IDs
 
 - Verified that every rendered element ID is unique.
+
+### 43 — QA: verify the single page heading
+
+- Verified that the page has exactly one h1.
