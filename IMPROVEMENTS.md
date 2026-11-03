@@ -1,4 +1,4 @@
-Last completed iteration: 36
+Last completed iteration: 37
 
 ## Pre-iteration work
 
@@ -156,3 +156,7 @@ Last completed iteration: 36
 ### 36 — QA: verify social image dimensions
 
 - Verified that the Open Graph PNG is exactly 1200 by 630 pixels.
+
+### 37 — QA: verify the résumé asset
+
+- Verified that the published résumé asset is a readable PDF.
