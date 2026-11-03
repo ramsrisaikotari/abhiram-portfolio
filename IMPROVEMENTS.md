@@ -1,4 +1,4 @@
-Last completed iteration: 33
+Last completed iteration: 34
 
 ## Pre-iteration work
 
@@ -144,3 +144,7 @@ Last completed iteration: 33
 ### 33 — QA: verify the sitemap
 
 - Verified that the sitemap contains the canonical production URL.
+
+### 34 — QA: verify robots discovery
+
+- Verified that robots.txt allows crawling and points to the production sitemap.
