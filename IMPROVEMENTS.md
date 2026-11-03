@@ -1,4 +1,4 @@
-Last completed iteration: 104
+Last completed iteration: 105
 
 ## Pre-iteration work
 
@@ -428,6 +428,11 @@ Last completed iteration: 104
 ### 104 — QA: reflow the hero across phone and desktop layouts
 
 - Placed impact immediately after the headline on phones and in a right-hand 2×2 grid from 1024 px.
+
+### 105 — QA: promote hero Resume and Email actions
+
+- Styled Resume as a primary button and Email as a secondary button, retaining GitHub and LinkedIn as text links.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.

@@ -219,6 +219,15 @@ h4 {
   color: var(--accent-text);
 }
 
+.button-secondary {
+  color: var(--accent);
+  background: transparent;
+}
+
+.text-links {
+  align-items: center;
+}
+
 .hero {
   display: grid;
   gap: 2rem;

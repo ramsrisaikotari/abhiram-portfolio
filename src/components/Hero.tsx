@@ -36,6 +36,7 @@ export default function Hero() {
             return (
               <li key={link.label}>
                 <a
+                  className={link.label === "Resume" ? "button button-primary" : link.label === "Email" ? "button button-secondary" : undefined}
                   href={link.href}
                   target={external ? "_blank" : undefined}
                   rel={external ? "noreferrer" : undefined}
