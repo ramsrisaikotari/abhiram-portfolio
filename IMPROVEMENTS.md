@@ -1,4 +1,4 @@
-Last completed iteration: 89
+Last completed iteration: 90
 
 ## Pre-iteration work
 
@@ -368,3 +368,7 @@ Last completed iteration: 89
 ### 89 — QA: verify the recorded performance audit
 
 - Verified the production Lighthouse report for the unchanged application code scores 100 for performance.
+
+### 90 — QA: verify the recorded quality audits
+
+- Verified the same production Lighthouse report scores 100 for accessibility, best practices, and SEO.
