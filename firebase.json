@@ -1,6 +1,13 @@
 {
   "hosting": {
     "public": "dist",
+    "redirects": [
+      {
+        "source": "/experience-3d",
+        "destination": "/",
+        "type": 301
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
