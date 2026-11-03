@@ -1,4 +1,4 @@
-Last completed iteration: 35
+Last completed iteration: 36
 
 ## Pre-iteration work
 
@@ -152,3 +152,7 @@ Last completed iteration: 35
 ### 35 — QA: verify favicon palette
 
 - Verified that the favicon uses only the new surface and accent palette colors.
+
+### 36 — QA: verify social image dimensions
+
+- Verified that the Open Graph PNG is exactly 1200 by 630 pixels.
