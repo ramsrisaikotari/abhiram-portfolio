@@ -1,4 +1,4 @@
-Last completed iteration: 49
+Last completed iteration: 50
 
 ## Pre-iteration work
 
@@ -208,3 +208,7 @@ Last completed iteration: 49
 ### 49 — QA: verify mobile menu keyboard recovery
 
 - Verified that the mobile menu opens, closes with Escape, updates its expanded state, and restores focus to its button.
+
+### 50 — QA: verify reduced-motion support
+
+- Verified that the reduced-motion media query removes smooth scrolling and suppresses motion for users who request it.
