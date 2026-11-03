@@ -1,4 +1,4 @@
-Last completed iteration: 44
+Last completed iteration: 45
 
 ## Pre-iteration work
 
@@ -188,3 +188,7 @@ Last completed iteration: 44
 ### 44 — QA: verify heading progression
 
 - Verified that rendered headings do not skip levels.
+
+### 45 — QA: verify page landmarks
+
+- Verified one top-level banner, navigation, main region, and footer.
