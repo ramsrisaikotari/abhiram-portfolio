@@ -1,4 +1,4 @@
-Last completed iteration: 67
+Last completed iteration: 68
 
 ## Pre-iteration work
 
@@ -280,3 +280,7 @@ Last completed iteration: 67
 ### 67 — QA: verify credit-free presentation
 
 - Verified that the published page contains no generator credit, AI credit, watermark, or template attribution.
+
+### 68 — QA: verify the legacy route is unpublished
+
+- Verified that the retired 3D route is absent from application source, assets, HTML, and package manifests.
