@@ -1,4 +1,4 @@
-Last completed iteration: 97
+Last completed iteration: 98
 
 ## Pre-iteration work
 
@@ -400,3 +400,7 @@ Last completed iteration: 97
 ### 97 — QA: verify published-copy hygiene at release
 
 - Rechecked that hidden markers, placeholder copy, credits, and the retired route are absent from published source.
+
+### 98 — QA: verify the hosting output configuration
+
+- Verified Firebase publishes dist and routes application requests to index.html.
