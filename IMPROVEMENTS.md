@@ -1,4 +1,4 @@
-Last completed iteration: 7
+Last completed iteration: 8
 
 ## Pre-iteration work
 
@@ -40,3 +40,7 @@ Last completed iteration: 7
 ### 7 — Accessibility: move focus with the skip link
 
 - Made the main content a focusable skip-link destination so keyboard users move focus and viewport together.
+
+### 8 — Code quality: guard production dependencies
+
+- Added a CI audit that fails on high-severity production dependency vulnerabilities; the current production audit reports zero findings.
