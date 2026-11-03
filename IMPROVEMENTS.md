@@ -1,4 +1,4 @@
-Last completed iteration: 22
+Last completed iteration: 23
 
 ## Pre-iteration work
 
@@ -100,3 +100,7 @@ Last completed iteration: 22
 ### 22 — QA: verify section order
 
 - Verified that Experience, Selected work, Projects, Skills, and Contact remain in the required vertical order.
+
+### 23 — QA: verify hidden markers stay unpublished
+
+- Verified that no HIDDEN marker is present in published source or metadata.
