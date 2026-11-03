@@ -1,4 +1,4 @@
-Last completed iteration: 72
+Last completed iteration: 73
 
 ## Pre-iteration work
 
@@ -300,3 +300,7 @@ Last completed iteration: 72
 ### 72 — QA: verify experience responsibility coverage
 
 - Verified that all seven supplied responsibility statements and the tools line remain present.
+
+### 73 — QA: verify selected-work coverage
+
+- Verified the three supplied professional case studies remain in their original order.
