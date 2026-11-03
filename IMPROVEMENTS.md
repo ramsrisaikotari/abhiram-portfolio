@@ -1,4 +1,4 @@
-Last completed iteration: 102
+Last completed iteration: 103
 
 ## Pre-iteration work
 
@@ -420,5 +420,10 @@ Last completed iteration: 102
 ### 102 — QA: update impact numbers and labels
 
 - Updated the impact values and labels to the four supplied items in their requested order.
+
+### 103 — QA: move KubeReliability status into its label
+
+- Set the exact KubeReliability title and Personal lab project · In progress label.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.

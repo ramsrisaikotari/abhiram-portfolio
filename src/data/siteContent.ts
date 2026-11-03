@@ -101,8 +101,8 @@ export const selectedWork = {
 
 export const projects = [
   {
-    title: "KubeReliability (in progress)",
-    label: "Personal lab project",
+    title: "KubeReliability",
+    label: "Personal lab project · In progress",
     description:
       "A lab for testing how Kubernetes workloads behave when things fail. It uses Python tooling against the Kubernetes API, Prometheus and Grafana for monitoring, and failure scenarios to test against.",
     stack: "Python, Kubernetes, Prometheus, Grafana",
