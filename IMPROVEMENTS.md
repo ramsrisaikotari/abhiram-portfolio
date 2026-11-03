@@ -1,4 +1,4 @@
-Last completed iteration: 62
+Last completed iteration: 63
 
 ## Pre-iteration work
 
@@ -260,3 +260,7 @@ Last completed iteration: 62
 ### 62 — QA: verify locked dependency parity
 
 - Verified that every declared runtime dependency is represented in the lockfile root package with the same requested range.
+
+### 63 — QA: verify the lean source inventory
+
+- Verified that the published app contains only the current entry points, eight page components, one content module, and two stylesheets.
