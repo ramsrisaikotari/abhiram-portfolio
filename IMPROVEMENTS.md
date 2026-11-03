@@ -1,4 +1,4 @@
-Last completed iteration: 90
+Last completed iteration: 91
 
 ## Pre-iteration work
 
@@ -372,3 +372,7 @@ Last completed iteration: 90
 ### 90 — QA: verify the recorded quality audits
 
 - Verified the same production Lighthouse report scores 100 for accessibility, best practices, and SEO.
+
+### 91 — QA: verify the narrow release layout
+
+- Rechecked the complete 320 px page with no horizontal overflow or content-integrity failures.
