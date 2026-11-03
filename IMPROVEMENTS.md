@@ -1,4 +1,4 @@
-Last completed iteration: 101
+Last completed iteration: 102
 
 ## Pre-iteration work
 
@@ -416,4 +416,9 @@ Last completed iteration: 101
 ### 101 — QA: replace experience bullets with supplied wording
 
 - Replaced the seven experience bullets with the four exact supplied statements.
+
+### 102 — QA: update impact numbers and labels
+
+- Updated the impact values and labels to the four supplied items in their requested order.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.

@@ -25,8 +25,8 @@ export const hero = {
   impact: [
     { value: "10", label: "Applications I own end to end" },
     { value: "150+", label: "APIs and microservices supported in production" },
-    { value: "~85", label: "APIs covered by monitoring and alerts I set up" },
-    { value: "2", label: "AWS regions, including disaster recovery" },
+    { value: "400+", label: "CloudWatch log groups monitored" },
+    { value: "80+", label: "APIs with monitoring and alerts I set up" },
   ],
 } as const;
 
