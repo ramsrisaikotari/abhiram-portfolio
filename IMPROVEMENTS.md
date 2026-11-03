@@ -1,4 +1,4 @@
-Last completed iteration: 54
+Last completed iteration: 55
 
 ## Pre-iteration work
 
@@ -228,3 +228,7 @@ Last completed iteration: 54
 ### 54 — QA: verify softened color extremes
 
 - Verified that the published source avoids pure black and pure white color literals.
+
+### 55 — QA: verify 3D dependencies stay removed
+
+- Verified that Three.js, React Three Fiber, Drei, and their type package are absent from both dependency manifests.
