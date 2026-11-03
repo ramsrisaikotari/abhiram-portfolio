@@ -1,4 +1,4 @@
-Last completed iteration: 29
+Last completed iteration: 30
 
 ## Pre-iteration work
 
@@ -128,3 +128,7 @@ Last completed iteration: 29
 ### 29 — QA: verify the canonical URL
 
 - Verified that the canonical link points to the production HTTPS URL.
+
+### 30 — QA: verify Open Graph metadata
+
+- Verified the Open Graph type, title, description, URL, image, dimensions, type, and alternative text.
