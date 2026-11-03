@@ -1,4 +1,4 @@
-Last completed iteration: 105
+Last completed iteration: 106
 
 ## Pre-iteration work
 
@@ -432,6 +432,11 @@ Last completed iteration: 105
 ### 105 — QA: promote hero Resume and Email actions
 
 - Styled Resume as a primary button and Email as a secondary button, retaining GitHub and LinkedIn as text links.
+
+### 106 — QA: synchronize navigation with the visible section
+
+- Recomputed the active link from all page sections on scroll and resize; cleared it at the top and in sections without navigation links.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
 - Verification: build, lint, TypeScript, and whitespace checks passed.

@@ -8,20 +8,39 @@ export default function Navbar() {
   const menu = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.find((entry) => entry.isIntersecting);
-        if (visible) setActiveHref(`#${visible.target.id}`);
-      },
-      { rootMargin: "-20% 0px -65% 0px" },
-    );
+    const sections = [...document.querySelectorAll<HTMLElement>("main > section")];
+    let frame = 0;
 
-    navigation.forEach((item) => {
-      const section = document.querySelector(item.href);
-      if (section) observer.observe(section);
-    });
+    const updateActiveSection = () => {
+      frame = 0;
+      const headerBottom = document.querySelector(".site-header")?.getBoundingClientRect().bottom ?? 0;
+      const readingLine = headerBottom + (window.innerHeight - headerBottom) * 0.2;
+      const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      const section = window.scrollY <= 1 ? undefined : atBottom
+        ? sections.filter((item) => item.getBoundingClientRect().bottom > headerBottom && item.getBoundingClientRect().top < window.innerHeight).at(-1)
+        : sections.find((item) => {
+          const bounds = item.getBoundingClientRect();
+          return bounds.top <= readingLine && bounds.bottom > readingLine;
+        });
+      const href = section ? `#${section.id}` : "";
+      setActiveHref(navigation.some((item) => item.href === href) ? href : "");
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateActiveSection);
+    };
+    const observer = new ResizeObserver(scheduleUpdate);
+    const main = document.querySelector("main");
+    if (main) observer.observe(main);
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    scheduleUpdate();
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
   }, []);
 
   useEffect(() => {
