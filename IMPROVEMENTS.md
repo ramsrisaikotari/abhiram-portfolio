@@ -1,4 +1,4 @@
-Last completed iteration: 79
+Last completed iteration: 80
 
 ## Pre-iteration work
 
@@ -328,3 +328,7 @@ Last completed iteration: 79
 ### 79 — QA: verify the confidentiality note
 
 - Verified the exact supplied confidentiality note.
+
+### 80 — QA: verify the deferred-content ledger
+
+- Verified exactly three deferred items: location, KubeReliability link, and education.
