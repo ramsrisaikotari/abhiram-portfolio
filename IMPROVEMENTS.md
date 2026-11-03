@@ -1,4 +1,4 @@
-Last completed iteration: 20
+Last completed iteration: 21
 
 ## Pre-iteration work
 
@@ -92,3 +92,7 @@ Last completed iteration: 20
 ### 20 — QA: verify the 1600 px layout
 
 - Verified the complete page at 1600 px with no horizontal overflow, valid anchors, correct content counts, and intact semantic structure.
+
+### 21 — QA: verify navigation anchors
+
+- Verified that every hash link in the main navigation resolves to a unique section target.
