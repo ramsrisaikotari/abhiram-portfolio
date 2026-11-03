@@ -1,4 +1,4 @@
-Last completed iteration: 10
+Last completed iteration: 11
 
 ## Pre-iteration work
 
@@ -52,3 +52,7 @@ Last completed iteration: 10
 ### 10 — QA: verify responsive content integrity
 
 - Verified 320 px, 390 px, and 1440 px layouts with no horizontal overflow; all navigation anchors resolve, hidden content stays absent, the footer is exact, and the résumé and social image load locally.
+
+### 11 — QA: verify the 320 px layout
+
+- Verified the complete page at 320 px with no horizontal overflow, valid anchors, correct content counts, and intact semantic structure.
