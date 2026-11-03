@@ -1,4 +1,4 @@
-Last completed iteration: 3
+Last completed iteration: 4
 
 ## Pre-iteration work
 
@@ -24,3 +24,7 @@ Last completed iteration: 3
 ### 3 — Navigation: show the current section
 
 - Added an active-section state to the main navigation with matching visual and `aria-current` cues.
+
+### 4 — SEO: add structured profile data
+
+- Added a minimal Person schema using only the published name, role, site, GitHub, and LinkedIn details.
