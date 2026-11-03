@@ -1,4 +1,4 @@
-Last completed iteration: 95
+Last completed iteration: 96
 
 ## Pre-iteration work
 
@@ -392,3 +392,7 @@ Last completed iteration: 95
 ### 95 — QA: verify navigation interaction at release
 
 - Rechecked mobile-menu expansion, Escape dismissal, and focus restoration.
+
+### 96 — QA: verify the release dependency audit
+
+- Rechecked the production dependency graph with no high-severity audit findings.
