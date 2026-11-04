@@ -1,4 +1,4 @@
-Last completed iteration: 120
+Last completed iteration: 121
 
 ## Pre-iteration work
 
@@ -513,4 +513,9 @@ Last completed iteration: 120
 ### 120 — update the currently learning skills row
 
 - Renamed the last skills row and set its description to the exact supplied wording.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 121 — verify page wording and disclosure scope
+
+- Verified that the company reference appears only in the hero introduction, experience company line, and experience summary. Exact-copy comparison confirms all other content is unchanged, with no added internal names or watermarks. Production browser checks passed at 320, 390, 768, 1023, 1024, and 1440 px.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
