@@ -92,7 +92,7 @@ export const selectedWork = {
         "Built a Python validator for the log pipeline (CloudWatch Logs to Amazon Data Firehose to Dynatrace, with S3 backup). It checks delivery, throttling, backup health, data freshness and ingestion across accounts and regions.",
       ],
       outcome:
-        "Observability across 400+ CloudWatch log groups, and monitoring and alert coverage for about 85 APIs. The validator replaced a repetitive manual check.",
+        "Observability across 400+ CloudWatch log groups, and monitoring and alert coverage for 80+ APIs. The validator replaced a repetitive manual check, so log delivery problems show up without someone checking by hand.",
       stack:
         "Dynatrace, DQL, Python, CloudWatch, Amazon Data Firehose, S3, Kibana",
     },

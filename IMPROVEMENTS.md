@@ -1,4 +1,4 @@
-Last completed iteration: 111
+Last completed iteration: 112
 
 ## Pre-iteration work
 
@@ -467,4 +467,9 @@ Last completed iteration: 111
 ### 111 — clarify the multi-region case-study outcome
 
 - Set case study 2 Outcome to the exact supplied pull-request, rollback, and release-check wording.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 112 — clarify the observability case-study outcome
+
+- Set case study 3 Outcome to the exact supplied 400+ log-group, 80+ API, and automated-check wording.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
