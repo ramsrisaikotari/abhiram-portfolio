@@ -1,4 +1,4 @@
-Last completed iteration: 124
+Last completed iteration: 125
 
 ## Pre-iteration work
 
@@ -533,4 +533,9 @@ Last completed iteration: 124
 ### 124 — show a not-found view for unknown paths
 
 - Added a simple Page not found view with a homepage link for unknown paths and a matching document title. Checked nested missing paths, return navigation, and homepage query/hash URLs at phone and desktop widths. Preserved the Firebase 301 redirect from /experience-3d to /.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 125 — separate regional changes from rollback flow
+
+- Labeled the main regional arrows Changes through pull requests and added a separate dashed Rollback pull request path back through the same process. Updated the screen-reader description.
 - Verification: build, lint, TypeScript, and whitespace checks passed.

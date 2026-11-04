@@ -8,8 +8,8 @@ const descriptions = [
   },
   {
     title: "Configuration changes in two regions",
-    description: "AWS CDK and GitHub pull requests feed the primary and disaster-recovery regions. Each contains ECS/Fargate, SQS and configuration in S3. The change arrow is labeled Rollback pull request.",
-    height: 364,
+    description: "AWS CDK and GitHub pull requests feed the primary and disaster-recovery regions through arrows labeled Changes through pull requests. Each region contains ECS/Fargate, SQS and configuration in S3. A separate dashed return path labeled Rollback pull request leads back through the same pull-request process.",
+    height: 440,
   },
   {
     title: "Log pipeline and Python validation",
@@ -58,17 +58,21 @@ export default function CaseStudyDiagram({ index }: { index: number }) {
         <>
           <rect x="24" y="8" width="272" height="72" rx="4" />
           <text x="160" y="38"><tspan x="160">AWS CDK</tspan><tspan x="160" dy="25">GitHub pull requests</tspan></text>
-          <path d="M160 80 V148 H78 V166 M160 148 H242 V166" markerEnd={arrow} />
-          <path d="M78 148 V166" markerEnd={arrow} />
-          <rect className="diagram-arrow-label" x="47" y="98" width="226" height="27" />
-          <text x="160" y="117">Rollback pull request</text>
-          <rect x="4" y="168" width="148" height="188" rx="4" />
-          <rect x="168" y="168" width="148" height="188" rx="4" />
-          <text className="diagram-region" x="78" y="195"><tspan x="78">Primary</tspan><tspan x="78" dy="22">region</tspan></text>
-          <text className="diagram-region" x="242" y="195"><tspan x="242">Disaster-recovery</tspan><tspan x="242" dy="22">region</tspan></text>
-          {[78, 242].map((x) => (
+          <path d="M160 80 V148 H72 V166 M160 148 H224 V166" markerEnd={arrow} />
+          <path d="M72 148 V166" markerEnd={arrow} />
+          <rect className="diagram-arrow-label" x="47" y="92" width="226" height="47" />
+          <text x="160" y="109"><tspan x="160">Changes through</tspan><tspan x="160" dy="23">pull requests</tspan></text>
+          <rect x="4" y="168" width="136" height="188" rx="4" />
+          <rect x="156" y="168" width="136" height="188" rx="4" />
+          <text className="diagram-region" x="72" y="195"><tspan x="72">Primary</tspan><tspan x="72" dy="22">region</tspan></text>
+          <text className="diagram-region" x="224" y="195"><tspan x="224">Disaster-recovery</tspan><tspan x="224" dy="22">region</tspan></text>
+          {[72, 224].map((x) => (
             <text key={x} x={x} y="250"><tspan x={x}>ECS/Fargate</tspan><tspan x={x} dy="27">SQS</tspan><tspan x={x} dy="27">Configuration</tspan><tspan x={x} dy="22">in S3</tspan></text>
           ))}
+          <path className="diagram-check" d="M72 356 V408 H312 V44 H298 M224 356 V408" markerEnd={undefined} />
+          <path className="diagram-check" d="M312 44 H298" markerEnd={arrow} />
+          <rect className="diagram-arrow-label" x="46" y="391" width="228" height="27" />
+          <text x="160" y="410">Rollback pull request</text>
         </>
       )}
 
