@@ -62,7 +62,7 @@ export const selectedWork = {
         "Helped with production cutovers and rollbacks alongside developers, testers, middleware and cloud engineering teams.",
       ],
       outcome:
-        "The migrated workloads run in Stage and Production with Watcher alerts in place, and environment changes go through pull requests.",
+        "I worked on 130 of the 194 applications, across Stage and Production. When a cutover had to be reversed, I helped roll it back, and the migrated workloads now run with Watcher alerts in place.",
       stack:
         "AWS, ECS/Fargate, CodePipeline, CodeBuild, CodeDeploy, GitHub, Kibana",
     },

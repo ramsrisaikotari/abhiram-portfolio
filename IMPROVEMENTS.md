@@ -1,4 +1,4 @@
-Last completed iteration: 109
+Last completed iteration: 110
 
 ## Pre-iteration work
 
@@ -457,4 +457,9 @@ Last completed iteration: 109
 ### 109 — specify the migration case-study context
 
 - Set case study 1 Context to the exact supplied 194-application migration wording.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 110 — clarify the migration case-study outcome
+
+- Set case study 1 Outcome to the exact supplied contribution, rollback, and Watcher-alert wording.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
