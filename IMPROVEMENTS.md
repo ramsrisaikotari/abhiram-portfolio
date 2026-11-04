@@ -1,4 +1,4 @@
-Last completed iteration: 127
+Last completed iteration: 128
 
 ## Pre-iteration work
 
@@ -549,3 +549,8 @@ Last completed iteration: 127
 
 - Added left-to-right layouts from 768 px using the full case-study content width, while retaining vertical phone layouts. Browser checks passed at 360, 768, and 1440 px for readable text, accessible labels, ordering, full width, and no overflow; reviewed phone and desktop captures.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 128 — connect validator checks directly to all three target boxes
+
+- Added three separate dashed arrows from the Python validator to Amazon Data Firehose for delivery/throttling, S3 backup for backup health, and Dynatrace for freshness in both layouts. Updated the description and individual arrow titles to match.
+- Verification: build, lint, TypeScript, and whitespace checks passed. Browser geometry checks at 360, 768, and 1440 px confirm three arrowheads at their target boxes and no dashed endpoint on another line. Reviewed phone and desktop captures.

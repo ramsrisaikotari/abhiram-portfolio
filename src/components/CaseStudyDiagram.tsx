@@ -21,7 +21,7 @@ const descriptions = [
   },
   {
     title: "Log pipeline and Python validation",
-    description: "CloudWatch Logs flow to Amazon Data Firehose, then Dynatrace, with a branch to an S3 backup. A Python validator checks delivery, throttling, backup health and freshness. Dashed arrows indicate checks.",
+    description: "CloudWatch Logs flow to Amazon Data Firehose, then Dynatrace, with a branch to an S3 backup. Three separate dashed arrows run from the Python validator directly to Amazon Data Firehose for delivery and throttling, S3 backup for backup health, and Dynatrace for freshness. Each check arrow ends at its target box, not on another line.",
     height: 464,
   },
 ] as const;
@@ -96,8 +96,9 @@ export default function CaseStudyDiagram({ index }: { index: number }) {
           <text x="840" y="98">Dynatrace</text>
           <rect x="728" y="190" width="224" height="68" rx="4" />
           <text x="840" y="232">S3 backup</text>
-          <path className="diagram-check" d="M489 338 V300 H680 V90 H726" markerEnd={arrow} />
-          <path className="diagram-check" d="M714 383 H840 V260" markerEnd={arrow} />
+          <path className="diagram-check" d="M420 338 V192" markerEnd={arrow}><title>Amazon Data Firehose: delivery and throttling</title></path>
+          <path className="diagram-check" d="M600 338 V280 H700 V140 H840 V126" markerEnd={arrow}><title>Dynatrace: freshness</title></path>
+          <path className="diagram-check" d="M714 383 H840 V260" markerEnd={arrow}><title>S3 backup: backup health</title></path>
           <rect x="264" y="338" width="450" height="92" rx="4" />
           <text x="489" y="365"><tspan x="489">Python validator</tspan><tspan x="489" dy="28">Checks delivery, throttling,</tspan><tspan x="489" dy="28">backup health and freshness</tspan></text>
         </>
@@ -153,8 +154,9 @@ export default function CaseStudyDiagram({ index }: { index: number }) {
           <text x="78" y="234">Dynatrace</text>
           <rect x="168" y="200" width="148" height="56" rx="4" />
           <text x="242" y="234">S3 backup</text>
-          <path className="diagram-check" d="M160 306 V282 H78 V258 M160 282 H242 V258" markerEnd={arrow} />
-          <path className="diagram-check" d="M78 282 V258" markerEnd={arrow} />
+          <path className="diagram-check" d="M160 308 V176 H280 V162" markerEnd={arrow}><title>Amazon Data Firehose: delivery and throttling</title></path>
+          <path className="diagram-check" d="M110 308 V282 H78 V258" markerEnd={arrow}><title>Dynatrace: freshness</title></path>
+          <path className="diagram-check" d="M210 308 V282 H242 V258" markerEnd={arrow}><title>S3 backup: backup health</title></path>
           <rect x="24" y="308" width="272" height="146" rx="4" />
           <text x="160" y="337"><tspan x="160">Python validator</tspan><tspan x="160" dy="33">Checks delivery, throttling,</tspan><tspan x="160" dy="26">backup health</tspan><tspan x="160" dy="26">and freshness</tspan></text>
         </>
