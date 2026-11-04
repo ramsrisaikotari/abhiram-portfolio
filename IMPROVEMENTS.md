@@ -1,4 +1,4 @@
-Last completed iteration: 108
+Last completed iteration: 109
 
 ## Pre-iteration work
 
@@ -452,4 +452,9 @@ Last completed iteration: 108
 ### 108 — update impact figures with migration scope
 
 - Set the four impact figures and labels to the exact supplied wording and order: 10, 130, 150+, and 80+.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 109 — specify the migration case-study context
+
+- Set case study 1 Context to the exact supplied 194-application migration wording.
 - Verification: build, lint, TypeScript, and whitespace checks passed.

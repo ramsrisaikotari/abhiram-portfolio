@@ -53,7 +53,7 @@ export const selectedWork = {
     {
       title: "Moving enterprise APIs from MuleSoft to AWS",
       context:
-        "A large set of enterprise applications and APIs had to move from MuleSoft to AWS, in both Stage and Production.",
+        "194 enterprise applications and APIs had to move from MuleSoft to AWS, in both Stage and Production.",
       actions: [
         "Carried out Stage and Production migration deployments and ran the infrastructure and application pipelines.",
         "Updated application configuration and infrastructure repositories, with pull requests for each environment's changes.",
