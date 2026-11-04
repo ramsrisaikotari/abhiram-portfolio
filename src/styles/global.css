@@ -718,6 +718,20 @@ footer {
 }
 
 @media (min-width: 48rem) {
+  .case-study-visual {
+    width: calc(100% + 3.25rem);
+    margin-left: -3.25rem;
+  }
+
+  .case-study-diagram-wide {
+    max-width: none;
+  }
+
+  .case-study-diagram-wide text,
+  .case-study-diagram-wide .diagram-region {
+    font-size: 22px;
+  }
+
   .menu-toggle {
     display: none;
   }

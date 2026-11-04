@@ -1,4 +1,4 @@
-Last completed iteration: 126
+Last completed iteration: 127
 
 ## Pre-iteration work
 
@@ -543,4 +543,9 @@ Last completed iteration: 126
 ### 126 — show migration as a before-and-after flow
 
 - Replaced the intermediate pipeline-service step with a MuleSoft before to AWS after flow, annotated the migration arrow with the supplied deployment wording, and kept Kibana Watcher alerts attached to AWS. Updated the accessible description.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 127 — draw full-width horizontal diagrams from tablet widths
+
+- Added left-to-right layouts from 768 px using the full case-study content width, while retaining vertical phone layouts. Browser checks passed at 360, 768, and 1440 px for readable text, accessible labels, ordering, full width, and no overflow; reviewed phone and desktop captures.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
