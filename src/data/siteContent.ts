@@ -78,7 +78,7 @@ export const selectedWork = {
         "Verified updated configuration in S3, restarted ECS tasks to pick it up, and checked logs and service health after each release.",
       ],
       outcome:
-        "Configuration changes reach both regions through pull requests, and services are validated after every release.",
+        "Changes to both regions go through pull requests, so when one has to be reversed, the rollback is a pull request too. Services are checked after every release.",
       stack: "AWS CDK, SQS, IAM, S3, ECS/Fargate, GitHub",
     },
     {

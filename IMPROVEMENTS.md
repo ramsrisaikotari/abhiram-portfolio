@@ -1,4 +1,4 @@
-Last completed iteration: 110
+Last completed iteration: 111
 
 ## Pre-iteration work
 
@@ -462,4 +462,9 @@ Last completed iteration: 110
 ### 110 — clarify the migration case-study outcome
 
 - Set case study 1 Outcome to the exact supplied contribution, rollback, and Watcher-alert wording.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 111 — clarify the multi-region case-study outcome
+
+- Set case study 2 Outcome to the exact supplied pull-request, rollback, and release-check wording.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
