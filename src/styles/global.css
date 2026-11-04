@@ -646,6 +646,20 @@ h4 {
   align-items: center;
 }
 
+.not-found {
+  display: grid;
+  min-height: 75vh;
+  align-content: center;
+  justify-items: start;
+  gap: 1.5rem;
+  padding-block: 4rem;
+}
+
+.not-found h1 {
+  margin-bottom: 0;
+  font-size: clamp(2.5rem, 9vw, 4.5rem);
+}
+
 footer {
   width: min(100% - 2.5rem, var(--content-width));
   margin-inline: auto;

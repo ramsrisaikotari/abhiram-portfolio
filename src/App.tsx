@@ -4,11 +4,14 @@ import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import NotFound from "./components/NotFound";
 import Projects from "./components/Projects";
 import SelectedWork from "./components/SelectedWork";
 import Skills from "./components/Skills";
 
 export default function App() {
+  if (window.location.pathname !== "/") return <NotFound />;
+
   return (
     <>
       <a className="skip-link" href="#main-content">

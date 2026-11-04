@@ -1,4 +1,4 @@
-Last completed iteration: 123
+Last completed iteration: 124
 
 ## Pre-iteration work
 
@@ -528,4 +528,9 @@ Last completed iteration: 123
 ### 123 — add accessible case-study diagrams
 
 - Added three inline SVG diagrams using only the requested named components and site colors, with unique title/description labels and correct placement before Outcome. Checked text fit and order at 360, 768, and 1440 px and visually reviewed all three at 360 px.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 124 — show a not-found view for unknown paths
+
+- Added a simple Page not found view with a homepage link for unknown paths and a matching document title. Checked nested missing paths, return navigation, and homepage query/hash URLs at phone and desktop widths. Preserved the Firebase 301 redirect from /experience-3d to /.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
