@@ -24,8 +24,8 @@ export const hero = {
   relocation: "Open to relocation anywhere in the US.",
   impact: [
     { value: "10", label: "Applications I own end to end" },
+    { value: "130", label: "Applications I worked on in the MuleSoft-to-AWS migration" },
     { value: "150+", label: "APIs and microservices supported in production" },
-    { value: "400+", label: "CloudWatch log groups monitored" },
     { value: "80+", label: "APIs with monitoring and alerts I set up" },
   ],
 } as const;

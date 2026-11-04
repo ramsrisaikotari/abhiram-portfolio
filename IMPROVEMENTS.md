@@ -1,4 +1,4 @@
-Last completed iteration: 107
+Last completed iteration: 108
 
 ## Pre-iteration work
 
@@ -448,3 +448,8 @@ Last completed iteration: 107
 - Removed the desktop split-column contact layout so Email and social links stay directly below the contact text.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
 - Round verification: production browser checks passed at 320, 390, 768, 1023, 1024, and 1440 px for hero placement, overflow, contact alignment, actions, and navigation through sections in both scroll directions. Reviewed 390, 1024, and 1440 px screenshots.
+
+### 108 — update impact figures with migration scope
+
+- Set the four impact figures and labels to the exact supplied wording and order: 10, 130, 150+, and 80+.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
