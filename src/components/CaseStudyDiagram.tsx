@@ -3,8 +3,8 @@ import { useId } from "react";
 const descriptions = [
   {
     title: "MuleSoft-to-AWS migration",
-    description: "MuleSoft to CodePipeline, CodeBuild and CodeDeploy, then ECS/Fargate on AWS in Stage and Production, followed by Kibana Watcher alerts.",
-    height: 400,
+    description: "Before: MuleSoft. After: ECS/Fargate on AWS in Stage and Production, with Kibana Watcher alerts attached. The migration arrow is labeled Migrated and deployed through CodePipeline, CodeBuild and CodeDeploy. The pipeline services are annotations, not an intermediate step in the flow.",
+    height: 480,
   },
   {
     title: "Configuration changes in two regions",
@@ -41,16 +41,15 @@ export default function CaseStudyDiagram({ index }: { index: number }) {
       {index === 0 && (
         <>
           <rect x="24" y="8" width="272" height="52" rx="4" />
-          <text x="160" y="40">MuleSoft</text>
-          <path d="M160 60 V92" markerEnd={arrow} />
-          <rect x="24" y="94" width="272" height="88" rx="4" />
-          <text x="160" y="119"><tspan x="160">CodePipeline</tspan><tspan x="160" dy="24">CodeBuild</tspan><tspan x="160" dy="24">CodeDeploy</tspan></text>
-          <path d="M160 182 V214" markerEnd={arrow} />
-          <rect x="24" y="216" width="272" height="76" rx="4" />
-          <text x="160" y="247"><tspan x="160">ECS/Fargate on AWS</tspan><tspan x="160" dy="25">Stage and Production</tspan></text>
-          <path d="M160 292 V324" markerEnd={arrow} />
-          <rect x="24" y="326" width="272" height="64" rx="4" />
-          <text x="160" y="364">Kibana Watcher alerts</text>
+          <text x="160" y="40">MuleSoft (before)</text>
+          <path d="M160 60 V76 H36 V246 H160 V264" markerEnd={arrow} />
+          <text x="180" y="108"><tspan x="180">Migrated and</tspan><tspan x="180" dy="24">deployed through</tspan></text>
+          <text x="180" y="169"><tspan x="180">CodePipeline,</tspan><tspan x="180" dy="24">CodeBuild and</tspan><tspan x="180" dy="24">CodeDeploy</tspan></text>
+          <rect x="24" y="266" width="272" height="100" rx="4" />
+          <text x="160" y="295"><tspan x="160">ECS/Fargate on AWS,</tspan><tspan x="160" dy="25">Stage and Production</tspan><tspan x="160" dy="25">(after)</tspan></text>
+          <path d="M160 366 V406" markerEnd={arrow} />
+          <rect x="24" y="408" width="272" height="64" rx="4" />
+          <text x="160" y="446">Kibana Watcher alerts</text>
         </>
       )}
 

@@ -1,4 +1,4 @@
-Last completed iteration: 125
+Last completed iteration: 126
 
 ## Pre-iteration work
 
@@ -538,4 +538,9 @@ Last completed iteration: 125
 ### 125 — separate regional changes from rollback flow
 
 - Labeled the main regional arrows Changes through pull requests and added a separate dashed Rollback pull request path back through the same process. Updated the screen-reader description.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 126 — show migration as a before-and-after flow
+
+- Replaced the intermediate pipeline-service step with a MuleSoft before to AWS after flow, annotated the migration arrow with the supplied deployment wording, and kept Kibana Watcher alerts attached to AWS. Updated the accessible description.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
