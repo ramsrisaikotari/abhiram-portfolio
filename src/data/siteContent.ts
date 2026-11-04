@@ -155,8 +155,8 @@ export const skills = [
       "Incident investigation, root-cause analysis, disaster-recovery configuration, alert design, release validation, Linux troubleshooting",
   },
   {
-    category: "Learning in my lab",
-    details: "Kubernetes, Prometheus, Grafana",
+    category: "Currently learning",
+    details: "Kubernetes, Prometheus and Grafana in my lab; LLMs, system design and machine learning on my own.",
   },
 ] as const;
 

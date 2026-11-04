@@ -1,4 +1,4 @@
-Last completed iteration: 119
+Last completed iteration: 120
 
 ## Pre-iteration work
 
@@ -508,4 +508,9 @@ Last completed iteration: 119
 ### 119 — update the experience tools line
 
 - Replaced the experience tools line with the exact supplied list.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 120 — update the currently learning skills row
+
+- Renamed the last skills row and set its description to the exact supplied wording.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
