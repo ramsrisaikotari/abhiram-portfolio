@@ -1,4 +1,4 @@
-Last completed iteration: 115
+Last completed iteration: 116
 
 ## Pre-iteration work
 
@@ -489,3 +489,8 @@ Last completed iteration: 115
 - Removed bottom-pinning from phone impact labels and used a consistent small gap beneath each number.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
 - Round verification: exact copy checks and production browser checks passed at 320, 390, 768, 1023, 1024, and 1440 px, covering impact values, phone label gaps, hero action order, arrow spacing, education placement, navigation fit, and section tracking. Reviewed phone and desktop captures and the rendered resume education entry.
+
+### 116 — update the hero introduction
+
+- Replaced only the first sentence of the hero introduction with the exact supplied wording.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
