@@ -39,7 +39,8 @@ export const experience = {
     "at Amtrak , I work on enterprise APIs and applications running on AWS, across four accounts (Dev, Test, Stage and Production) and two regions.",
   responsibilities: [
     "Own 10 applications from development through production as the team's DevOps engineer and SRE, running on ECS/Fargate, Lambda, Step Functions and a scheduler, with on-call support.",
-    "Ran and troubleshot release pipelines in AWS CodePipeline, CodeBuild, CodeDeploy and Jenkins, and raised 140+ change requests.",
+    "Built a new Application Load Balancer with AWS CDK, Terraform and CloudFormation, covering HTTPS listeners and certificates, target groups and health checks, routing rules, security groups and DNS, and used it to make an existing application available externally. It's now live.",
+    "Ran and troubleshot release pipelines in AWS CodePipeline, CodeBuild, CodeDeploy and Jenkins, and raised 140+ change requests. When a manually aborted Jenkins run left an Amazon MSK cluster undeleted, I found why it was stuck, deleted it and cleaned up the resources left behind.",
     "Investigated 30+ production incidents, from ECS task failures and database connection timeouts to HTTP errors and network issues, working with application, database, network and platform teams on recovery and root-cause analysis.",
     "My main 2026 work was the MuleSoft-to-AWS migration, disaster-recovery configuration and alerting, described in Selected work below.",
   ],

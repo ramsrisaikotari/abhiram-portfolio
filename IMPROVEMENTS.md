@@ -1,4 +1,4 @@
-Last completed iteration: 117
+Last completed iteration: 118
 
 ## Pre-iteration work
 
@@ -498,4 +498,9 @@ Last completed iteration: 117
 ### 117 — update the experience company and summary
 
 - Set the company line and summary to the exact supplied wording, retaining the requested lowercase opening and space before the comma.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 118 — update the five experience bullets
+
+- Set all five experience bullets in the requested order, using only the supplied wording.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
