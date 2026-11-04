@@ -32,11 +32,11 @@ export const hero = {
 } as const;
 
 export const experience = {
-  company: "Cyber Nirvana LLC",
+  company: "Cyber Nirvana LLC · Contract role at Amtrak",
   role: "DevOps & Site Reliability Engineer",
   dates: "Aug 2024 – Present",
   summary:
-    "I work on enterprise APIs and applications running on AWS, across four accounts (Dev, Test, Stage and Production) and two regions.",
+    "at Amtrak , I work on enterprise APIs and applications running on AWS, across four accounts (Dev, Test, Stage and Production) and two regions.",
   responsibilities: [
     "Own 10 applications from development through production as the team's DevOps engineer and SRE, running on ECS/Fargate, Lambda, Step Functions and a scheduler, with on-call support.",
     "Ran and troubleshot release pipelines in AWS CodePipeline, CodeBuild, CodeDeploy and Jenkins, and raised 140+ change requests.",

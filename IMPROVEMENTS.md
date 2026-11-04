@@ -1,4 +1,4 @@
-Last completed iteration: 116
+Last completed iteration: 117
 
 ## Pre-iteration work
 
@@ -493,4 +493,9 @@ Last completed iteration: 116
 ### 116 — update the hero introduction
 
 - Replaced only the first sentence of the hero introduction with the exact supplied wording.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 117 — update the experience company and summary
+
+- Set the company line and summary to the exact supplied wording, retaining the requested lowercase opening and space before the comma.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
