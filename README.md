@@ -69,7 +69,7 @@ The fixed navbar uses native anchor links and marks the visible section. The mob
 ## Replace before publishing
 
 1. Contact links are configured in `src/data/profile.ts`; update them there if they change.
-2. Replace `public/resume.pdf` whenever the résumé changes; the configured `/resume.pdf` URL can stay the same.
+2. Replace `public/resume.pdf` whenever the résumé changes and update the `v` query value in `siteLinks.resume` to the new file's SHA-256 prefix. This bypasses older cached downloads; Hosting also requires revalidation for the PDF and homepage.
 3. Keep incomplete or private content in `CONTENT_TODO.md` until it is ready to publish.
 4. The canonical production URL is `https://abhiramkotari.com/`. Update `index.html`, `public/robots.txt`, and `public/sitemap.xml` together if the domain changes.
 

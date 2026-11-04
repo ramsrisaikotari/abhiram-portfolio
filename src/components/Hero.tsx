@@ -32,7 +32,7 @@ export default function Hero() {
         <p className="relocation">{hero.relocation}</p>
         <ul className="text-links" aria-label="Profile links">
           {heroLinks.map((link) => {
-            const external = link.href.startsWith("http") || link.href.endsWith(".pdf");
+            const external = link.href.startsWith("http") || link.href.split("?")[0].endsWith(".pdf");
             return (
               <li key={link.label}>
                 <a

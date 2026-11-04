@@ -1,5 +1,5 @@
 export const siteLinks = {
-  resume: "/resume.pdf",
+  resume: "/resume.pdf?v=e5c3596790b6",
   github: "https://github.com/ramsrisaikotari",
   linkedin: "https://www.linkedin.com/in/abhi-ram-kotari-bb4bb9323/",
   email: "mailto:ramsrisaikotari@gmail.com",
