@@ -11,6 +11,7 @@ export const navigation = [
   { label: "Experience", href: "#experience" },
   { label: "Work", href: "#work" },
   { label: "Projects", href: "#projects" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -156,6 +157,11 @@ export const skills = [
     category: "Learning in my lab",
     details: "Kubernetes, Prometheus, Grafana",
   },
+] as const;
+
+export const education = [
+  { degree: "M.S., Computer Science", school: "University of Central Missouri" },
+  { degree: "B.Tech, Computer Science & Engineering", school: "JNTU Vizianagaram" },
 ] as const;
 
 export const contact = {

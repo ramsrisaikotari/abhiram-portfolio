@@ -558,6 +558,23 @@ h4 {
   color: var(--text-muted);
 }
 
+.education-list {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.education-list h3 {
+  margin-bottom: 0.5rem;
+}
+
+.education-list p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
 .contact {
   background: var(--surface);
 }

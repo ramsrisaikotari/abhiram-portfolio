@@ -1,4 +1,4 @@
-Last completed iteration: 112
+Last completed iteration: 113
 
 ## Pre-iteration work
 
@@ -472,4 +472,9 @@ Last completed iteration: 112
 ### 112 — clarify the observability case-study outcome
 
 - Set case study 3 Outcome to the exact supplied 400+ log-group, 80+ API, and automated-check wording.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 113 — add education from the repository resume
+
+- Added the two degree and school entries from public/resume.pdf between Skills and Contact. The resume has no graduation dates, so dates are omitted and tracked in CONTENT_TODO. The Education nav link fits on one line at 768, 1023, 1024, and 1440 px.
 - Verification: build, lint, TypeScript, and whitespace checks passed.

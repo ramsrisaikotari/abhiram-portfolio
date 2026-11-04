@@ -2,4 +2,4 @@
 
 - Location for the hero.
 - Public link for KubeReliability.
-- Education details and section.
+- Graduation dates for Education (not present in resume.pdf).

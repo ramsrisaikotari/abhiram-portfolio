@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contact" className="section contact" aria-labelledby="contact-title">
       <div className="section-shell contact-inner">
         <div>
-          <p className="section-kicker"><span>05</span> / Contact</p>
+          <p className="section-kicker"><span>06</span> / Contact</p>
           <h2 id="contact-title">{contact.heading}</h2>
           <p>{contact.text}</p>
         </div>
