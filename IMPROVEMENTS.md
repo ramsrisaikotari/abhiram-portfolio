@@ -1,4 +1,4 @@
-Last completed iteration: 114
+Last completed iteration: 115
 
 ## Pre-iteration work
 
@@ -483,3 +483,9 @@ Last completed iteration: 114
 
 - Ordered hero actions as Resume, Email, GitHub, and LinkedIn, preserving their primary, secondary, and text styles. Added visible spacing before the Resume arrow; all external arrows retain preceding spaces.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 115 — place phone impact labels directly below their numbers
+
+- Removed bottom-pinning from phone impact labels and used a consistent small gap beneath each number.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+- Round verification: exact copy checks and production browser checks passed at 320, 390, 768, 1023, 1024, and 1440 px, covering impact values, phone label gaps, hero action order, arrow spacing, education placement, navigation fit, and section tracking. Reviewed phone and desktop captures and the rendered resume education entry.

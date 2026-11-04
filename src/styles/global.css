@@ -608,6 +608,16 @@ footer {
   font-size: 0.86rem;
 }
 
+@media (max-width: 47.999rem) {
+  .impact-item dt {
+    margin-top: 0;
+  }
+
+  .impact-item dd {
+    margin-bottom: 0.65rem;
+  }
+}
+
 @media (min-width: 40rem) {
   .section-shell,
   .nav-shell,
