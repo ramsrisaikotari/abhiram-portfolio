@@ -45,7 +45,7 @@ export const experience = {
     "My main 2026 work was the MuleSoft-to-AWS migration, disaster-recovery configuration and alerting, described in Selected work below.",
   ],
   tools:
-    "AWS, ECS/Fargate, Lambda, AWS CDK, Jenkins, Python, Dynatrace, Kibana, CloudWatch",
+    "AWS, ECS/Fargate, Lambda, ALB, Amazon MSK, AWS CDK, Terraform, Jenkins, Python, Dynatrace, Kibana, CloudWatch",
 } as const;
 
 export const selectedWork = {

@@ -1,4 +1,4 @@
-Last completed iteration: 118
+Last completed iteration: 119
 
 ## Pre-iteration work
 
@@ -503,4 +503,9 @@ Last completed iteration: 118
 ### 118 — update the five experience bullets
 
 - Set all five experience bullets in the requested order, using only the supplied wording.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 119 — update the experience tools line
+
+- Replaced the experience tools line with the exact supplied list.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
