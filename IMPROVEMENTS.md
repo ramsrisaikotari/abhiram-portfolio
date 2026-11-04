@@ -1,4 +1,4 @@
-Last completed iteration: 121
+Last completed iteration: 122
 
 ## Pre-iteration work
 
@@ -518,4 +518,9 @@ Last completed iteration: 121
 ### 121 — verify page wording and disclosure scope
 
 - Verified that the company reference appears only in the hero introduction, experience company line, and experience summary. Exact-copy comparison confirms all other content is unchanged, with no added internal names or watermarks. Production browser checks passed at 320, 390, 768, 1023, 1024, and 1440 px.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 122 — shorten the hero introduction
+
+- Replaced the hero introduction with the exact supplied two-sentence wording.
 - Verification: build, lint, TypeScript, and whitespace checks passed.

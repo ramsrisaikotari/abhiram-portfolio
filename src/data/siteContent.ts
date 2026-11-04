@@ -21,7 +21,7 @@ export const hero = {
   headline:
     "I keep cloud applications reliable, from deployment to production monitoring.",
   intro:
-    "I'm a DevOps and Site Reliability Engineer working mainly on AWS, currently at Amtrak. I own ten applications end to end, from development through production, and I spent much of 2026 moving enterprise APIs from MuleSoft to AWS. Most days that means deployments, monitoring and alerting, disaster-recovery configuration, and tracking down production issues across the stack.",
+    "I'm a DevOps and Site Reliability Engineer working mainly on AWS, currently at Amtrak. Most days that means deployments, monitoring and alerting, disaster-recovery configuration, and tracking down production issues across the stack.",
   relocation: "Open to relocation anywhere in the US.",
   impact: [
     { value: "10", label: "Applications I own end to end" },
