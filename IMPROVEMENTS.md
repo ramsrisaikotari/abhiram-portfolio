@@ -1,4 +1,4 @@
-Last completed iteration: 122
+Last completed iteration: 123
 
 ## Pre-iteration work
 
@@ -523,4 +523,9 @@ Last completed iteration: 122
 ### 122 — shorten the hero introduction
 
 - Replaced the hero introduction with the exact supplied two-sentence wording.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 123 — add accessible case-study diagrams
+
+- Added three inline SVG diagrams using only the requested named components and site colors, with unique title/description labels and correct placement before Outcome. Checked text fit and order at 360, 768, and 1440 px and visually reviewed all three at 360 px.
 - Verification: build, lint, TypeScript, and whitespace checks passed.

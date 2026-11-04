@@ -1,4 +1,5 @@
 import { selectedWork } from "../data/siteContent";
+import CaseStudyDiagram from "./CaseStudyDiagram";
 
 export default function SelectedWork() {
   return (
@@ -29,6 +30,9 @@ export default function SelectedWork() {
                       <li key={action}>{action}</li>
                     ))}
                   </ul>
+                </div>
+                <div className="case-study-visual">
+                  <CaseStudyDiagram index={index} />
                 </div>
                 <div className="case-study-outcome">
                   <h4>Outcome</h4>
