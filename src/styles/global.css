@@ -201,6 +201,7 @@ h4 {
 
 .button {
   display: inline-flex;
+  gap: 0.35rem;
   min-height: 2.75rem;
   align-items: center;
   justify-content: center;

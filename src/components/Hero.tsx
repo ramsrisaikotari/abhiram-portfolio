@@ -2,9 +2,9 @@ import { hero, siteLinks } from "../data/siteContent";
 
 const heroLinks = [
   { label: "Resume", href: siteLinks.resume },
+  { label: "Email", href: siteLinks.email },
   { label: "GitHub", href: siteLinks.github },
   { label: "LinkedIn", href: siteLinks.linkedin },
-  { label: "Email", href: siteLinks.email },
 ] as const;
 
 export default function Hero() {

@@ -1,4 +1,4 @@
-Last completed iteration: 113
+Last completed iteration: 114
 
 ## Pre-iteration work
 
@@ -477,4 +477,9 @@ Last completed iteration: 113
 ### 113 — add education from the repository resume
 
 - Added the two degree and school entries from public/resume.pdf between Skills and Contact. The resume has no graduation dates, so dates are omitted and tracked in CONTENT_TODO. The Education nav link fits on one line at 768, 1023, 1024, and 1440 px.
+- Verification: build, lint, TypeScript, and whitespace checks passed.
+
+### 114 — order hero actions and separate link arrows
+
+- Ordered hero actions as Resume, Email, GitHub, and LinkedIn, preserving their primary, secondary, and text styles. Added visible spacing before the Resume arrow; all external arrows retain preceding spaces.
 - Verification: build, lint, TypeScript, and whitespace checks passed.
